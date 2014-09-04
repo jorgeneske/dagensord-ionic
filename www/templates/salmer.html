@@ -1,0 +1,12 @@
+<ion-view title="Salmer">
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="salme in salmer" href="#/app/salmer/{{salme.id}}">
+        {{salme.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
