@@ -1,11 +1,11 @@
-angular.module('starter.controllers', [])
+angular.module('dagensord.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('MainCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
   $scope.loginData = {};
 
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
+  $ionicModal.fromTemplateUrl('templates/overlay.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
@@ -33,12 +33,10 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('SalmerCtrl', function($scope) {
-  $scope.salmer = [
-    { title: 'Salme 1', id: 1 },
-    { title: 'Salme 2', id: 2 }
-  ];
+.controller('SalmerCtrl', function($scope,getData) {
+    $scope.salmer = getData.all();
 })
 
-.controller('VisSalmeCtrl', function($scope, $stateParams) {
+.controller('VisSalmeCtrl', function($scope, $stateParams, getData) {
+    $scope.vistsalme = getData.get($stateParams.salmeId);
 });

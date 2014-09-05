@@ -1,1 +1,40 @@
-/* Empty. Add your own CSS if you like */
+.col-30 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 36.8333%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 36.8333%;
+    -ms-flex: 0 0 36.8333%;
+    box-flex: 0;
+    flex: 0 0 36.8333%;
+    max-width: 36.8333%; }
+.col-40 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 45.16667%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 45.16667%;
+    -ms-flex: 0 0 45.16667%;
+    box-flex: 0;
+    flex: 0 0 45.16667%;
+    max-width: 45.16667%; }
+.col-60 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 53.5%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 53.5%;
+    -ms-flex: 0 0 53.5%;
+    box-flex: 0;
+    flex: 0 0 53.5%;
+    max-width: 53.5%; }
+.col-70 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 61.8333%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 61.8333%;
+    -ms-flex: 0 0 61.8333%;
+    box-flex: 0;
+    flex: 0 0 61.8333%;
+    max-width: 61.8333%; }
+.col-offset-1 {
+    margin-left: 1.33333%; }
+.spacer {
+    height: 22px; }
