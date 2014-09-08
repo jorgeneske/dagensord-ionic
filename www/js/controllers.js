@@ -33,10 +33,10 @@ angular.module('dagensord.controllers', [])
   };
 })
 
-.controller('SalmerCtrl', function($scope,getData) {
-    $scope.salmer = getData.all();
+.controller('SalmerCtrl', function($scope,salmer) {
+    $scope.salmer = salmer;
 })
 
-.controller('VisSalmeCtrl', function($scope, $stateParams, getData) {
-    $scope.vistsalme = getData.get($stateParams.salmeId);
+.controller('VisSalmeCtrl', function($scope, $stateParams, salme) {
+        $scope.vistsalme = salme[0];
 });

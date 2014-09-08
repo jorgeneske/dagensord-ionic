@@ -1,10 +1,13 @@
+
+var adminurl = "http://77.66.32.233/php/aktualitet/dagensord_version_2/";
+
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.services'])
+angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.services','angular-data.DSCacheFactory'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,6 +24,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
 })
 
 .config(function($stateProvider, $locationProvider, $urlRouterProvider) {
+
   $stateProvider
 
     .state('app', {
@@ -45,21 +49,21 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
               'menuContent' :{
                   templateUrl: "templates/salmer.html",
                   controller: 'SalmerCtrl',
-//                  resolve: {
-//                      salmer : function() {
-//                          var deferred = $q.defer();
-//                          $http.jsonp('http://77.66.32.233/php/aktualitet/dagensord_version_2/?cat=1&limit=20&callback=JSON_CALLBACK', {
-////                              cache: DSCacheFactory.get('dataCache')
-//                          })
-//                              .success(function (data) {
-//                                  deferred.resolve(data);
-//                              })
-//                              .error(function () {
-//                                  deferred.reject();
-//                              });
-//                          return deferred.promise;
-//                      }
-//                  }
+                  resolve: {
+                      salmer : function($http,$q) {
+                          var deferred = $q.defer();
+                          $http.jsonp(adminurl+'?cat=1&callback=JSON_CALLBACK', {
+                              cache: true
+                              })
+                              .success(function (data) {
+                                  deferred.resolve(data);
+                              })
+                              .error(function (data) {
+                                  deferred.reject();
+                              });
+                          return deferred.promise;
+                      }
+                  }
               }
           }
       })
@@ -68,7 +72,23 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           views: {
               'menuContent' :{
                   templateUrl: "templates/vissalme.html",
-                  controller: 'VisSalmeCtrl'
+                  controller: 'VisSalmeCtrl',
+                  resolve: {
+                      salme: function($http,$q,$stateParams) {
+                          var url = adminurl+"?itemid="+$stateParams.salmeId+"&callback=JSON_CALLBACK";
+                          var defer = $q.defer();
+                          $http.jsonp(url, {
+                              cache: true
+                          })
+                              .success(function (data) {
+                                  defer.resolve(data);
+                              })
+                              .error(function (data) {
+                                  defer.reject();
+                              });
+                          return defer.promise;
+                      }
+                  }
               }
           }
       });
