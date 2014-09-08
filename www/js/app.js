@@ -44,7 +44,22 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           views: {
               'menuContent' :{
                   templateUrl: "templates/salmer.html",
-                  controller: 'SalmerCtrl'
+                  controller: 'SalmerCtrl',
+//                  resolve: {
+//                      salmer : function() {
+//                          var deferred = $q.defer();
+//                          $http.jsonp('http://77.66.32.233/php/aktualitet/dagensord_version_2/?cat=1&limit=20&callback=JSON_CALLBACK', {
+////                              cache: DSCacheFactory.get('dataCache')
+//                          })
+//                              .success(function (data) {
+//                                  deferred.resolve(data);
+//                              })
+//                              .error(function () {
+//                                  deferred.reject();
+//                              });
+//                          return deferred.promise;
+//                      }
+//                  }
               }
           }
       })
