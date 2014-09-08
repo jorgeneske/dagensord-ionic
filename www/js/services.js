@@ -1,5 +1,5 @@
-angular.module('dagensord.services',['angular-data.DSCacheFactory'])
+angular.module('dagensord.services',[])
 
     .factory('getData', function($http, DSCacheFactory, $q) {
-        console.log("Here we go");
+
     });

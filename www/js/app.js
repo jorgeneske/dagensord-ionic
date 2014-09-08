@@ -38,7 +38,38 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           url: "/home",
           views: {
               'menuContent' :{
-                  templateUrl: "templates/home.html"
+                  templateUrl: "templates/home.html",
+                  controller: 'FrontCtrl',
+                  resolve: {
+                      dagenssalme: function($http,$q) {
+                          var url = adminurl+"?itemid=14&callback=JSON_CALLBACK";
+                          var defer = $q.defer();
+                          $http.jsonp(url, {
+                              cache: true
+                          })
+                              .success(function (data) {
+                                  defer.resolve(data);
+                              })
+                              .error(function (data) {
+                                  defer.reject();
+                              });
+                          return defer.promise;
+                      },
+                      dagenstext: function($http,$q) {
+                          var url = adminurl+"?itemid=145&callback=JSON_CALLBACK";
+                          var defer = $q.defer();
+                          $http.jsonp(url, {
+                              cache: true
+                          })
+                              .success(function (data) {
+                                  defer.resolve(data);
+                              })
+                              .error(function (data) {
+                                  defer.reject();
+                              });
+                          return defer.promise;
+                      }
+                  }
               }
           }
       })
