@@ -1,4 +1,4 @@
-angular.module('dagensord.controllers', [])
+angular.module('dagensord.controllers', ['ngAudio'])
 
 .controller('MainCtrl', function($scope) {
 //        $scope.dagenssalme = dagenssalme[0];
@@ -14,6 +14,8 @@ angular.module('dagensord.controllers', [])
     $scope.salmer = salmer;
 })
 
-.controller('VisSalmeCtrl', function($scope, $stateParams, salme) {
+.controller('VisSalmeCtrl', function($scope, $stateParams, salme,ngAudio) {
     $scope.vistsalme = salme[0];
+    $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
+    $scope.audio = ngAudio.load($scope.vistsalme['qbrickAudio']);
 });

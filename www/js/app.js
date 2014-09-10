@@ -23,7 +23,8 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
   });
 })
 
-.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
+
+.config(function($stateProvider, $locationProvider, $urlRouterProvider, $sceDelegateProvider) {
 
   $stateProvider
 
@@ -41,33 +42,11 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   templateUrl: "templates/home.html",
                   controller: 'FrontCtrl',
                   resolve: {
-                      dagenssalme: function($http,$q) {
-                          var url = adminurl+"?itemid=14&callback=JSON_CALLBACK";
-                          var defer = $q.defer();
-                          $http.jsonp(url, {
-                              cache: true
-                          })
-                              .success(function (data) {
-                                  defer.resolve(data);
-                              })
-                              .error(function (data) {
-                                  defer.reject();
-                              });
-                          return defer.promise;
+                      dagenssalme: function(getData){
+                          return getData.get(124);
                       },
-                      dagenstext: function($http,$q) {
-                          var url = adminurl+"?itemid=145&callback=JSON_CALLBACK";
-                          var defer = $q.defer();
-                          $http.jsonp(url, {
-                              cache: true
-                          })
-                              .success(function (data) {
-                                  defer.resolve(data);
-                              })
-                              .error(function (data) {
-                                  defer.reject();
-                              });
-                          return defer.promise;
+                      dagenstext: function(getData){
+                          return getData.get(2108);
                       }
                   }
               }
@@ -81,18 +60,8 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   templateUrl: "templates/salmer.html",
                   controller: 'SalmerCtrl',
                   resolve: {
-                      salmer : function($http,$q) {
-                          var deferred = $q.defer();
-                          $http.jsonp(adminurl+'?cat=1&callback=JSON_CALLBACK', {
-                              cache: true
-                              })
-                              .success(function (data) {
-                                  deferred.resolve(data);
-                              })
-                              .error(function (data) {
-                                  deferred.reject();
-                              });
-                          return deferred.promise;
+                      salmer: function(getData){
+                          return getData.all(1);
                       }
                   }
               }
@@ -105,19 +74,8 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   templateUrl: "templates/vissalme.html",
                   controller: 'VisSalmeCtrl',
                   resolve: {
-                      salme: function($http,$q,$stateParams) {
-                          var url = adminurl+"?itemid="+$stateParams.salmeId+"&callback=JSON_CALLBACK";
-                          var defer = $q.defer();
-                          $http.jsonp(url, {
-                              cache: true
-                          })
-                              .success(function (data) {
-                                  defer.resolve(data);
-                              })
-                              .error(function (data) {
-                                  defer.reject();
-                              });
-                          return defer.promise;
+                      salme: function(getData,$stateParams){
+                          return getData.get($stateParams.salmeId);
                       }
                   }
               }
@@ -127,6 +85,11 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
   $urlRouterProvider.otherwise('/app/home');
 
   $locationProvider.html5Mode(false);
+
+  $sceDelegateProvider.resourceUrlWhitelist([
+      'self',
+      'http://qstream-down.qbrick.com/**'
+  ]);
 
 });
 

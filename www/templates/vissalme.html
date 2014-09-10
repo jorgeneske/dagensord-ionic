@@ -3,6 +3,18 @@
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>{{vistsalme.title}}</h1>
+    <h4>{{vistsalme.title}}</h4>
+    <p><pre>{{vistsalme.text}}</pre></p>
+      <button ng-click='audio.play()'>Play NU</button>
+      <!--<button ng-click='audio.paused ? audio.play() : audio.pause()'>Play</button>-->
+      <button ng-click='audio.restart()'>Stop</button>
+
+      <a href="javascript:audio.play()">Klik og lyt</a>
+
   </ion-content>
 </ion-view>
+
+
+<!--.angular-with-newlines {-->
+<!--white-space: pre;-->
+<!--}-->
