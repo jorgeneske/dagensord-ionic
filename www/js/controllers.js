@@ -1,6 +1,5 @@
 angular.module('dagensord.controllers', ['ngAudio'])
 .controller('MainCtrl', function($scope) {
-//        $scope.dagenssalme = dagenssalme[0];
 
 })
 
