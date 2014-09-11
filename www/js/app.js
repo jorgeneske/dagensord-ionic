@@ -1,12 +1,9 @@
 
 var adminurl = "http://77.66.32.233/php/aktualitet/dagensord_version_2/";
+var imageurl = "http://77.66.32.233/php/aktualitet/dagensord/media/picts/";
 
 // Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
 angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.services','angular-data.DSCacheFactory'])
 
 .run(function($ionicPlatform) {
@@ -20,6 +17,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
   });
 })
 
@@ -46,7 +44,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                           return getData.get(124);
                       },
                       dagenstext: function(getData){
-                          return getData.get(2108);
+                          return getData.get(1037);
                       }
                   }
               }

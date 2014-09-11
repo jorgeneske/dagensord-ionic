@@ -33,7 +33,11 @@
 .col-offset-1 {
     margin-left: 1.33333%; }
 .spacer {
-    min-height: 4px; }
+    min-height: 4px;}
+img {
+    width: 100%;
+    max-width: 620px;
+}
 @media (min-width: 480px) {
     .spacer {
         min-height: 6px; }

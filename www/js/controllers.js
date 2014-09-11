@@ -1,5 +1,4 @@
 angular.module('dagensord.controllers', ['ngAudio'])
-
 .controller('MainCtrl', function($scope) {
 //        $scope.dagenssalme = dagenssalme[0];
 
@@ -8,13 +7,14 @@ angular.module('dagensord.controllers', ['ngAudio'])
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
     $scope.dagenssalme = dagenssalme[0];
     $scope.dagenstext = dagenstext[0];
+    $scope.dagenstext['image'] = imageurl + $scope.dagenstext['image'];
 })
 
 .controller('SalmerCtrl', function($scope,salmer) {
     $scope.salmer = salmer;
 })
 
-.controller('VisSalmeCtrl', function($scope, $stateParams, salme,ngAudio) {
+.controller('VisSalmeCtrl', function($scope, $stateParams, salme, ngAudio) {
     $scope.vistsalme = salme[0];
     $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
     $scope.audio = ngAudio.load($scope.vistsalme['qbrickAudio']);
