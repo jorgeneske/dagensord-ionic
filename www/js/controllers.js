@@ -6,7 +6,9 @@ angular.module('dagensord.controllers', ['ngAudio'])
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
     $scope.dagenssalme = dagenssalme[0];
     $scope.dagenstext = dagenstext[0];
-    $scope.dagenstext['image'] = imageurl + $scope.dagenstext['image'];
+    if ($scope.dagenstext['image']) {
+        $scope.dagenstext['image'] = "<img src='"+ imageurl + $scope.dagenstext['image']+"' alt='"+$scope.dagenstext['performer']+"'/>"
+    }
 })
 
 .controller('SalmerCtrl', function($scope,salmer) {
