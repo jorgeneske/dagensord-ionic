@@ -11,6 +11,22 @@ angular.module('dagensord.controllers', ['ngAudio'])
     }
 })
 
+.controller('BoennerCtrl', function($scope,boenner) {
+    $scope.boenner = boenner;
+})
+
+.controller('VisBoenCtrl', function($scope) {
+
+})
+
+.controller('OrdCtrl', function($scope,ord) {
+    $scope.ord = ord;
+})
+
+.controller('VisOrdCtrl', function($scope, $stateParams, dagensord) {
+    $scope.vistord = dagensord[0];
+})
+
 .controller('SalmerCtrl', function($scope,salmer) {
     $scope.salmer = salmer;
 })

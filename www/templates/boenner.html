@@ -1,0 +1,12 @@
+<ion-view title="Bønner">
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="bon in boenner" href="#/app/boenner/{{bon.id}}">
+        {{bon.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

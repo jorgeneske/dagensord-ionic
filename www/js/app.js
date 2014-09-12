@@ -41,16 +41,67 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   controller: 'FrontCtrl',
                   resolve: {
                       dagenssalme: function(getData){
-                          return getData.get(124);
+                          return getData.dagens("salme");
                       },
                       dagenstext: function(getData){
-                          return getData.get(1037);
+                          return getData.dagens("ord");
                       }
                   }
               }
           }
       })
+      .state('app.ord', {
+          url: "/ord",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/ord.html",
+                  controller: 'OrdCtrl',
+                  resolve: {
+                      ord: function(getData){
+                          return getData.all(2);
+                      }
+                  }
+              }
+          }
+      })
+      .state('app.visord', {
+          url: "/ord/:ordId",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/visord.html",
+                  controller: 'VisOrdCtrl',
+                  resolve: {
+                      dagensord: function(getData,$stateParams){
+                          return getData.get($stateParams.ordId);
+                      }
+                  }
+              }
+          }
+      })
+      .state('app.boenner', {
+          url: "/boenner",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/boenner.html",
+                  controller: 'BoennerCtrl',
+                  resolve: {
+                      boenner: function(getData){
+                          return getData.all(3);
+                      }
+                  }
+              }
+          }
+      })
+      .state('app.visboen', {
+          url: "/boenner/:boenId",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/visboen.html",
+                  controller: 'VisBoenCtrl'
 
+              }
+          }
+      })
       .state('app.salmer', {
           url: "/salmer",
           views: {

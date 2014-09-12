@@ -30,6 +30,20 @@ angular.module('dagensord.services',[])
                           deferred.reject();
                       });
                   return deferred.promise;
+            },
+            dagens: function (cat) {
+                var url = adminurl+"?dagens="+cat+"&callback=JSON_CALLBACK";
+                var deferred = $q.defer();
+                $http.jsonp(url, {
+                    cache: true
+                })
+                    .success(function (data) {
+                        deferred.resolve(data);
+                    })
+                    .error(function (data) {
+                        deferred.reject();
+                    });
+                return deferred.promise;
             }
         };
     })
