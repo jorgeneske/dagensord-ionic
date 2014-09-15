@@ -9,7 +9,7 @@ angular.module('dagensord.controllers', ['ngAudio'])
                 'Device UUID: '     + device.uuid     + '\n' +
                 'Device Model: '    + device.model     + '\n' +
                 'Device Version: '  + device.version  + '\n';
-            alert(element);
+            alert("Properties:\n"+element);
         }
 })
 
