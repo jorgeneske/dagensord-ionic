@@ -1,6 +1,8 @@
 angular.module('dagensord.controllers', ['ngAudio'])
 .controller('MainCtrl', function($scope) {
-
+        $scope.test = function() {
+            alert("test");
+        }
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
