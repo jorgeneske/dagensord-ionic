@@ -1,7 +1,9 @@
 angular.module('dagensord.controllers', ['ngAudio'])
 .controller('MainCtrl', function($scope) {
         $scope.test = function() {
-            var element = 'Device Name: '     + device.name     + '\n' +
+            var element =
+                'Navigator '+navigator.userAgent+ '\n' +
+                'Device Name: '     + device.name     + '\n' +
                 'Device Cordova: '  + device.cordova + '\n' +
                 'Device Platform: ' + device.platform + '\n' +
                 'Device UUID: '     + device.uuid     + '\n' +
