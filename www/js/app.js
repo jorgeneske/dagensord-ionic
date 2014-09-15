@@ -97,8 +97,12 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           views: {
               'menuContent' :{
                   templateUrl: "templates/visboen.html",
-                  controller: 'VisBoenCtrl'
-
+                  controller: 'VisBoenCtrl',
+                  resolve: {
+                      boen: function(getData,$stateParams){
+                          return getData.get($stateParams.boenId);
+                      }
+                  }
               }
           }
       })

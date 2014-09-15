@@ -15,8 +15,8 @@ angular.module('dagensord.controllers', ['ngAudio'])
     $scope.boenner = boenner;
 })
 
-.controller('VisBoenCtrl', function($scope) {
-
+.controller('VisBoenCtrl', function($scope, $stateParams, boen) {
+    $scope.vistboen = boen[0];
 })
 
 .controller('OrdCtrl', function($scope,ord) {
