@@ -111,15 +111,15 @@ img {
     background: #abaaaa;
     border: 2px solid #abaaaa;
     border-radius: 1%;
-    min-width: 320px;
+    /*min-width: 320px;*/
     text-align: center;
 }
 .light p {
     white-space: pre;
-    font-size: 120%;
+    /*font-size: 120%;*/
 }
 .light h3 {
-    font-size: 30px;
+    /*font-size: 30px;*/
 }
 .light * {
     color: #FFF;
@@ -128,7 +128,7 @@ img {
 
 /* LOGO'er*/
 img.do_logo {
-   max-width: 30%;
+   /*max-width: 30%;*/
 }
 
 /*The three built in classes are:*/
