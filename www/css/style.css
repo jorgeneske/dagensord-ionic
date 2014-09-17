@@ -32,6 +32,9 @@
     max-width: 61.8333%; }
 .col-offset-1 {
     margin-left: 0.3em; }
+.col-logo {
+    max-width: 107px;
+}
 .spacer {
     min-height: 0.3em;}
 img {
@@ -77,15 +80,13 @@ img {
     min-height: 75px;
     padding: 1em;
 }
-.col-33.grey {
-    text-align: center;
-}
-.item-complex .item-content, .item-radio .item-content {
-    background-color: transparent;
-}
-.item {
+.grey .item {
     border: none;
     background-color: transparent;
+}
+.grey .item-complex .item-content, .grey .item-radio .item-content {
+    background-color: transparent;
+    padding: 0;
 }
 .light {
     background: #abaaaa;
@@ -105,16 +106,22 @@ img {
 .light * {
     color: #FFF;
 }
+.light p.meta {
+    font-size: 0.9em;
+    font-style: italic;
+}
 
 
 /* LOGO'er*/
-.do_logo {
-    background: #989898;
-    padding: 0.75em;
-}
-.do_logo img {
-    max-width: 75px;
-}
+/*.do_logo {*/
+    /*background: #989898;*/
+/*}*/
+/*.grey img {*/
+    /*max-width: 75px;*/
+/*}*/
+/*.do_logo a.item-content {*/
+    /*padding: 0.75em;*/
+/*}*/
 
 /*The three built in classes are:*/
 /*.responsive-sm = smaller than landscape phone*/

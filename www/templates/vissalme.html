@@ -3,31 +3,26 @@
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
   <ion-content class="has-header">
-
-      <!--<div class="row">-->
-          <!--<div class="col col-33 grey">-->
-              <!--<ion-item href="#/app/salmer" class="grey">-->
-                  <!--<img class="do_logo" src="img/LOGO_salmer.png" alt="" />-->
-              <!--</ion-item>-->
-          <!--</div>-->
-          <!--<div class="col col-offset-1 grey">-->
-              <!--<p>&nbsp;</p>-->
-          <!--</div>-->
-      <!--</div>-->
       <div class="row">
-          <div class="do_logo">
-              <img src="img/LOGO_salmer.png" alt="" />
+          <!--<div class="do_logo">-->
+              <!--<ion-item class="do_logo" href="#/app/salmer"><img src="img/LOGO_salmer.png" alt="" /></ion-item>-->
+          <!--<ion-item class="do_logo" href="#/app/salmer"></ion-item>-->
+          <!--</div>-->
+          <div class="col col-25 grey">
+            <ion-item href="#/app/salmer"><img src="img/LOGO_salmer.png" alt="" /></ion-item>
           </div>
           <div class="col col-offset-1 grey">
-
+              2
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
               <div class="col grey">
                   <div class="col grey light">
-                      <h3>{{vistsalme.title}}</h3>
+                      <h3>{{vistsalme.nr}}: {{vistsalme.title}}</h3>
+                      <p class="meta">Mel: {{vistsalme.composer}} {{vistsalme.composed}}</p>
                       <p>{{vistsalme.text}}</p>
+                      <p class="meta">Tekst: {{vistsalme.lyrics}} {{vistsalme.written}}</p>
                   </div>
               </div>
       </div>
