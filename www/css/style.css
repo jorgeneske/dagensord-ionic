@@ -31,30 +31,107 @@
     flex: 0 0 61.8333%;
     max-width: 61.8333%; }
 .col-offset-1 {
-    margin-left: 1.33333%; }
+    margin-left: 0.52%; }
 .spacer {
-    min-height: 4px;}
+    min-height: 1px;}
 img {
     width: 100%;
     max-width: 620px;
 }
+.scroll {
+    margin:0.25%;
+}
 @media (min-width: 480px) {
     .spacer {
-        min-height: 6px; }
+        min-height: 3px; }
 }
 @media (min-width: 567px) {
     .spacer {
-        min-height: 9px; }
+        min-height: 5px; }
 }
 @media (min-width: 768px) {
     .spacer {
-        height: 12px; }
+        height: 6px; }
 }
 @media (min-width: 1024px) {
     .spacer {
-        height: 15px; }
+        height: 7px; }
 }
 @media (min-width: 1500px) {
     .spacer {
-        height: 22px; }
+        height: 8px; }
 }
+
+/* Navigation */
+
+.bar.bar-stable {
+    background-color: #656565;
+    background-image: none;
+    border-color: #656565;
+    color: #FFF;
+}
+.bar-stable .button {
+    background-color: #656565;
+    border-color: #656565;
+    color: #FFF;
+}
+.bar.bar-stable .title {
+    color: #FFF;
+}
+.bar.bar-positive {
+    background-color: #656565;
+    background-image: none;
+    border-color: #656565;
+    color: #fff;
+}
+.bar-stable .button.button-clear {
+    color: #fff;
+}
+.title img {
+    padding-top: 7px;
+    max-width: 133px;
+}
+
+/* Color-classes */
+.grey {
+    background: #989898;
+    min-height: 75px;
+}
+.col-33.grey {
+    text-align: center;
+}
+.item-complex .item-content, .item-radio .item-content {
+    background-color: transparent;
+}
+.item {
+    border: none;
+    background-color: transparent;
+}
+.light {
+    background: #abaaaa;
+    border: 2px solid #abaaaa;
+    border-radius: 1%;
+    min-width: 320px;
+    text-align: center;
+}
+.light p {
+    white-space: pre;
+    font-size: 120%;
+}
+.light h3 {
+    font-size: 30px;
+}
+.light * {
+    color: #FFF;
+}
+
+
+/* LOGO'er*/
+img.do_logo {
+   max-width: 30%;
+}
+
+/*The three built in classes are:*/
+/*.responsive-sm = smaller than landscape phone*/
+/*.responsive-md = smaller than portrait tablet*/
+/*.responsive-lg = smaller than landscape tablet*/

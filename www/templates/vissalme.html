@@ -1,12 +1,48 @@
-<ion-view title="Salme">
+<ion-view>
     <ion-nav-buttons side="right">
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
   <ion-content class="has-header">
-    <h4>{{vistsalme.title}}</h4>
-      <button class="ng-binding" ng-click="audio.paused ? audio.play() : audio.pause()">Play</button>
-      <button ng-click="audio.restart()">Stop</button>
-      <button ng-click="test()">test</button>
-    <p><pre>{{vistsalme.text}}</pre></p>
+
+      <div class="row">
+          <div class="col col-33 grey">
+              <ion-item href="#/app/salmer" class="grey">
+                  <img class="do_logo" src="img/LOGO_salmer.png" alt="" />
+              </ion-item>
+          </div>
+          <div class="col col-offset-1 grey">
+              <p>&nbsp;</p>
+          </div>
+      </div>
+      <div class="row"><div class="spacer"></div></div>
+      <div class="row">
+          <div class="col col-25 grey">
+            <p>&nbsp;</p>
+          </div>
+              <div class="col col-50 grey">
+                  <div class="col grey light">
+                      <h3>{{vistsalme.title}}</h3>
+                      <p>{{vistsalme.text}}</p>
+                  </div>
+              </div>
+          <div class="col col-25 grey">
+              <p>&nbsp;</p>
+          </div>
+      </div>
+      <div class="row"><div class="spacer"></div></div>
+      <div class="row">
+
+          <div class="col col-60 grey">
+
+          </div>
+          <div class="col col-offset-1 grey">
+
+          </div>
+      </div>
+
+
   </ion-content>
+    <ion-footer-bar align-title="left" class="bar-positive">
+        <h1 class="title">Footer</h1>
+    </ion-footer-bar>
 </ion-view>
