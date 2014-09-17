@@ -31,15 +31,15 @@
     flex: 0 0 61.8333%;
     max-width: 61.8333%; }
 .col-offset-1 {
-    margin-left: 1.3333%; }
+    margin-left: 0.3em; }
 .spacer {
-    min-height: 4px;}
+    min-height: 0.3em;}
 img {
     width: 100%;
     max-width: 620px;
 }
 .scroll {
-    margin:0.25%;
+    /*margin:0.10em;*/
 }
 /* Navigation */
 
@@ -75,7 +75,7 @@ img {
 .grey {
     background: #989898;
     min-height: 75px;
-    padding: 2% 5% 2% 5%;
+    padding: 1em;
 }
 .col-33.grey {
     text-align: center;
@@ -96,7 +96,7 @@ img {
 }
 .light p {
     white-space: pre;
-    font-size: 120%;
+    font-size: 1.2em;
 }
 .light h3 {
     /*font-size: 30px;*/
@@ -109,7 +109,7 @@ img {
 /* LOGO'er*/
 .do_logo {
     background: #989898;
-    padding: 4%;
+    padding: 0.75em;
 }
 .do_logo img {
     max-width: 75px;
@@ -121,27 +121,27 @@ img {
 /*.responsive-lg = smaller than landscape tablet*/
 
 @media (min-width: 480px) {
-    .spacer {
-        min-height: 3px; }
+    /*.spacer {*/
+        /*min-height: 3px; }*/
 }
 @media (min-width: 567px) {
-    .spacer {
-        min-height: 5px; }
+    /*.spacer {*/
+        /*min-height: 5px; }*/
 }
 @media (min-width: 768px) {
-    .spacer {
-        height: 6px; }
+    /*.spacer {*/
+        /*height: 6px; }*/
     .title img {
         padding-top: 9px;
         max-width: 133px;
     }
 }
 @media (min-width: 1024px) {
-    .spacer {
-        height: 7px; }
+    /*.spacer {*/
+        /*height: 7px; }*/
 }
 @media (min-width: 1500px) {
-    .spacer {
-        height: 8px; }
+    /*.spacer {*/
+        /*height: 8px; }*/
 }
 
