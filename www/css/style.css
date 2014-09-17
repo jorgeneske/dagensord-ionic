@@ -31,9 +31,9 @@
     flex: 0 0 61.8333%;
     max-width: 61.8333%; }
 .col-offset-1 {
-    margin-left: 0.52%; }
+    margin-left: 1.3333%; }
 .spacer {
-    min-height: 1px;}
+    min-height: 4px;}
 img {
     width: 100%;
     max-width: 620px;
@@ -75,6 +75,7 @@ img {
 .grey {
     background: #989898;
     min-height: 75px;
+    padding: 2% 5% 2% 5%;
 }
 .col-33.grey {
     text-align: center;
@@ -89,13 +90,13 @@ img {
 .light {
     background: #abaaaa;
     border: 2px solid #abaaaa;
-    border-radius: 1%;
+    border-radius: 1em;
     /*min-width: 320px;*/
     text-align: center;
 }
 .light p {
     white-space: pre;
-    /*font-size: 120%;*/
+    font-size: 120%;
 }
 .light h3 {
     /*font-size: 30px;*/
@@ -106,8 +107,12 @@ img {
 
 
 /* LOGO'er*/
-img.do_logo {
-    /*max-width: 30%;*/
+.do_logo {
+    background: #989898;
+    padding: 4%;
+}
+.do_logo img {
+    max-width: 75px;
 }
 
 /*The three built in classes are:*/
