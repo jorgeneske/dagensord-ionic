@@ -11,7 +11,7 @@ angular.module('dagensord.controllers', ['ngAudio'])
                 'Device Version: '  + device.version  + '\n';
             alert("Properties:\n"+element);
         }
-        $scope.title = '<img src="img/LOGO.png">';
+        $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
