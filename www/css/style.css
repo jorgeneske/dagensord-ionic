@@ -95,8 +95,9 @@ img {
     text-align: center;
 }
 .light p {
-    white-space: pre;
+    white-space: pre-wrap;
     font-size: 1.2em;
+    word-wrap: normal;
 }
 .light h3 {
     /*font-size: 30px;*/
