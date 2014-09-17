@@ -100,7 +100,7 @@ img {
     word-wrap: normal;
 }
 .light h3 {
-    /*font-size: 30px;*/
+    font-size: 1.7em;
 }
 .light * {
     color: #FFF;
