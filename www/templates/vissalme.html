@@ -36,6 +36,10 @@
 
   </ion-content>
     <ion-footer-bar align-title="left" class="bar-positive">
-
+        <button onclick="window.plugins.socialsharing.shareViaTwitter('Her skal stå et eller andet')">Twitter</button>
+        <button onclick="window.plugins.socialsharing.shareViaFacebook('Facebook: Jeg slår noget op :-)', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">Facebook</button>
+        <button onclick="window.plugins.socialsharing.shareViaSMS('Her får du lige en sms fra Dagens Ord', null, function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">SMS</button>
+        <button onclick="window.plugins.socialsharing.share()">DEL</button>
+        <button ng-click='test()'>test</button>
     </ion-footer-bar>
 </ion-view>

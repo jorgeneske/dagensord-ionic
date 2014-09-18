@@ -1,17 +1,17 @@
 angular.module('dagensord.controllers', ['ngAudio'])
 .controller('MainCtrl', function($scope) {
+    $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
         $scope.test = function() {
             var element =
                 'Navigator '+navigator.userAgent+ '\n' +
-                'Device Name: '     + device.name     + '\n' +
-                'Device Cordova: '  + device.cordova + '\n' +
-                'Device Platform: ' + device.platform + '\n' +
-                'Device UUID: '     + device.uuid     + '\n' +
-                'Device Model: '    + device.model     + '\n' +
-                'Device Version: '  + device.version  + '\n';
+                    'Device Name: '     + device.name     + '\n' +
+                    'Device Cordova: '  + device.cordova + '\n' +
+                    'Device Platform: ' + device.platform + '\n' +
+                    'Device UUID: '     + device.uuid     + '\n' +
+                    'Device Model: '    + device.model     + '\n' +
+                    'Device Version: '  + device.version  + '\n';
             alert("Properties:\n"+element);
         }
-        $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
@@ -46,5 +46,4 @@ angular.module('dagensord.controllers', ['ngAudio'])
     $scope.vistsalme = salme[0];
     $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
     $scope.audio = ngAudio.load($scope.vistsalme['qbrickAudio']);
-        console.log($scope.audio);
 });
