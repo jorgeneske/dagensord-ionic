@@ -4,15 +4,11 @@
     </ion-nav-buttons>
   <ion-content class="has-header">
       <div class="row">
-          <!--<div class="do_logo">-->
-              <!--<ion-item class="do_logo" href="#/app/salmer"><img src="img/LOGO_salmer.png" alt="" /></ion-item>-->
-          <!--<ion-item class="do_logo" href="#/app/salmer"></ion-item>-->
-          <!--</div>-->
           <div class="col col-25 grey">
             <ion-item href="#/app/salmer"><img src="img/LOGO_salmer.png" alt="" /></ion-item>
           </div>
           <div class="col col-offset-1 grey">
-              2
+              <p>&nbsp;</p>
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
@@ -20,20 +16,20 @@
               <div class="col grey">
                   <div class="col grey light">
                       <h3>{{vistsalme.nr}}: {{vistsalme.title}}</h3>
-                      <p class="meta">Mel: {{vistsalme.composer}} {{vistsalme.composed}}</p>
+                      <p class="meta">Mel: {{vistsalme.composer}}</p>
                       <p>{{vistsalme.text}}</p>
-                      <p class="meta">Tekst: {{vistsalme.lyrics}} {{vistsalme.written}}</p>
+                      <p class="meta">Tekst: {{vistsalme.lyrics}}</p>
                   </div>
               </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
 
-          <div class="col col-60 grey">
+          <div class="col grey">
 
           </div>
-          <div class="col col-offset-1 grey">
-
+          <div class="col col-40 col-offset-1 grey">
+              <ion-item href="#/app/salmer" class="search"><h3>Søg i salmer</h3></ion-item>
           </div>
       </div>
 

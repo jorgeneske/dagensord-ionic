@@ -39,7 +39,14 @@
     min-height: 0.3em;}
 img {
     width: 100%;
-    max-width: 620px;
+    border: none;
+}
+.col.image {
+    /*-moz-box-flex: 1;*/
+    /*display: block;*/
+    /*flex: 1 1 0;*/
+    padding: 0px;
+    width: 100%;
 }
 .scroll {
     /*margin:0.10em;*/
@@ -77,13 +84,38 @@ img {
 /* Color-classes */
 .grey {
     background: #989898;
-    min-height: 75px;
     padding: 1em;
 }
+.yellow {
+    background: #FFCC05;
+    padding: 1em;
+}
+.blue {
+    background: #016699;
+    padding: 1em;
+}
+.green {
+    background: #659940;
+    padding: 1em;
+}
+.image .item,
+.blue .item,
+.green .item,
+.yellow .item,
 .grey .item {
     border: none;
     background-color: transparent;
 }
+.blue .item p,
+.green .item p,
+.yellow .item p,
+.grey .item p {
+    color: #FFF;
+}
+.image .item-complex .item-content, .image .item-radio .item-content,
+.blue .item-complex .item-content, .blue .item-radio .item-content,
+.green .item-complex .item-content, .green .item-radio .item-content,
+.yellow .item-complex .item-content, .yellow .item-radio .item-content,
 .grey .item-complex .item-content, .grey .item-radio .item-content {
     background-color: transparent;
     padding: 0;
@@ -97,11 +129,12 @@ img {
 }
 .light p {
     white-space: pre-wrap;
-    font-size: 1.2em;
+    font-size: 1.15em;
     word-wrap: normal;
 }
 .light h3 {
-    font-size: 1.7em;
+    font-size: 1.4em;
+    font-weight: bold;
 }
 .light * {
     color: #FFF;
@@ -110,18 +143,39 @@ img {
     font-size: 0.9em;
     font-style: italic;
 }
+.search {
+    text-align: center;
+}
+.search h3 {
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #FFF;
+}
+.image .ng-binding {
+    background: #CE0000;
+    padding: 0;
+    margin-bottom: -5px;
+    border: 1px solid #FFF;
+}
+img.logo {
+    max-height: 90px;
+    width: auto;
+}
+p.dagens {
+    white-space: pre-wrap;
+    font-size: 0.8em;
+    word-wrap: normal;
+    font-style: italic;
+}
+p.dagens span {
+    font-style: normal;
+    font-weight: bold;
+    display: block;
+}
+.nopadding {
+    padding: 0;
+}
 
-
-/* LOGO'er*/
-/*.do_logo {*/
-    /*background: #989898;*/
-/*}*/
-/*.grey img {*/
-    /*max-width: 75px;*/
-/*}*/
-/*.do_logo a.item-content {*/
-    /*padding: 0.75em;*/
-/*}*/
 
 /*The three built in classes are:*/
 /*.responsive-sm = smaller than landscape phone*/
