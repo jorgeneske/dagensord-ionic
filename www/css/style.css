@@ -161,6 +161,11 @@ img.logo {
     max-height: 90px;
     width: auto;
 }
+img.logo.more {
+    max-height: 55px;
+    width: auto;
+    padding-top: 0.5em;
+}
 p.dagens {
     white-space: pre-wrap;
     font-size: 0.8em;
@@ -174,6 +179,9 @@ p.dagens span {
 }
 .nopadding {
     padding: 0;
+}
+.padding_right {
+    padding: 0 1em 0 0;
 }
 
 

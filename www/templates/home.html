@@ -38,25 +38,29 @@
               </div>
           </div>
       <div class="row"><div class="spacer"></div></div>
-      <div class="row row-center">
-              <div class="col blue">
-                  <p>1123</p>
-                  <p>1123</p>
-                  <p>1123</p>
-                  <p>1123</p>
-                  <p>1123</p>
-                  <p>1123</p>
-                  <p>1123</p>
-              </div>
-              <div class="col col-25 col-offset-1 col-center yellow">
-                  <ion-item href="#/app/mere">
-                      <div class="row row-center">
-                          <div class="col col-center">
-                              <img class="logo" src="img/LOGO_mere.png" alt="" />
-                          </div>
+      <div class="row">
+          <div class="col blue nopadding">
+              <ion-item href="#/app/ord/{{dagenstext.id}}">
+                  <div class="row row-center">
+                      <div class="col col-40">
+                          <img class="logo" src="img/LOGO_dagensord.png" alt="" />
                       </div>
-                  </ion-item>
-              </div>
+                      <div class="col col-center text-center padding_right">
+                          <p class="dagens">&quot;{{dagenstext.title}}&quot;</p>
+                          <!--<p class="dagens"><span>Dagens salme:</span>&quot;{{dagenssalme.title}}&quot;</p>-->
+                      </div>
+                  </div>
+              </ion-item>
+          </div>
+          <div class="col col-25 col-offset-1 yellow text-center">
+              <ion-item href="#/app/mere">
+                  <div class="row">
+                      <div class="col">
+                          <img class="logo more" src="img/LOGO_mere.png" alt="" />
+                      </div>
+                  </div>
+              </ion-item>
+          </div>
       </div>
 
 
