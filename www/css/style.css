@@ -186,6 +186,15 @@ p.dagens span {
 @media (min-width: 480px) {
     /*.spacer {*/
         /*min-height: 3px; }*/
+
+}
+@media (min-width: 567px) {
+    /*.spacer {*/
+        /*min-height: 5px; }*/
+}
+@media (min-width: 768px) {
+    /*.spacer {*/
+        /*height: 6px; }*/
     #doWrapper {
         zoom: 2;
     }
@@ -231,14 +240,6 @@ p.dagens span {
         width: auto;
         padding-top: 3em;
     }
-}
-@media (min-width: 567px) {
-    /*.spacer {*/
-        /*min-height: 5px; }*/
-}
-@media (min-width: 768px) {
-    /*.spacer {*/
-        /*height: 6px; }*/
 
 }
 @media (min-width: 1024px) {
