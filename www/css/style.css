@@ -227,6 +227,9 @@ p.dagens span {
         font-size: 64px;
         vertical-align: top;
     }
+    img.logo.more {
+        padding-top: 1em;
+    }
 }
 @media (min-width: 567px) {
     /*.spacer {*/
