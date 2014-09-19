@@ -222,12 +222,13 @@ p.dagens span {
     .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
         font-size: 50px;
     }
-
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
         font-size: 64px;
         vertical-align: top;
     }
     img.logo.more {
+        max-height: 100px;
+        width: auto;
         padding-top: 3em;
     }
 }
