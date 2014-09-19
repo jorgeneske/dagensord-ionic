@@ -36,6 +36,11 @@ angular.module('dagensord.controllers', ['ngAudio'])
 
 .controller('VisOrdCtrl', function($scope, $stateParams, dagensord) {
     $scope.vistord = dagensord[0];
+        if ($scope.vistord['image']) {
+            $scope.vistord['image'] = "<img src='"+ imageurl + $scope.vistord['image']+"' alt='"+$scope.vistord['performer']+"'/>"
+        }
+        console.log(dagensord[0]);
+        console.log($scope.vistord['image']);
 })
 
 .controller('SalmerCtrl', function($scope,salmer) {

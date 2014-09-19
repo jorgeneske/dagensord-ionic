@@ -165,6 +165,12 @@ img.logo.more {
     width: auto;
     padding-top: 0.5em;
 }
+img.dagensord {
+    max-height: 55px;
+    width: auto;
+    padding: 6px 0 0 0;
+    margin-bottom: 1.4em;
+}
 p.dagens {
     white-space: pre-wrap;
     font-size: 0.8em;
@@ -175,6 +181,10 @@ p.dagens span {
     font-style: normal;
     font-weight: bold;
     display: block;
+}
+.nobackground {
+    background: transparent none;
+    border: none;
 }
 .nopadding {
     padding: 0;

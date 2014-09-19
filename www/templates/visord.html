@@ -3,10 +3,44 @@
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
   <ion-content class="has-header">
-    <h4>{{vistord.title}}</h4>
-      <video controls="controls">
-          <source src="http://qstream-down.qbrick.com/80369/ncode/2014-08-11/5853_Hoer_min_boen_Herre_lyt_til_mit_skr_aos_800_41cb1cdb.mp4" type="video/mp4">
-      </video>
-    <p><pre>{{vistord.text}}</pre></p>
+      <div class="row">
+          <div class="col image">
+              <ion-item ng-click="test()" class="nopadding">
+                  <div ng-bind-html="vistord.image"></div>
+              </ion-item>
+          </div>
+      </div>
+      <div class="row"><div class="spacer"></div></div>
+      <div class="row">
+          <div class="col blue">
+              <div class="row nopadding">
+                  <div class="col light nopadding nobackground">
+                      <p class="meta text-left">{{vistord.performer}}</p>
+                  </div>
+                  <div class="col col-25 nopadding text-right col-top">
+                      <ion-item class="nopadding"><img class="dagensord" src="img/LOGO_dagensord.png" alt="" /></ion-item>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col light nobackground">
+                    <h3>{{vistord.title}}</h3>
+                    <p>{{vistord.text}}</p>
+                    <p class="meta">{{vistord.lyrics}}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row"><div class="spacer"></div></div>
+      <div class="row">
+          <div class="col blue">
+
+          </div>
+          <div class="col col-50 col-offset-1 blue">
+              <ion-item href="#/app/ord" class="search"><h3>Flere dagens ord</h3></ion-item>
+          </div>
+      </div>
   </ion-content>
+    <ion-footer-bar align-title="left" class="bar-positive">
+
+    </ion-footer-bar>
 </ion-view>
