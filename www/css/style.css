@@ -183,12 +183,6 @@ p.dagens span {
     padding: 0 1em 0 0;
 }
 
-
-/*The three built in classes are:*/
-/*.responsive-sm = smaller than landscape phone*/
-/*.responsive-md = smaller than portrait tablet*/
-/*.responsive-lg = smaller than landscape tablet*/
-
 @media (min-width: 480px) {
     /*.spacer {*/
         /*min-height: 3px; }*/
@@ -222,38 +216,17 @@ p.dagens span {
         font-size: 2.3em;
         line-height: 1.2;
     }
-    .bar-stable .button.button-clear {
-        font-size: 34px;
+    .ion-ios7-arrow-back {
+        font-size: 2em;
+    }
+    .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
+        font-size: 50px;
     }
 
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
         font-size: 64px;
-        /*line-height: 64px;*/
         vertical-align: top;
     }
-    /*.bar .button.button-icon:before, .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before {*/
-        /*font-size: 20px;*/
-        /*line-height: 32px;*/
-        /*padding-left: 2px;*/
-        /*padding-right: 2px;*/
-    /*}*/
-    /*.bar .button.button-icon:before, .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before {*/
-        /*font-size: 20px;*/
-        /*line-height: 32px;*/
-        /*padding-left: 2px;*/
-        /*padding-right: 2px;*/
-    /*}*/
-    /*.button-icon .icon:before, .button-icon.icon:before {*/
-        /*font-size: 32px;*/
-    /*}*/
-    /*.button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {*/
-        /*display: inline-block;*/
-        /*font-size: 24px;*/
-        /*line-height: 41px;*/
-        /*padding: 0 0 1px;*/
-        /*pointer-events: none;*/
-        /*vertical-align: inherit;*/
-    /*}*/
 }
 @media (min-width: 567px) {
     /*.spacer {*/
