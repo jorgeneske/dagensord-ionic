@@ -198,7 +198,7 @@ p.dagens span {
     }
     p.dagens {
         font-size: 1.6em;
-        line-height: 40px;
+        line-height: 1.6em;
     }
 }
 @media (min-width: 567px) {
