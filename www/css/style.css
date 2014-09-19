@@ -152,7 +152,6 @@ img {
     color: #FFF;
 }
 .image .ng-binding {
-    background: #CE0000;
     padding: 0;
     margin-bottom: -5px;
     border: 1px solid #FFF;
@@ -200,6 +199,61 @@ p.dagens span {
         font-size: 1.6em;
         line-height: 1.6em;
     }
+    .image .ng-binding {
+        margin-bottom: -2px;
+    }
+    .light p {
+        font-size: 2.3em;
+        line-height: 1.2;
+    }
+    .light h3 {
+        font-size: 2.8em;
+        line-height: 1.2;
+    }
+    .light p.meta {
+        font-size: 1.8em;
+        line-height: 1.2;
+    }
+    .title img {
+        padding-top: 9px;
+        max-width: 133px;
+    }
+    .search h3 {
+        font-size: 2.3em;
+        line-height: 1.2;
+    }
+    .bar-stable .button.button-clear {
+        font-size: 34px;
+    }
+
+    .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
+        font-size: 64px;
+        /*line-height: 64px;*/
+        vertical-align: top;
+    }
+    /*.bar .button.button-icon:before, .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before {*/
+        /*font-size: 20px;*/
+        /*line-height: 32px;*/
+        /*padding-left: 2px;*/
+        /*padding-right: 2px;*/
+    /*}*/
+    /*.bar .button.button-icon:before, .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before {*/
+        /*font-size: 20px;*/
+        /*line-height: 32px;*/
+        /*padding-left: 2px;*/
+        /*padding-right: 2px;*/
+    /*}*/
+    /*.button-icon .icon:before, .button-icon.icon:before {*/
+        /*font-size: 32px;*/
+    /*}*/
+    /*.button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {*/
+        /*display: inline-block;*/
+        /*font-size: 24px;*/
+        /*line-height: 41px;*/
+        /*padding: 0 0 1px;*/
+        /*pointer-events: none;*/
+        /*vertical-align: inherit;*/
+    /*}*/
 }
 @media (min-width: 567px) {
     /*.spacer {*/
@@ -208,10 +262,7 @@ p.dagens span {
 @media (min-width: 768px) {
     /*.spacer {*/
         /*height: 6px; }*/
-    .title img {
-        padding-top: 9px;
-        max-width: 133px;
-    }
+
 }
 @media (min-width: 1024px) {
     /*.spacer {*/
