@@ -193,6 +193,9 @@ p.dagens span {
 @media (min-width: 480px) {
     /*.spacer {*/
         /*min-height: 3px; }*/
+    * {
+        zoom: 200%;
+    }
 }
 @media (min-width: 567px) {
     /*.spacer {*/
