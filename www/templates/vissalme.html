@@ -3,10 +3,13 @@
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
   <ion-content class="has-header">
+    <!--<p><audio id="audioID"><source src="{{vistsalme.qbrickAudio}}"></audio></p>-->
     <h4>{{vistsalme.title}}</h4>
       <button class="ng-binding" ng-click="audio.paused ? audio.play() : audio.pause()">Play</button>
-      <button ng-click="audio.restart()">Stop</button>
-      <button ng-click="test()">test</button>
+      <button ng-click="audio.stop()">Stop</button>
+      <button ng-click="pauseAudio()">pause</button>
+      <button ng-click="playAudio()">Android Play</button>
     <p><pre>{{vistsalme.text}}</pre></p>
+    <p></p>
   </ion-content>
 </ion-view>

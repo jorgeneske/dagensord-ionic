@@ -3,10 +3,19 @@
     <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
+
+      <ion-slide-box show-pager="false">
+          <ion-slide ng-repeat="bon in boenner" href="#/app/boenner/{{bon.id}}">
+            <pre>{{bon.text}}</pre>
+          </ion-slide>
+      </ion-slide-box>
+
+<!--
     <ion-list>
       <ion-item ng-repeat="bon in boenner" href="#/app/boenner/{{bon.id}}">
         {{bon.title}}
       </ion-item>
     </ion-list>
+-->
   </ion-content>
 </ion-view>

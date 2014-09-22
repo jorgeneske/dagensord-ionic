@@ -41,9 +41,19 @@ angular.module('dagensord.controllers', ['ngAudio'])
     $scope.salmer = salmer;
 })
 
-.controller('VisSalmeCtrl', function($scope, $stateParams, salme, ngAudio) {
+.controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv) {
     $scope.vistsalme = salme[0];
     $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
-    $scope.audio = ngAudio.load($scope.vistsalme['qbrickAudio']);
-        console.log($scope.audio);
+
+    MediaSrv.loadMedia($scope.vistsalme['qbrickAudio']).then(function(media){
+        $scope.mediaplay = media;
+        //media.play();
+    });
+
+    $scope.playAudio = function(ev){
+        $scope.mediaplay.play();
+    }
+    $scope.pauseAudio = function(){
+        $scope.mediaplay.pause();
+        }
 });
