@@ -42,9 +42,6 @@ img {
     border: none;
 }
 .col.image {
-    /*-moz-box-flex: 1;*/
-    /*display: block;*/
-    /*flex: 1 1 0;*/
     padding: 0px;
     width: 100%;
 }
