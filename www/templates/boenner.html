@@ -1,24 +1,14 @@
-<ion-view>
+<ion-view title="Bønner">
   <ion-nav-buttons side="right">
     <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <ion-list>
-      <ion-item ng-repeat="bon in boenner" href="#/app/boenner/{{bon.id}}">
-        {{bon.title}}
-      </ion-item>
-    </ion-list>
-      <!--<ion-slide-box>-->
-          <!--<ion-slide>-->
-              <!--<div class="box blue"><h1>BLUE</h1></div>-->
-          <!--</ion-slide>-->
-          <!--<ion-slide>-->
-              <!--<div class="box yellow"><h1>YELLOW</h1></div>-->
-          <!--</ion-slide>-->
-          <!--<ion-slide>-->
-              <!--<div class="box pink"><h1>PINK</h1></div>-->
-          <!--</ion-slide>-->
-      <!--</ion-slide-box>-->
-  </ion-content>
 
+      <ion-slide-box show-pager="false">
+          <ion-slide ng-repeat="bon in boenner" href="#/app/boenner/{{bon.id}}">
+            <pre>{{bon.text}}</pre>
+          </ion-slide>
+      </ion-slide-box>
+
+  </ion-content>
 </ion-view>

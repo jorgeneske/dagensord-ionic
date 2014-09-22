@@ -1,6 +1,5 @@
 angular.module('dagensord.controllers', ['ngAudio'])
 .controller('MainCtrl', function($scope) {
-    $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
         $scope.test = function() {
             var element =
                 'Navigator '+navigator.userAgent+ '\n' +
@@ -47,9 +46,19 @@ angular.module('dagensord.controllers', ['ngAudio'])
     $scope.salmer = salmer;
 })
 
-.controller('VisSalmeCtrl', function($scope, $stateParams, salme, ngAudio) {
+.controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv) {
     $scope.vistsalme = salme[0];
     $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
-//    $scope.audio = ngAudio.load($scope.vistsalme['qbrickAudio']);
-//        $scope.audio = new Media($scope.vistsalme['qbrickAudio']);
+
+    MediaSrv.loadMedia($scope.vistsalme['qbrickAudio']).then(function(media){
+        $scope.mediaplay = media;
+        //media.play();
+    });
+
+    $scope.playAudio = function(ev){
+        $scope.mediaplay.play();
+    }
+    $scope.pauseAudio = function(){
+        $scope.mediaplay.pause();
+        }
 });

@@ -21,7 +21,6 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
   });
 })
 
-
 .config(function($stateProvider, $locationProvider, $urlRouterProvider, $sceDelegateProvider) {
 
   $stateProvider
@@ -58,7 +57,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   controller: 'OrdCtrl',
                   resolve: {
                       ord: function(getData){
-                          return getData.all(2);
+                          return getData.all(2, 50);
                       }
                   }
               }
@@ -86,7 +85,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   controller: 'BoennerCtrl',
                   resolve: {
                       boenner: function(getData){
-                          return getData.all(3);
+                          return getData.all(3, 100);
                       }
                   }
               }
@@ -141,8 +140,8 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
 
   $sceDelegateProvider.resourceUrlWhitelist([
       'self',
-      'http://qstream-down.qbrick.com/**'
+      'http://qstream-down.qbrick.com/**',
+      'http://77.66.32.233/**'
   ]);
 
 });
-
