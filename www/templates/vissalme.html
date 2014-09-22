@@ -3,13 +3,46 @@
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
   <ion-content class="has-header">
-    <!--<p><audio id="audioID"><source src="{{vistsalme.qbrickAudio}}"></audio></p>-->
-    <h4>{{vistsalme.title}}</h4>
-      <button class="ng-binding" ng-click="audio.paused ? audio.play() : audio.pause()">Play</button>
+
+      <div class="row">
+          <div class="col col-25 grey">
+            <ion-item href="#/app/salmer"><img src="img/LOGO_salmer.png" alt="" /></ion-item>
+          </div>
+          <div class="col col-offset-1 grey">
+              <p>&nbsp;</p>
+          </div>
+      </div>
+      <div class="row"><div class="spacer"></div></div>
+      <div class="row">
+              <div class="col grey">
+                  <div class="col grey light">
+                      <h3>{{vistsalme.nr}}: {{vistsalme.title}}</h3>
+                      <p class="meta">Mel: {{vistsalme.composer}}</p>
+                      <p>{{vistsalme.text}}</p>
+                      <p class="meta">Tekst: {{vistsalme.lyrics}}</p>
+                  </div>
+              </div>
+      </div>
+      <div class="row"><div class="spacer"></div></div>
+      <div class="row">
+          <div class="col grey">
+
+          </div>
+          <div class="col col-40 col-offset-1 grey">
+              <ion-item href="#/app/salmer" class="search"><h3>Søg i salmer</h3></ion-item>
+          </div>
+      </div>
+
+      
+  </ion-content>
+    <ion-footer-bar align-title="left" class="bar-positive">
       <button ng-click="audio.stop()">Stop</button>
       <button ng-click="pauseAudio()">pause</button>
       <button ng-click="playAudio()">Android Play</button>
-    <p><pre>{{vistsalme.text}}</pre></p>
-    <p></p>
-  </ion-content>
+        <button onclick="window.plugins.socialsharing.shareViaTwitter('Her skal stå et eller andet')">Twitter</button>
+        <button onclick="window.plugins.socialsharing.shareViaFacebook('Facebook: Jeg slår noget op :-)', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">Facebook</button>
+        <button onclick="window.plugins.socialsharing.shareViaSMS('Her får du lige en sms fra Dagens Ord', null, function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">SMS</button>
+        <button onclick="window.plugins.socialsharing.share()">DEL</button>
+        <!--<button ng-click='test()'>test</button>-->
+    </ion-footer-bar>
 </ion-view>

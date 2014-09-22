@@ -1,4 +1,4 @@
-<ion-view title="Dagens Ord">
+<ion-view>
   <ion-nav-buttons side="right">
     <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -6,22 +6,32 @@
 
       <div class="row">
 
-          <div class="col col-60" style="background: #00d4b4;" id="do">
+          <div class="col col-70 grey nopadding">
               <ion-item href="#/app/salmer/{{dagenssalme.id}}">
-              <h2>Salmer</h2>
-              <p>Dagens: {{dagenssalme.title}}</p>
+                  <div class="row row-center">
+                      <div class="col col-40">
+                        <img class="logo" src="img/LOGO_salmer.png" alt="" />
+                      </div>
+                      <div class="col col-center text-center nopadding">
+                            <p class="dagens">&quot;{{dagenssalme.title}}&quot;</p>
+                          <!--<p class="dagens"><span>Dagens salme:</span>&quot;{{dagenssalme.title}}&quot;</p>-->
+                      </div>
+                  </div>
               </ion-item>
           </div>
-          <div class="col col-offset-1" style="background: #c8e5bc;">
+          <div class="col col-offset-1 green text-center nopadding">
               <ion-item href="#/app/boenner">
-              <h2>Bønner</h2>
-              <p>Ikon og antal bønner.</p>
+                  <div class="row">
+                      <div class="col">
+                        <img class="logo" src="img/LOGO_bonner.png" alt="" />
+                      </div>
+                  </div>
               </ion-item>
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
           <div class="row">
-              <div class="col" style="background: #cccccc;">
+              <div class="col image">
                   <ion-item href="#/app/ord/{{dagenstext.id}}">
                   <div ng-bind-html="dagenstext.image"></div>
                   </ion-item>
@@ -29,24 +39,33 @@
           </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
-          <div class="col col-70" style="background: #00d4b4;">
+          <div class="col blue nopadding">
               <ion-item href="#/app/ord/{{dagenstext.id}}">
-              <h2>Dagens Ord</h2>
-              <p>Præst: {{dagenstext.performer}}</p>
-              <p style="font-style: italic;">{{dagenstext.title}}</p>
+                  <div class="row row-center">
+                      <div class="col col-40">
+                          <img class="logo" src="img/LOGO_dagensord.png" alt="" />
+                      </div>
+                      <div class="col col-center text-center padding_right">
+                          <p class="dagens">&quot;{{dagenstext.title}}&quot;</p>
+                          <p class="dagens">Præst: {{dagenstext.performer}}</p>
+                      </div>
+                  </div>
               </ion-item>
           </div>
-          <div class="col col-offset-1" style="background: #c8e5bc;">
-              <h4>Mere</h4>
-              <p>Ikon</p>
+          <div class="col col-25 col-offset-1 yellow text-center">
+              <ion-item href="#/app/mere">
+                  <div class="row nopadding">
+                      <div class="col nopadding">
+                          <img class="logo more" src="img/LOGO_mere.png" alt="" />
+                      </div>
+                  </div>
+              </ion-item>
           </div>
       </div>
 
 
   </ion-content>
-    <ion-footer-bar align-title="center" class="bar-positive">
-
-        <h1 class="title">Footer</h1>
+    <ion-footer-bar align-title="left" class="bar-positive">
 
     </ion-footer-bar>
 </ion-view>
