@@ -58,7 +58,6 @@ img {
 .menu .item-complex .item-content, .menu .item-radio .item-content {
     background-color: #404041;
     color: #FFF;
-    font-weight: bold;
     font-size: 1.15em;
 }
 .menu-content {
@@ -143,11 +142,13 @@ img {
 .light p {
     white-space: pre-wrap;
     font-size: 1.15em;
+    line-height: 1.4em;
     word-wrap: normal;
 }
 .light h3 {
     font-size: 1.4em;
     font-weight: bold;
+    line-height: 1.4em;
 }
 .light * {
     color: #FFF;
@@ -216,60 +217,22 @@ p.dagens span {
         /*min-height: 5px; }*/
 }
 @media (min-width: 768px) {
-    /*.spacer {*/
-    /*height: 7px; }*/
     #doWrapper {
-        zoom: 1.5;
+        zoom: 2;
     }
     p.dagens {
-        font-size: 1em;
-        line-height: 1em;
+        line-height: 1.3em;
     }
-    /*.light p {*/
-        /*font-size: 2.3em;*/
-        /*line-height: 1.2;*/
-    /*}*/
-    /*.light h3 {*/
-        /*font-size: 2.8em;*/
-        /*line-height: 1.2;*/
-    /*}*/
-    /*.light p.meta {*/
-        /*font-size: 1.8em;*/
-        /*line-height: 1.2;*/
-    /*}*/
-    /*.title img {*/
-        /*padding-top: 9px;*/
-        /*max-width: 133px;*/
-    /*}*/
-    /*.search h3 {*/
-        /*font-size: 2.3em;*/
-        /*line-height: 1.2;*/
-    /*}*/
-    /*.ion-ios7-arrow-back {*/
-        /*font-size: 2em;*/
-    /*}*/
-    /*.bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {*/
-        /*font-size: 50px;*/
-    /*}*/
-    /*.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {*/
-        /*font-size: 64px;*/
-        /*vertical-align: top;*/
-    /*}*/
-    /*img.logo.more {*/
-        /*max-height: 175px;*/
-        /*width: auto;*/
-        /*padding-top: 3em;*/
-    /*}*/
-    /*img.dagensord {*/
-        /*max-height: 65px;*/
-        /*width: auto;*/
-        /*padding: 2px 0 0 0;*/
-        /*margin-bottom: 1.8em;*/
-    /*}*/
+    .light p {
+        white-space: pre-wrap;
+        line-height: 1.3em;
+        word-wrap: normal;
+    }
+    .light h3 {
+        line-height: 1.4;
+    }
 }
 @media (min-width: 1024px) {
-    /*.spacer {*/
-        /*height: 6px; }*/
     #doWrapper {
         zoom: 2;
     }
