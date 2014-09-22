@@ -51,6 +51,16 @@ img {
 .scroll {
     /*margin:0.10em;*/
 }
+
+/* Menu */
+.menu {
+    background: #585858;
+}
+.menu .item-complex .item-content, .menu .item-radio .item-content {
+    background-color: #CE0000;
+}
+.menu-content {
+    box-shadow: none; }
 /* Navigation */
 
 .bar.bar-stable {
