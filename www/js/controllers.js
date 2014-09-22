@@ -1,5 +1,6 @@
 angular.module('dagensord.controllers', ['ngAudio'])
 .controller('MainCtrl', function($scope) {
+    $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
         $scope.test = function() {
             var element =
                 'Navigator '+navigator.userAgent+ '\n' +
