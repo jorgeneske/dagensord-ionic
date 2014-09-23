@@ -1,7 +1,39 @@
 angular.module('dagensord.controllers', ['ngAudio'])
-.controller('MainCtrl', function($scope) {
+.controller('MainCtrl', function($scope, $ionicModal, $timeout) {
 
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
+
+        $scope.formularData = {};
+
+        $ionicModal.fromTemplateUrl('templates/overlay.html', {
+            scope: $scope
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.formular = function() {
+            $scope.modal.show();
+        };
+
+        $scope.closeFormular = function() {
+            $scope.modal.hide();
+        };
+
+        $scope.sendFormular = function($http) {
+            console.log('Sender', $scope.formularData);
+            var postUrl = adminurl + "getboen.php";
+            //$http.post(postUrl).then(function(resp) {
+            //    console.log('Success', resp);
+            //    // resp.data
+            //}, function(err) {
+            //    console.error('ERR', err);
+            //    // err.status will contain the status code
+            //});
+
+            $timeout(function() {
+                $scope.closeFormular();
+            }, 1000);
+        };
 
 })
 
