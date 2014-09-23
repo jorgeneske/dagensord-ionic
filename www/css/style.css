@@ -205,6 +205,33 @@ p.dagens span {
 .padding_right {
     padding: 0 1em 0 0;
 }
+.padding_leftright2 {
+    padding: 1em 2em 1em 2em;
+}
+.green h2 {
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 0.3em;
+}
+.greenbean {
+    background: #659940 url("../img/skriveboble.png") center no-repeat;
+    background-size: 100% 100%;
+    height: 285px;
+    width: 300px;
+    padding: 3em;
+}
+.greenbean p {
+    white-space: pre-wrap;
+    font-size: 1.15em;
+    line-height: 1.4em;
+    word-wrap: normal;
+    color: #FFFFFF;
+    padding-top: 2em;
+}
+
+
+
 
 @media (min-width: 480px) {
     /*.spacer {*/

@@ -1,17 +1,8 @@
 angular.module('dagensord.controllers', ['ngAudio'])
 .controller('MainCtrl', function($scope) {
+
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
-        $scope.test = function() {
-            var element =
-                'Navigator '+navigator.userAgent+ '\n' +
-                    'Device Name: '     + device.name     + '\n' +
-                    'Device Cordova: '  + device.cordova + '\n' +
-                    'Device Platform: ' + device.platform + '\n' +
-                    'Device UUID: '     + device.uuid     + '\n' +
-                    'Device Model: '    + device.model     + '\n' +
-                    'Device Version: '  + device.version  + '\n';
-            alert("Properties:\n"+element);
-        }
+
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
