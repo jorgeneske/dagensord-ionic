@@ -109,7 +109,6 @@ angular.module('dagensord.controllers', [])
 
     MediaSrv.loadMedia($scope.vistsalme['qbrickAudio']).then(function(media){
         $scope.mediaplay = media;
-        //media.play();
     });
 
     $scope.playAudio = function(ev){
