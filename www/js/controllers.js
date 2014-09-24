@@ -1,5 +1,5 @@
-angular.module('dagensord.controllers', ['ngAudio'])
-.controller('MainCtrl', function($scope, $ionicModal, $timeout) {
+angular.module('dagensord.controllers', [])
+.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout) {
 
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
 
@@ -19,16 +19,20 @@ angular.module('dagensord.controllers', ['ngAudio'])
             $scope.modal.hide();
         };
 
-        $scope.sendFormular = function($http) {
+        $scope.sendFormular = function() {
             console.log('Sender', $scope.formularData);
             var postUrl = adminurl + "getboen.php";
-            //$http.post(postUrl).then(function(resp) {
-            //    console.log('Success', resp);
-            //    // resp.data
-            //}, function(err) {
-            //    console.error('ERR', err);
-            //    // err.status will contain the status code
-            //});
+            console.log(postUrl);
+            $http({
+                method  : 'POST',
+                url     : postUrl,
+                data    : $scope.formularData,//'[{ title: "test"}]',
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+                .success(function(data) {
+                    console.log(data);
+                });
+
 
             $timeout(function() {
                 $scope.closeFormular();
