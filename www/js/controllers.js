@@ -33,7 +33,6 @@ angular.module('dagensord.controllers', [])
                     console.log(data);
                 });
 
-
             $timeout(function() {
                 $scope.closeFormular();
             }, 1000);
