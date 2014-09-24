@@ -37,7 +37,6 @@ angular.module('dagensord.controllers', [])
                 $scope.closeFormular();
             }, 1000);
         };
-
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
