@@ -121,4 +121,7 @@ angular.module('dagensord.controllers', [])
     $scope.pauseAudio = function(){
         $scope.mediaplay.pause();
         }
+    $scope.stopAudio = function(){
+        $scope.mediaplay.stop();
+    }
 });
