@@ -35,14 +35,16 @@
 
       
   </ion-content>
-    <ion-footer-bar align-title="left" class="bar-positive">
-      <button ng-click="audio.stop()">Stop</button>
-      <button ng-click="pauseAudio()">pause</button>
-      <button ng-click="playAudio()">Android Play</button>
-        <button onclick="window.plugins.socialsharing.shareViaTwitter('Her skal stå et eller andet')">Twitter</button>
-        <button onclick="window.plugins.socialsharing.shareViaFacebook('Facebook: Jeg slår noget op :-)', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">Facebook</button>
-        <button onclick="window.plugins.socialsharing.shareViaSMS('Her får du lige en sms fra Dagens Ord', null, function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">SMS</button>
-        <button onclick="window.plugins.socialsharing.share()">DEL</button>
+    <ion-footer-bar class="bar-positive">
+      <!--<button ng-click="audio.stop()">Stop</button>-->
+      <!--<button ng-click="pauseAudio()">pause</button>-->
+      <!--<button ng-click="playAudio()">Android Play</button>-->
+        <div class="share">
+            <button class="twitter" onclick="window.plugins.socialsharing.shareViaTwitter('Her skal stå et eller andet')"></button>
+            <button class="facebook" onclick="window.plugins.socialsharing.shareViaFacebook('Facebook: Jeg slår noget op :-)', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"></button>
+            <button class="sms" onclick="window.plugins.socialsharing.shareViaSMS('Her får du lige en sms fra Dagens Ord', null, function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})"></button>
+        </div>
+        <!--<button onclick="window.plugins.socialsharing.share()">DEL</button>-->
         <!--<button ng-click='test()'>test</button>-->
     </ion-footer-bar>
 </ion-view>

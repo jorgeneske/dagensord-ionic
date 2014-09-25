@@ -2,19 +2,6 @@ angular.module('dagensord.controllers', [])
 .controller('MainCtrl', function($scope, $ionicModal, $http, $timeout) {
 
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
-/*
-    $scope.test = function() {
-        var element =
-            'Navigator '+navigator.userAgent+ '\n' +
-            'Device Name: '     + device.name     + '\n' +
-            'Device Cordova: '  + device.cordova + '\n' +
-            'Device Platform: ' + device.platform + '\n' +
-            'Device UUID: '     + device.uuid     + '\n' +
-            'Device Model: '    + device.model     + '\n' +
-            'Device Version: '  + device.version  + '\n';
-        alert("Properties:\n"+element);
-    }
-*/
 
         $scope.formularData = {};
 
@@ -126,7 +113,6 @@ angular.module('dagensord.controllers', [])
 
     MediaSrv.loadMedia($scope.vistsalme['qbrickAudio']).then(function(media){
         $scope.mediaplay = media;
-        //media.play();
     });
 
     $scope.playAudio = function(ev){
