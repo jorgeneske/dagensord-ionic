@@ -82,30 +82,34 @@ angular.module('dagensord.controllers', [])
         if ($scope.vistord['qbrick']) {
             var videoSource = $scope.vistord.video.aoshq['0'];
             var mimetype = "type='"+$scope.vistord.video.aoshq['@attributes']['mimetype']+"'";
-            var tester = 'PC';
 
             if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
 
                 if(device.platform =="Android"){
                     videoSource = $scope.vistord.video.android['0'];
                     mimetype = "";
-                    tester = 'Android';
                 }
-                if(device.platform =="iPhone"){
-                    videoSource = $scope.vistord.video.iphone['0'];
-                    mimetype = "type='"+$scope.vistord.video.iphone['@attributes']['mimetype']+"'";
-                    tester = 'iPhone';
+                if(device.platform == "iOS"){
+                    if(device.name =="iPhone"){
+                        videoSource = $scope.vistord.video.iphone['0'];
+                        mimetype = "type='"+$scope.vistord.video.iphone['@attributes']['mimetype']+"'";
+                    }
+                    if(device.name =="iPad"){
+                        videoSource = $scope.vistord.video.ipad['0'];
+                        mimetype = "type='"+$scope.vistord.video.ipad['@attributes']['mimetype']+"'";
+                    }
                 }
-                if(device.platform =="iPad"){
-                    videoSource = $scope.vistord.video.ipad['0'];
-                    mimetype = "type='"+$scope.vistord.video.ipad['@attributes']['mimetype']+"'";
-                    tester = 'iPad';
-                }
-                alert(device.platform);
+                alert(device.platform+" + "+device.name);
             }
 
-            var sourceString = "<source src='"+videoSource+"' "+mimetype+"'>";
-            $scope.vistord['videotag'] = $sce.trustAsHtml("<video controls poster='"+imageurl + imagename+"'>"+sourceString+"</video>");
+            // Beregn højden på videoen:
+            var sourceString = "<source src='"+videoSource+"' "+mimetype+">";
+            var compWidth = parseInt(getComputedStyle(document.getElementById('theVideoDiv')).width)-10;
+            var compheight = Math.round(compWidth*0.5625);
+
+            console.log(compWidth, compheight)
+
+            $scope.vistord['videotag'] = $sce.trustAsHtml("<video id='theVideo' style='margin-bottom:-5px;' controls width="+compWidth+" height="+compheight+" poster='"+imageurl + imagename+"'>"+sourceString+"</video>");
         }
         console.log(dagensord[0]);
         console.log($scope.vistord['image']);

@@ -2067,7 +2067,7 @@ legend {
  * 5. Make sure webkit font smoothing is being inherited
  * 6. Remove default gradient in Android Firefox / FirefoxOS
  */
-button, input, select, textarea {
+button, html input, select, textarea {
   margin: 0;
   /* 3 */
   font-size: 100%;
@@ -2086,10 +2086,10 @@ button, input, select, textarea {
   /* 6 */ }
 
 /**
- * Address Firefox 4+ setting `line-height` on `input` using `importnt` in
+ * Address Firefox 4+ setting `line-height` on `html input` using `importnt` in
  * the UA stylesheet.
  */
-button, input {
+button, html input {
   line-height: normal; }
 
 /**
@@ -2104,11 +2104,11 @@ button, select {
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *  and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
+ * 2. Correct inability to style clickable `html input` types in iOS.
  * 3. Improve usability and consistency of cursor style between image-type
- *  `input` and others.
+ *  `html input` and others.
  */
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
+button, html html input[type="button"], html input[type="reset"], html input[type="submit"] {
   cursor: pointer;
   /* 3 */
   -webkit-appearance: button;
@@ -2117,7 +2117,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled], html input[disabled] {
+button[disabled], html html input[disabled] {
   cursor: default; }
 
 /**
@@ -2125,7 +2125,7 @@ button[disabled], html input[disabled] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *  (include `-moz` to future-proof).
  */
-input[type="search"] {
+html input[type="search"] {
   -webkit-box-sizing: content-box;
   /* 2 */
   -moz-box-sizing: content-box;
@@ -2137,13 +2137,13 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+html input[type="search"]::-webkit-search-cancel-button, html input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner, html input::-moz-focus-inner {
   padding: 0;
   border: 0; }
 
@@ -4715,7 +4715,7 @@ a.item-content {
 .card .item, .list-inset .item, .padding > .list .item, .padding-horizontal > .list .item {
   margin-right: 0;
   margin-left: 0; }
-  .card .item.item-input input, .list-inset .item.item-input input, .padding > .list .item.item-input input, .padding-horizontal > .list .item.item-input input {
+  .card .item.item-input html input, .list-inset .item.item-input html input, .padding > .list .item.item-input html input, .padding-horizontal > .list .item.item-input html input {
     padding-right: 44px; }
 
 .padding-left > .list .item {
@@ -4883,12 +4883,12 @@ legend {
     color: #f8f8f8;
     font-size: 1.07143; }
 
-label, input, button, select, textarea {
+label, html input, button, select, textarea {
   font-weight: normal;
   font-size: 14px;
   line-height: 1.42857; }
 
-input, button, select, textarea {
+html input, button, select, textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 .item-input {
@@ -4906,7 +4906,7 @@ input, button, select, textarea {
   position: relative;
   overflow: hidden;
   padding: 6px 0 5px 16px; }
-  .item-input input {
+  .item-input html input {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -4991,7 +4991,7 @@ input, button, select, textarea {
   padding-left: 8px;
   background: #eee; }
 
-.item-input-inset .item-input-wrapper input {
+.item-input-inset .item-input-wrapper html input {
   padding-left: 4px;
   height: 29px;
   background: transparent;
@@ -5030,7 +5030,7 @@ input, button, select, textarea {
     padding: 4px 0 0 0px;
     vertical-align: middle; }
 
-.item-stacked-label input, .item-stacked-label textarea {
+.item-stacked-label html input, .item-stacked-label textarea {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -5038,7 +5038,7 @@ input, button, select, textarea {
   border: none;
   background-color: #fff; }
 
-.item-stacked-label input {
+.item-stacked-label html input {
   overflow: hidden;
   height: 46px; }
 
@@ -5061,7 +5061,7 @@ input, button, select, textarea {
       -moz-transition: opacity 0.15s ease-in, top 0.2s linear;
       transition: opacity 0.15s ease-in, top 0.2s linear; }
 
-textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+textarea, html input[type="text"], html input[type="password"], html input[type="datetime"], html input[type="datetime-local"], html input[type="date"], html input[type="month"], html input[type="time"], html input[type="week"], html input[type="number"], html input[type="email"], html input[type="url"], html input[type="search"], html input[type="tel"], html input[type="color"] {
   display: block;
   padding-top: 2px;
   padding-left: 0;
@@ -5071,10 +5071,10 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   font-size: 14px;
   line-height: 16px; }
 
-.platform-ios input[type="datetime-local"], .platform-ios input[type="date"], .platform-ios input[type="month"], .platform-ios input[type="time"], .platform-ios input[type="week"], .platform-android input[type="datetime-local"], .platform-android input[type="date"], .platform-android input[type="month"], .platform-android input[type="time"], .platform-android input[type="week"] {
+.platform-ios input[type="datetime-local"], .platform-ios input[type="date"], .platform-ios input[type="month"], .platform-ios input[type="time"], .platform-ios input[type="week"], .platform-android html input[type="datetime-local"], .platform-android html input[type="date"], .platform-android html input[type="month"], .platform-android html input[type="time"], .platform-android html input[type="week"] {
   padding-top: 8px; }
 
-input, textarea {
+html input, textarea {
   width: 100%; }
 
 textarea {
@@ -5091,38 +5091,38 @@ textarea {
 textarea {
   height: auto; }
 
-textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+textarea, html input[type="text"], html input[type="password"], html input[type="datetime"], html input[type="datetime-local"], html input[type="date"], html input[type="month"], html input[type="time"], html input[type="week"], html input[type="number"], html input[type="email"], html input[type="url"], html input[type="search"], html input[type="tel"], html input[type="color"] {
   border: 0; }
 
-input[type="radio"], input[type="checkbox"] {
+html input[type="radio"], html input[type="checkbox"] {
   margin: 0;
   line-height: normal; }
 
-input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+html input[type="file"], html input[type="image"], html input[type="submit"], html input[type="reset"], html input[type="button"], html input[type="radio"], html input[type="checkbox"] {
   width: auto; }
 
-input[type="file"] {
+html input[type="file"] {
   line-height: 34px; }
 
-.previous-input-focus, .cloned-text-input + input, .cloned-text-input + textarea {
+.previous-input-focus, .cloned-text-input + html input, .cloned-text-input + textarea {
   position: absolute !important;
   left: -9999px;
   width: 200px; }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+html input::-moz-placeholder, textarea::-moz-placeholder {
   /* Firefox 19+ */
   color: #aaaaaa; }
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+html input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #aaaaaa; }
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+html input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #aaaaaa;
   text-indent: 0; }
 
-input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
+html input[disabled], select[disabled], textarea[disabled], html input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
   background-color: #f8f8f8;
   cursor: not-allowed; }
 
-input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="radio"][readonly], input[type="checkbox"][readonly] {
+html input[type="radio"][disabled], html input[type="checkbox"][disabled], html input[type="radio"][readonly], html input[type="checkbox"][readonly] {
   background-color: transparent; }
 
 /**
@@ -5174,26 +5174,26 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
 .checkbox-energized input:checked:before, .checkbox-energized input:checked + .checkbox-icon:before {
   background: #f0b840; }
 
-.checkbox-royal input:before, .checkbox-royal .checkbox-icon:before {
+.checkbox-royal html input:before, .checkbox-royal .checkbox-icon:before {
   border-color: #8a6de9; }
-.checkbox-royal input:checked:before, .checkbox-royal input:checked + .checkbox-icon:before {
+.checkbox-royal html input:checked:before, .checkbox-royal html input:checked + .checkbox-icon:before {
   background: #8a6de9; }
 
-.checkbox-dark input:before, .checkbox-dark .checkbox-icon:before {
+.checkbox-dark html input:before, .checkbox-dark .checkbox-icon:before {
   border-color: #444; }
-.checkbox-dark input:checked:before, .checkbox-dark input:checked + .checkbox-icon:before {
+.checkbox-dark html input:checked:before, .checkbox-dark html input:checked + .checkbox-icon:before {
   background: #444; }
 
-.checkbox input:disabled:before, .checkbox input:disabled + .checkbox-icon:before {
+.checkbox html input:disabled:before, .checkbox html input:disabled + .checkbox-icon:before {
   border-color: #ddd; }
 
-.checkbox input:disabled:checked:before, .checkbox input:disabled:checked + .checkbox-icon:before {
+.checkbox html input:disabled:checked:before, .checkbox html input:disabled:checked + .checkbox-icon:before {
   background: #ddd; }
 
-.checkbox.checkbox-input-hidden input {
+.checkbox.checkbox-input-hidden html input {
   display: none !important; }
 
-.checkbox input, .checkbox-icon {
+.checkbox html input, .checkbox-icon {
   position: relative;
   width: 28px;
   height: 28px;
@@ -5202,7 +5202,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   background: transparent;
   cursor: pointer;
   -webkit-appearance: none; }
-  .checkbox input:before, .checkbox-icon:before {
+  .checkbox html input:before, .checkbox-icon:before {
     display: table;
     width: 100%;
     height: 100%;
@@ -5213,10 +5213,10 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
     content: ' ';
     transition: background-color 20ms ease-in-out; }
 
-.checkbox input:checked:before, input:checked + .checkbox-icon:before {
+.checkbox html input:checked:before, html input:checked + .checkbox-icon:before {
   border-width: 2px; }
 
-.checkbox input:after, .checkbox-icon:after {
+.checkbox html input:after, .checkbox-icon:after {
   -webkit-transition: opacity 0.05s ease-in-out;
   -moz-transition: opacity 0.05s ease-in-out;
   transition: opacity 0.05s ease-in-out;
@@ -5235,7 +5235,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   content: ' ';
   opacity: 0; }
 
-.grade-c .checkbox input:after, .grade-c .checkbox-icon:after {
+.grade-c .checkbox html input:after, .grade-c .checkbox-icon:after {
   -webkit-transform: rotate(0);
   -moz-transform: rotate(0);
   transform: rotate(0);
@@ -5247,7 +5247,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   font-weight: bold;
   font-size: 20px; }
 
-.checkbox input:checked:after, input:checked + .checkbox-icon:after {
+.checkbox html input:checked:after, html input:checked + .checkbox-icon:after {
   opacity: 1; }
 
 .item-checkbox {
@@ -5267,7 +5267,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   padding-right: 60px;
   padding-left: 16px; }
 
-.item-checkbox-right .checkbox input, .item-checkbox-right .checkbox-icon {
+.item-checkbox-right .checkbox html input, .item-checkbox-right .checkbox-icon {
   float: right; }
 
 /**
@@ -5283,40 +5283,40 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   pointer-events: auto;
   margin: -5px;
   padding: 5px; }
-  .toggle input:checked + .track {
+  .toggle html input:checked + .track {
     border-color: #4a87ee;
     background-color: #4a87ee; }
   .toggle.dragging .handle {
     background-color: #f2f2f2 !important; }
-  .toggle.toggle-light input:checked + .track {
+  .toggle.toggle-light html input:checked + .track {
     border-color: #ddd;
     background-color: #ddd; }
-  .toggle.toggle-stable input:checked + .track {
+  .toggle.toggle-stable html input:checked + .track {
     border-color: #b2b2b2;
     background-color: #b2b2b2; }
-  .toggle.toggle-positive input:checked + .track {
+  .toggle.toggle-positive html input:checked + .track {
     border-color: #4a87ee;
     background-color: #4a87ee; }
-  .toggle.toggle-calm input:checked + .track {
+  .toggle.toggle-calm html input:checked + .track {
     border-color: #43cee6;
     background-color: #43cee6; }
-  .toggle.toggle-assertive input:checked + .track {
+  .toggle.toggle-assertive html input:checked + .track {
     border-color: #ef4e3a;
     background-color: #ef4e3a; }
-  .toggle.toggle-balanced input:checked + .track {
+  .toggle.toggle-balanced html input:checked + .track {
     border-color: #66cc33;
     background-color: #66cc33; }
-  .toggle.toggle-energized input:checked + .track {
+  .toggle.toggle-energized html input:checked + .track {
     border-color: #f0b840;
     background-color: #f0b840; }
-  .toggle.toggle-royal input:checked + .track {
+  .toggle.toggle-royal html input:checked + .track {
     border-color: #8a6de9;
     background-color: #8a6de9; }
-  .toggle.toggle-dark input:checked + .track {
+  .toggle.toggle-dark html input:checked + .track {
     border-color: #444;
     background-color: #444; }
 
-.toggle input {
+.toggle html input {
   display: none; }
 
 /* the track appearance when the toggle is "off" */
@@ -5367,7 +5367,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
     padding: 19px 35px;
     content: " "; }
 
-.toggle input:checked + .track .handle {
+.toggle html input:checked + .track .handle {
   -webkit-transform: translate3d(22px, 0, 0);
   -moz-transform: translate3d(22px, 0, 0);
   transform: translate3d(22px, 0, 0);
@@ -5388,7 +5388,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   right: 16px;
   z-index: 3; }
 
-.toggle input:disabled + .track {
+.toggle html input:disabled + .track {
   opacity: 0.6; }
 
 /**
@@ -5415,14 +5415,14 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   height: 100%;
   font-size: 24px; }
 
-.item-radio input {
+.item-radio html input {
   /* hide any radio button inputs elements (the ugly circles) */
   position: absolute;
   left: -9999px; }
-  .item-radio input:checked ~ .item-content {
+  .item-radio html input:checked ~ .item-content {
     /* style the item content when its checked */
     background: #f7f7f7; }
-  .item-radio input:checked ~ .radio-icon {
+  .item-radio html input:checked ~ .radio-icon {
     /* show the checkmark icon when its checked */
     visibility: visible; }
 
@@ -5440,7 +5440,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
  * Range
  * --------------------------------------------------
  */
-input[type="range"] {
+html input[type="range"] {
   display: inline-block;
   overflow: hidden;
   margin-top: 5px;
@@ -5456,7 +5456,7 @@ input[type="range"] {
   background-size: 99% 4px;
   background-repeat: no-repeat;
   -webkit-appearance: none; }
-  input[type="range"]::-webkit-slider-thumb {
+  html input[type="range"]::-webkit-slider-thumb {
     position: relative;
     width: 20px;
     height: 20px;
@@ -5465,7 +5465,7 @@ input[type="range"] {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5), 1px 3px 5px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     -webkit-appearance: none; }
-  input[type="range"]::-webkit-slider-thumb:before {
+  html input[type="range"]::-webkit-slider-thumb:before {
     /* what creates the colorful line on the left side of the slider */
     position: absolute;
     top: 8px;
@@ -5474,7 +5474,7 @@ input[type="range"] {
     height: 4px;
     background: #444;
     content: ' '; }
-  input[type="range"]::-webkit-slider-thumb:after {
+  html input[type="range"]::-webkit-slider-thumb:after {
     /* create a larger (but hidden) hit area */
     position: absolute;
     top: -20px;
@@ -5495,23 +5495,23 @@ input[type="range"] {
   -moz-align-items: center;
   align-items: center;
   padding: 2px 11px; }
-  .range.range-light input::-webkit-slider-thumb:before {
+  .range.range-light html input::-webkit-slider-thumb:before {
     background: #ddd; }
-  .range.range-stable input::-webkit-slider-thumb:before {
+  .range.range-stable html input::-webkit-slider-thumb:before {
     background: #b2b2b2; }
-  .range.range-positive input::-webkit-slider-thumb:before {
+  .range.range-positive html input::-webkit-slider-thumb:before {
     background: #4a87ee; }
-  .range.range-calm input::-webkit-slider-thumb:before {
+  .range.range-calm html input::-webkit-slider-thumb:before {
     background: #43cee6; }
-  .range.range-balanced input::-webkit-slider-thumb:before {
+  .range.range-balanced html input::-webkit-slider-thumb:before {
     background: #66cc33; }
-  .range.range-assertive input::-webkit-slider-thumb:before {
+  .range.range-assertive html input::-webkit-slider-thumb:before {
     background: #ef4e3a; }
-  .range.range-energized input::-webkit-slider-thumb:before {
+  .range.range-energized html input::-webkit-slider-thumb:before {
     background: #f0b840; }
-  .range.range-royal input::-webkit-slider-thumb:before {
+  .range.range-royal html input::-webkit-slider-thumb:before {
     background: #8a6de9; }
-  .range.range-dark input::-webkit-slider-thumb:before {
+  .range.range-dark html input::-webkit-slider-thumb:before {
     background: #444; }
 
 .range .icon {
@@ -5526,7 +5526,7 @@ input[type="range"] {
   text-align: center;
   font-size: 24px; }
 
-.range input {
+.range html input {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
@@ -5550,7 +5550,7 @@ input[type="range"] {
 .range-label:first-child {
   padding-left: 5px; }
 
-.range input + .range-label {
+.range html input + .range-label {
   padding-right: 5px;
   padding-left: 0; }
 
@@ -6043,7 +6043,7 @@ progress {
   border-left-width: 0;
   border-radius: 0; }
 
-button.button-block, button.button-full, .button-full > button.button, input.button.button-block {
+button.button-block, button.button-full, .button-full > button.button, html input.button.button-block {
   width: 100%; }
 
 a.button {
@@ -7544,7 +7544,7 @@ a.button {
  */
 .roboto {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
-  .roboto input {
+  .roboto html input {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 /*
