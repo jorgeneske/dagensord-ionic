@@ -55,17 +55,28 @@ angular.module('dagensord.controllers', [])
     $scope.vistboen = boen[0];
 })
 
-.controller('OrdCtrl', function($scope, $ionicLoading, ord) {
+.controller('OrdCtrl_temp', function($scope, ord) {
+        $scope.ord = ord;
+})
+
+    .controller('OrdCtrl', function($scope, $ionicLoading, getData) {
+
         $scope.loadingIndicator = $ionicLoading.show({
-            content: 'Henter Bønner',
+            content: 'Loading Data',
             animation: 'fade-in',
             showBackdrop: false,
             maxWidth: 200,
-            showDelay: 500
+            showDelay: 0
         });
-        $scope.ord = ord;
-        $scope.loadingIndicator.hide();
-})
+
+        getData.all(2,3000).then(
+            function(ord) {
+                $scope.ord = ord;
+                $scope.loadingIndicator.hide();
+            }
+        )
+
+    })
 
 .controller('VisOrdCtrl', function($scope, $stateParams, dagensord, $sce) {
     $scope.vistord = dagensord[0];
@@ -102,7 +113,7 @@ angular.module('dagensord.controllers', [])
             var compWidth = parseInt(getComputedStyle(document.getElementById('theVideoDiv')).width)-10;
             var compheight = Math.round(compWidth*0.5625);
 
-            console.log(compWidth, compheight)
+            console.log(compWidth, compheight);
 
             $scope.vistord['videotag'] = $sce.trustAsHtml("<video id='theVideo'style='margin-bottom:-5px' controls width="+compWidth+" height="+compheight+" poster='"+imageurl + imagename+"'>"+sourceString+"</video>");
         }
