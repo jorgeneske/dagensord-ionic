@@ -237,6 +237,38 @@ video{
 }
 
 
+/* Share */
+.share {
+    width: 100%;
+    text-align: center;
+    margin-top: 2px;
+}
+.facebook {
+    background: transparent url("../img/FB-f-Logo__blue_144.png");
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: 0 30px 0 0;
+}
+.twitter {
+    background: transparent url("../img/Twitter_logo_blue.png");
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: 0 30px 0 0px;
+}
+.sms {
+    background: transparent url("../img/sms_logo.png");
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: 0;
+}
+
+
 @media (min-width: 480px) {
 
 
