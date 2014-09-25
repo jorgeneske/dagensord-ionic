@@ -46,7 +46,9 @@ img {
     padding: 0px;
     width: 100%;
 }
-
+.col.video {
+    width: 100%;
+}
 /* Menu */
 .menu {
     background: #585858;
@@ -95,6 +97,10 @@ img {
 }
 
 /* Color-classes */
+.black{
+    background: #000000;
+    border:1px solid #FFFFFF;
+}
 .grey {
     background: #989898;
     padding: 1em;
@@ -230,12 +236,6 @@ p.dagens span {
     color: #FFFFFF;
     padding-top: 2em;
 }
-
-video{
-    max-width: 100%;
-    height:auto;
-}
-
 
 /* Share */
 .share {
