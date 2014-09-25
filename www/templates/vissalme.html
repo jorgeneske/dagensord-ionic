@@ -6,7 +6,7 @@
 
       <div class="row">
           <div class="col col-25 grey">
-            <!--<ion-item href="#/app/salmer"><img src="img/LOGO_salmer.png" alt="" /></ion-item>-->
+            <ion-item href="#/app/salmer"><img class="logo_small" src="img/LOGO_salmer.png" alt="" /></ion-item>
           </div>
           <div class="col col-offset-1 text-center grey">
               <button class="play" ng-click="playAudio()"></button>
@@ -38,15 +38,10 @@
       
   </ion-content>
     <ion-footer-bar class="bar-positive">
-      <!--<button ng-click="audio.stop()">Stop</button>-->
-      <!--<button ng-click="pauseAudio()">pause</button>-->
-      <!--<button ng-click="playAudio()">Android Play</button>-->
         <div class="share">
             <button class="twitter" onclick="window.plugins.socialsharing.shareViaTwitter('Her skal stå et eller andet')"></button>
             <button class="facebook" onclick="window.plugins.socialsharing.shareViaFacebook('Facebook: Jeg slår noget op :-)', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"></button>
             <button class="sms" onclick="window.plugins.socialsharing.shareViaSMS('Her får du lige en sms fra Dagens Ord', null, function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})"></button>
         </div>
-        <!--<button onclick="window.plugins.socialsharing.share()">DEL</button>-->
-        <!--<button ng-click='test()'>test</button>-->
     </ion-footer-bar>
 </ion-view>

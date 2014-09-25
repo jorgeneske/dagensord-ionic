@@ -180,6 +180,10 @@ img.logo {
     max-height: 90px;
     width: auto;
 }
+img.logo_small {
+    max-height: 65px;
+    width: auto;
+}
 img.logo.more {
     max-height: 55px;
     width: auto;
@@ -317,6 +321,8 @@ p.dagens span {
         line-height: 1.4;
     }
 }
+
+
 @media (min-width: 1024px) {
     /*#doWrapper {*/
         /*zoom: 2;*/

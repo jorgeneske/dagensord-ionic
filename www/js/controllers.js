@@ -123,5 +123,7 @@ angular.module('dagensord.controllers', [])
         }
     $scope.stopAudio = function(){
         $scope.mediaplay.stop();
+        clearInterval(mediaTimer);
+        mediaTimer = null;
     }
 });
