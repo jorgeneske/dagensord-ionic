@@ -57,7 +57,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   controller: 'OrdCtrl',
                   resolve: {
                       ord: function(getData){
-                          return getData.all(2, 50);
+                          return getData.all(2, 5000);
                       }
                   }
               }

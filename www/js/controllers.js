@@ -47,7 +47,7 @@ angular.module('dagensord.controllers', [])
     }
 })
 
-.controller('BoennerCtrl', function($scope,boenner) {
+.controller('BoennerCtrl', function($scope, boenner) {
     $scope.boenner = boenner;
 })
 
@@ -55,8 +55,16 @@ angular.module('dagensord.controllers', [])
     $scope.vistboen = boen[0];
 })
 
-.controller('OrdCtrl', function($scope,ord) {
-    $scope.ord = ord;
+.controller('OrdCtrl', function($scope, $ionicLoading, ord) {
+        $scope.loadingIndicator = $ionicLoading.show({
+            content: 'Henter Bønner',
+            animation: 'fade-in',
+            showBackdrop: false,
+            maxWidth: 200,
+            showDelay: 500
+        });
+        $scope.ord = ord;
+        $scope.loadingIndicator.hide();
 })
 
 .controller('VisOrdCtrl', function($scope, $stateParams, dagensord, $sce) {
@@ -103,8 +111,8 @@ angular.module('dagensord.controllers', [])
         console.log($scope.vistord['videotag']);
 })
 
-.controller('SalmerCtrl', function($scope,salmer) {
-    $scope.salmer = salmer;
+.controller('SalmerCtrl', function($scope, salmer) {
+        $scope.salmer = salmer;
 })
 
 .controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv) {
