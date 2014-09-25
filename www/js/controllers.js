@@ -1,5 +1,5 @@
 angular.module('dagensord.controllers', [])
-.controller('MainCtrl', function($scope) {
+.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout) {
 
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
 /*
@@ -16,6 +16,40 @@ angular.module('dagensord.controllers', [])
     }
 */
 
+        $scope.formularData = {};
+
+        $ionicModal.fromTemplateUrl('templates/overlay.html', {
+            scope: $scope
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.formular = function() {
+            $scope.modal.show();
+        };
+
+        $scope.closeFormular = function() {
+            $scope.modal.hide();
+        };
+
+        $scope.sendFormular = function() {
+            console.log('Sender', $scope.formularData);
+            var postUrl = adminurl + "getboen.php";
+            console.log(postUrl);
+            $http({
+                method  : 'POST',
+                url     : postUrl,
+                data    : $scope.formularData,//'[{ title: "test"}]',
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+                .success(function(data) {
+                    console.log(data);
+                });
+
+            $timeout(function() {
+                $scope.closeFormular();
+            }, 1000);
+        };
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
