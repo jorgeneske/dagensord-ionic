@@ -77,11 +77,11 @@ angular.module('dagensord.controllers', [])
                     mimetype = "";
                 }
                 if(device.platform == "iOS"){
-                    if(device.model == "iPhone"){
+                    if(device.model.match(/(iPhone)/)){
                         videoSource = $scope.vistord.video.iphone['0'];
                         mimetype = "type='"+$scope.vistord.video.iphone['@attributes']['mimetype']+"'";
                     }
-                    if(device.model == "iPad"){
+                    if(device.model.match(/(iPad)/)){
                         videoSource = $scope.vistord.video.ipad['0'];
                         mimetype = "type='"+$scope.vistord.video.ipad['@attributes']['mimetype']+"'";
                     }
@@ -96,7 +96,7 @@ angular.module('dagensord.controllers', [])
 
             console.log(compWidth, compheight)
 
-            $scope.vistord['videotag'] = $sce.trustAsHtml("<video id='theVideo'controls width="+compWidth+" height="+compheight+" poster='"+imageurl + imagename+"'>"+sourceString+"</video>");
+            $scope.vistord['videotag'] = $sce.trustAsHtml("<video id='theVideo'style='margin-bottom:-5px' controls width="+compWidth+" height="+compheight+" poster='"+imageurl + imagename+"'>"+sourceString+"</video>");
         }
         console.log(dagensord[0]);
         console.log($scope.vistord['image']);
