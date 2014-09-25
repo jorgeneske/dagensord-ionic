@@ -180,6 +180,10 @@ img.logo {
     max-height: 90px;
     width: auto;
 }
+img.logo_small {
+    max-height: 65px;
+    width: auto;
+}
 img.logo.more {
     max-height: 55px;
     width: auto;
