@@ -68,31 +68,31 @@ angular.module('dagensord.controllers', [])
         }
         if ($scope.vistord['qbrick']) {
             var videoSource = $scope.vistord.video.aoshq['0'];
-            var mimetype = $scope.vistord.video.aoshq['@attributes']['mimetype'];
+            var mimetype = "type='"+$scope.vistord.video.aoshq['@attributes']['mimetype']+"'";
             var tester = 'PC';
 
             if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
 
                 if(device.platform =="Android"){
                     videoSource = $scope.vistord.video.android['0'];
-                    mimetype = $scope.vistord.video.android['@attributes']['mimetype'];
+                    mimetype = "";
                     tester = 'Android';
                 }
                 if(device.platform =="iPhone"){
                     videoSource = $scope.vistord.video.iphone['0'];
-                    mimetype = $scope.vistord.video.iphone['@attributes']['mimetype'];
+                    mimetype = "type='"+$scope.vistord.video.iphone['@attributes']['mimetype']+"'";
                     tester = 'iPhone';
                 }
                 if(device.platform =="iPad"){
                     videoSource = $scope.vistord.video.ipad['0'];
-                    mimetype = $scope.vistord.video.ipad['@attributes']['mimetype'];
+                    mimetype = "type='"+$scope.vistord.video.ipad['@attributes']['mimetype']+"'";
                     tester = 'iPad';
                 }
+                alert(device.platform);
             }
-            alert(tester);
 
-            var sourceString = "<source src='"+videoSource+"' type='"+mimetype+"'>";
-            $scope.vistord['videotag'] = $sce.trustAsHtml("<video controls poster='"+imageurl + imagename+"' width='100%' height='auto'>"+sourceString+"</video>");
+            var sourceString = "<source src='"+videoSource+"' "+mimetype+"'>";
+            $scope.vistord['videotag'] = $sce.trustAsHtml("<video controls poster='"+imageurl + imagename+"'>"+sourceString+"</video>");
         }
         console.log(dagensord[0]);
         console.log($scope.vistord['image']);
