@@ -49,6 +49,7 @@ angular.module('dagensord.controllers', [])
 
 .controller('BoennerCtrl', function($scope,boenner) {
     $scope.boenner = boenner;
+        console.log(boenner);
 })
 
 .controller('VisBoenCtrl', function($scope, $stateParams, boen) {
