@@ -1,5 +1,5 @@
 angular.module('dagensord.controllers', [])
-.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout, $ionicLoading) {
+.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout, $ionicLoading,$ionicSlideBoxDelegate, getData) {
 
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
 
@@ -15,7 +15,6 @@ angular.module('dagensord.controllers', [])
         $scope.hideload = function(){
             $ionicLoading.hide();
         };
-
         $scope.formularData = {};
 
         $ionicModal.fromTemplateUrl('templates/overlay.html', {
@@ -62,9 +61,32 @@ angular.module('dagensord.controllers', [])
     }
 })
 
-.controller('BoennerCtrl', function($scope, boenner) {
-    $scope.boenner = boenner;
-        console.log(boenner);
+.controller('BoennerCtrl', function($scope, boenner, $ionicSlideBoxDelegate, getData) {
+        $scope.boenner = boenner;
+
+        $scope.boenneSlideChange = function(i){
+            console.log('slide change', i);
+            var current = i;
+            var end = $ionicSlideBoxDelegate.slidesCount()-1;
+            if(current == end){
+                console.log('this is the end');
+                $scope.showload();
+                var loadString = ''+(current+1)+',10';
+                console.log(loadString);
+                getData.all(3, loadString).then(
+                    function(newboenner) {
+                        //$scope.ord = ord;
+                        $scope.hideload();
+                        console.log(newboenner, $scope.boenner);
+                        $scope.boenner = $scope.boenner.concat(newboenner);
+                        console.log($scope.boenner);
+                        $ionicSlideBoxDelegate.update();
+                    }
+                )
+
+            }
+        }
+
 })
 
 .controller('VisBoenCtrl', function($scope, $stateParams, boen) {
@@ -75,7 +97,7 @@ angular.module('dagensord.controllers', [])
 //        $scope.ord = ord;
 //})
 
-.controller('OrdCtrl', function($scope, getData, $ionicLoading) {
+.controller('OrdCtrl', function($scope, getData) {
     $scope.showload();
 
     getData.all(2).then(
