@@ -47,7 +47,9 @@ img {
     width: 100%;
 }
 .col.video {
+    /*position: absolute;*/
     width: 100%;
+    z-index:9999;
 }
 /* Menu */
 .menu {
@@ -314,6 +316,7 @@ p.dagens span {
 
 }
 @media (min-width: 768px) {
+/*
     #doWrapper {
         zoom: 2;
     }
@@ -328,6 +331,7 @@ p.dagens span {
     .light h3 {
         line-height: 1.4;
     }
+*/
 }
 
 

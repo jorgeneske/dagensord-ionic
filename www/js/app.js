@@ -86,7 +86,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   controller: 'BoennerCtrl',
                   resolve: {
                       boenner: function(getData){
-                          return getData.all(3, 100);
+                          return getData.all(3, '10,10');
                       }
                   }
               }
