@@ -1,7 +1,20 @@
 angular.module('dagensord.controllers', [])
-.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout) {
+.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout, $ionicLoading) {
 
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
+
+        $scope.showload = function() {
+            $ionicLoading.show({
+                content: 'Loading Data',
+                animation: 'fade-in',
+                showBackdrop: false,
+                maxWidth: 200,
+                showDelay: 0
+            });
+        };
+        $scope.hideload = function(){
+            $ionicLoading.hide();
+        };
 
         $scope.formularData = {};
 
@@ -61,20 +74,13 @@ angular.module('dagensord.controllers', [])
 //        $scope.ord = ord;
 //})
 
-.controller('OrdCtrl', function($scope, $ionicLoading, getData) {
-
-    $scope.loadingIndicator = $ionicLoading.show({
-        content: 'Loading Data',
-        animation: 'fade-in',
-        showBackdrop: false,
-        maxWidth: 200,
-        showDelay: 0
-    });
+.controller('OrdCtrl', function($scope, getData, $ionicLoading) {
+    $scope.showload();
 
     getData.all(2).then(
         function(ord) {
             $scope.ord = ord;
-            $ionicLoading.hide();
+            $scope.hideload();
         }
     )
 
@@ -142,6 +148,7 @@ angular.module('dagensord.controllers', [])
     });
 
     $scope.playAudio = function(ev){
+        //$scope.showload();
         playbt.style.display = "none";
         pausebt.style.display = "inline";
         stopbt.style.display = "inline";
