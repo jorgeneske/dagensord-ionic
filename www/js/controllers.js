@@ -55,28 +55,28 @@ angular.module('dagensord.controllers', [])
     $scope.vistboen = boen[0];
 })
 
-.controller('OrdCtrl_temp', function($scope, ord) {
-        $scope.ord = ord;
+//.controller('OrdCtrl', function($scope, ord) {
+//        $scope.ord = ord;
+//})
+
+.controller('OrdCtrl', function($scope, $ionicLoading, getData) {
+
+    $scope.loadingIndicator = $ionicLoading.show({
+        content: 'Loading Data',
+        animation: 'fade-in',
+        showBackdrop: false,
+        maxWidth: 200,
+        showDelay: 0
+    });
+
+    getData.all(3,30000).then(
+        function(ord) {
+            $scope.ord = ord;
+            $ionicLoading.hide();
+        }
+    )
+
 })
-
-    .controller('OrdCtrl', function($scope, $ionicLoading, getData) {
-
-        $scope.loadingIndicator = $ionicLoading.show({
-            content: 'Loading Data',
-            animation: 'fade-in',
-            showBackdrop: false,
-            maxWidth: 200,
-            showDelay: 0
-        });
-
-        getData.all(2,3000).then(
-            function(ord) {
-                $scope.ord = ord;
-                $scope.loadingIndicator.hide();
-            }
-        )
-
-    })
 
 .controller('VisOrdCtrl', function($scope, $stateParams, dagensord, $sce) {
     $scope.vistord = dagensord[0];
