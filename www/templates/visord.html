@@ -1,12 +1,13 @@
+
 <ion-view>
     <ion-nav-buttons side="right">
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
-  <ion-content class="has-header">
+  <ion-content class="has-header" overflow-scroll="true">
       <div class="row nopadding">
-          <div id="theVideoDiv" class="col video">
-              <div ng-bind-html="vistord.videotag"></div>
-          </div>
+        <div id="theVideoDiv" class="col video">
+            <div ng-bind-html="vistord.videotag"></div>
+        </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
@@ -30,15 +31,17 @@
       </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
-          <div class="col blue">
-
+          <div class="col blue" >
+            <ion-item ng-click="playVideo()"></ion-item>
           </div>
           <div class="col col-50 col-offset-1 blue">
               <ion-item href="#/app/ord" class="search"><h3>Flere dagens ord</h3></ion-item>
           </div>
       </div>
   </ion-content>
+<!--
     <ion-footer-bar align-title="left" class="bar-positive">
 
     </ion-footer-bar>
+-->
 </ion-view>
