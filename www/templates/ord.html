@@ -2,11 +2,12 @@
   <ion-nav-buttons side="right">
     <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
+  <ion-content class="has-header" on-infinite-scroll="addMoreItem">
     <ion-list>
       <ion-item ng-repeat="item in ord" href="#/app/ord/{{item.id}}">
         {{item.title}}
       </ion-item>
+
     </ion-list>
   </ion-content>
 </ion-view>

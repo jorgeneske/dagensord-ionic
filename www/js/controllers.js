@@ -1,7 +1,20 @@
 angular.module('dagensord.controllers', [])
-.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout) {
+.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout, $ionicLoading) {
 
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
+
+        $scope.showload = function() {
+            $ionicLoading.show({
+                content: 'Loading Data',
+                animation: 'fade-in',
+                showBackdrop: false,
+                maxWidth: 200,
+                showDelay: 0
+            });
+        };
+        $scope.hideload = function(){
+            $ionicLoading.hide();
+        };
 
         $scope.formularData = {};
 
@@ -37,6 +50,8 @@ angular.module('dagensord.controllers', [])
                 $scope.closeFormular();
             }, 1000);
         };
+
+
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
@@ -47,7 +62,7 @@ angular.module('dagensord.controllers', [])
     }
 })
 
-.controller('BoennerCtrl', function($scope,boenner) {
+.controller('BoennerCtrl', function($scope, boenner) {
     $scope.boenner = boenner;
         console.log(boenner);
 })
@@ -56,8 +71,20 @@ angular.module('dagensord.controllers', [])
     $scope.vistboen = boen[0];
 })
 
-.controller('OrdCtrl', function($scope,ord) {
-    $scope.ord = ord;
+//.controller('OrdCtrl', function($scope, ord) {
+//        $scope.ord = ord;
+//})
+
+.controller('OrdCtrl', function($scope, getData, $ionicLoading) {
+    $scope.showload();
+
+    getData.all(2).then(
+        function(ord) {
+            $scope.ord = ord;
+            $scope.hideload();
+        }
+    )
+
 })
 
 .controller('VisOrdCtrl', function($scope, $stateParams, dagensord, $sce) {
@@ -74,23 +101,19 @@ angular.module('dagensord.controllers', [])
             if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
 
                 if(device.platform =="Android"){
-                    alert('android video');
                     videoSource = $scope.vistord.video.android['0'];
                     mimetype = "";
                 }
                 if(device.platform == "iOS"){
                     if(device.model.match(/(iPhone)/)){
                         videoSource = $scope.vistord.video.iphone['0'];
-                        alert('iphone video');
                         mimetype = "type='"+$scope.vistord.video.iphone['@attributes']['mimetype']+"'";
                     }
                     if(device.model.match(/(iPad)/)){
-                        alert('iPad video');
                         videoSource = $scope.vistord.video.ipad['0'];
                         mimetype = "type='"+$scope.vistord.video.ipad['@attributes']['mimetype']+"'";
                     }
                 }
-                alert(device.platform+" + "+device.model);
             }
 
             // Beregn højden på videoen:
@@ -98,7 +121,7 @@ angular.module('dagensord.controllers', [])
             var compWidth = parseInt(getComputedStyle(document.getElementById('theVideoDiv')).width)-10;
             var compheight = Math.round(compWidth*0.5625);
 
-            console.log(compWidth, compheight)
+            console.log(compWidth, compheight);
 
             $scope.vistord['videotag'] = $sce.trustAsHtml("<video id='theVideo'style='margin-bottom:-5px' autobuffer controls width="+compWidth+" height="+compheight+" poster='"+imageurl + imagename+"'>"+sourceString+"</video>");
         }
@@ -107,19 +130,22 @@ angular.module('dagensord.controllers', [])
         console.log($scope.vistord['videotag']);
 
         $scope.playVideo = function(){
-            //alert('play');
             var video = document.getElementById("theVideo");
             video.addEventListener('click', function(){video.play()}, false);
-            //alert(video);
         }
 
     })
 
-.controller('SalmerCtrl', function($scope,salmer) {
-    $scope.salmer = salmer;
+.controller('SalmerCtrl', function($scope, salmer) {
+        $scope.salmer = salmer;
 })
 
-.controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv) {
+.controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv, $ionicPlatform) {
+
+    var playbt = document.getElementById("playbutton");
+    var pausebt = document.getElementById("pausebutton");
+    var stopbt = document.getElementById("stopbutton");
+
     $scope.vistsalme = salme[0];
     $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
 
@@ -128,14 +154,33 @@ angular.module('dagensord.controllers', [])
     });
 
     $scope.playAudio = function(ev){
+        //$scope.showload();
+        playbt.style.display = "none";
+        pausebt.style.display = "inline";
+        stopbt.style.display = "inline";
         $scope.mediaplay.play();
     }
     $scope.pauseAudio = function(){
+        playbt.style.display = "inline";
+        pausebt.style.display = "none";
+        stopbt.style.display = "inline";
         $scope.mediaplay.pause();
         }
     $scope.stopAudio = function(){
+        playbt.style.display = "inline";
+        pausebt.style.display = "none";
+        stopbt.style.display = "none";
         $scope.mediaplay.stop();
         clearInterval(mediaTimer);
         mediaTimer = null;
     }
+        $ionicPlatform.ready(function() {
+            if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
+                var share = document.getElementById("share");
+                var webshare = document.getElementById("webshare");
+                share.style.display = "none";
+                webshare.style.display = "inline";
+            }
+        });
+
 });
