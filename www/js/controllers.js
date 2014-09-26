@@ -37,6 +37,8 @@ angular.module('dagensord.controllers', [])
                 $scope.closeFormular();
             }, 1000);
         };
+
+
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
@@ -69,7 +71,7 @@ angular.module('dagensord.controllers', [])
         showDelay: 0
     });
 
-    getData.all(3,30000).then(
+    getData.all(2).then(
         function(ord) {
             $scope.ord = ord;
             $ionicLoading.hide();
@@ -126,7 +128,12 @@ angular.module('dagensord.controllers', [])
         $scope.salmer = salmer;
 })
 
-.controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv) {
+.controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv, $ionicPlatform) {
+
+    var playbt = document.getElementById("playbutton");
+    var pausebt = document.getElementById("pausebutton");
+    var stopbt = document.getElementById("stopbutton");
+
     $scope.vistsalme = salme[0];
     $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
 
@@ -135,14 +142,32 @@ angular.module('dagensord.controllers', [])
     });
 
     $scope.playAudio = function(ev){
+        playbt.style.display = "none";
+        pausebt.style.display = "inline";
+        stopbt.style.display = "inline";
         $scope.mediaplay.play();
     }
     $scope.pauseAudio = function(){
+        playbt.style.display = "inline";
+        pausebt.style.display = "none";
+        stopbt.style.display = "inline";
         $scope.mediaplay.pause();
         }
     $scope.stopAudio = function(){
+        playbt.style.display = "inline";
+        pausebt.style.display = "none";
+        stopbt.style.display = "none";
         $scope.mediaplay.stop();
         clearInterval(mediaTimer);
         mediaTimer = null;
     }
+        $ionicPlatform.ready(function() {
+            if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
+                var share = document.getElementById("share");
+                var webshare = document.getElementById("webshare");
+                share.style.display = "none";
+                webshare.style.display = "inline";
+            }
+        });
+
 });

@@ -9,9 +9,9 @@
             <ion-item href="#/app/salmer"><img class="logo_small" src="img/LOGO_salmer.png" alt="" /></ion-item>
           </div>
           <div class="col col-offset-1 text-center grey">
-              <button class="play" ng-click="playAudio()"></button>
-              <button class="pause" ng-click="pauseAudio()"></button>
-              <button class="stop" ng-click="stopAudio()"></button>
+              <button id="playbutton" ng-click="playAudio()"></button>
+              <button id="pausebutton" ng-click="pauseAudio()"></button>
+              <button id="stopbutton" ng-click="stopAudio()"></button>
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
@@ -37,10 +37,13 @@
   </ion-content>
 
     <ion-footer-bar class="bar-positive">
-        <div class="share">
-            <button class="twitter" onclick="window.plugins.socialsharing.shareViaTwitter('Her skal stå et eller andet')"></button>
-            <button class="facebook" onclick="window.plugins.socialsharing.shareViaFacebook('Facebook: Jeg slår noget op :-)', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"></button>
-            <button class="sms" onclick="window.plugins.socialsharing.shareViaSMS('Her får du lige en sms fra Dagens Ord', null, function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})"></button>
+        <div id="share">
+            <button class="twitter" onclick="window.plugins.socialsharing.shareViaTwitter('Her skal stå et eller andet', null /* img */, null /* url */, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Twitter på denne enhed')})"></button>
+            <button class="facebook" onclick="window.plugins.socialsharing.shareViaFacebook('Facebook: Jeg slår noget op :-)', null /* img */, null /* url */, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Facebook på denne enhed')})"></button>
+            <button class="sms" onclick="window.plugins.socialsharing.shareViaSMS('Her får du lige en sms fra Dagens Ord', null, function(msg) {console.log('ok: ' + msg)}, function() {alert('Det er ikke muligt at dele via sms på denne enhed')})"></button>
+        </div>
+        <div id="webshare">
+            <div class="addthis_sharing_toolbox"></div>
         </div>
     </ion-footer-bar>
 </ion-view>
