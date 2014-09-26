@@ -100,19 +100,23 @@ angular.module('dagensord.controllers', [])
             if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
 
                 if(device.platform =="Android"){
+                    alert('android video');
                     videoSource = $scope.vistord.video.android['0'];
                     mimetype = "";
                 }
                 if(device.platform == "iOS"){
                     if(device.model.match(/(iPhone)/)){
                         videoSource = $scope.vistord.video.iphone['0'];
+                        alert('iphone video');
                         mimetype = "type='"+$scope.vistord.video.iphone['@attributes']['mimetype']+"'";
                     }
                     if(device.model.match(/(iPad)/)){
+                        alert('iPad video');
                         videoSource = $scope.vistord.video.ipad['0'];
                         mimetype = "type='"+$scope.vistord.video.ipad['@attributes']['mimetype']+"'";
                     }
                 }
+                alert(device.platform+" + "+device.model);
             }
 
             // Beregn højden på videoen:
@@ -129,8 +133,10 @@ angular.module('dagensord.controllers', [])
         console.log($scope.vistord['videotag']);
 
         $scope.playVideo = function(){
+            //alert('play');
             var video = document.getElementById("theVideo");
             video.addEventListener('click', function(){video.play()}, false);
+            //alert(video);
         }
 
     })
