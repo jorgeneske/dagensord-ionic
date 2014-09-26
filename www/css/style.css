@@ -98,6 +98,25 @@ img {
     max-width: 100px;
 }
 
+/* Listview */
+.listview {
+    margin: 0.3em;
+}
+.listview .item {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #FFF;
+    border-bottom: none;
+}
+.listview .item-complex .item-content, .listview .item-radio .item-content {
+    background-color: transparent;
+    padding: 0;
+}
+.listview h2 {
+    color: #FFF;
+    font-weight: bold;
+}
+
 /* Color-classes */
 .black{
     background: #000000;
