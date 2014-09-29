@@ -32,7 +32,7 @@ angular.module('dagensord.controllers', [])
         };
 
         $scope.sendFormular = function() {
-            console.log('Sender', $scope.formularData);
+            //console.log('Sender', $scope.formularData);
             var postUrl = adminurl + "getboen.php";
             console.log(postUrl);
             $http({
@@ -48,6 +48,14 @@ angular.module('dagensord.controllers', [])
             $timeout(function() {
                 $scope.closeFormular();
             }, 1000);
+        };
+
+        $scope.soeg = {};
+
+        $scope.sendSoeg = function(q) {
+            if ($scope.soeg[q]) {
+                location.href = "#/app/soeg"+q+"/" + $scope.soeg[q];
+            }
         };
 
 
@@ -103,6 +111,24 @@ angular.module('dagensord.controllers', [])
     getData.all(2).then(
         function(ord) {
             $scope.ord = ord;
+            for (i = 0; i < ord.length; ++i) {
+                ord[i]['image'] = '<img src="'+imageurl+ord[i]['image']+'" alt="'+ord[i]['performer']+'" />';
+            }
+            $scope.hideload();
+        }
+    )
+
+})
+
+.controller('SoegOrdCtrl', function($scope, getData) {
+    $scope.showload();
+
+    getData.all(2,1).then(
+        function(ord) {
+            $scope.ord = ord;
+            for (i = 0; i < ord.length; ++i) {
+                ord[i]['image'] = '<img src="'+imageurl+ord[i]['image']+'" alt="'+ord[i]['performer']+'" />';
+            }
             $scope.hideload();
         }
     )

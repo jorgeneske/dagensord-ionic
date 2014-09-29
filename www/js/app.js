@@ -78,6 +78,20 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
               }
           }
       })
+      .state('app.soegtext', {
+          url: "/soegtext/:soeg",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/ord.html",
+                  controller: 'SoegOrdCtrl',
+                  resolve: {
+                      ord: function(getData){
+                          return getData.all(2,1);
+                      }
+                  }
+              }
+          }
+      })
       .state('app.boenner', {
           url: "/boenner",
           views: {

@@ -44,6 +44,20 @@ angular.module('dagensord.services',[])
                         deferred.reject();
                     });
                 return deferred.promise;
+            },
+            soeg: function (query) {
+                var url = adminurl+"?soeg="+query+"&callback=JSON_CALLBACK";
+                var deferred = $q.defer();
+                $http.jsonp(url, {
+                    cache: true
+                })
+                    .success(function (data) {
+                        deferred.resolve(data);
+                    })
+                    .error(function (data) {
+                        deferred.reject();
+                    });
+                return deferred.promise;
             }
         };
     })

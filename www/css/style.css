@@ -99,6 +99,7 @@ img {
 }
 
 /* Listview */
+
 .listview {
     margin: 0.3em;
 }
@@ -112,9 +113,22 @@ img {
     background-color: transparent;
     padding: 0;
 }
+.listview p {
+    color: #FFF;
+}
+.listview p.meta {
+    font-style: italic;
+    font-size: 0.8em;
+}
 .listview h2 {
     color: #FFF;
     font-weight: bold;
+    padding-top: 0.4em;
+}
+.listview img {
+    max-width: 110px;
+    height: auto;
+    margin-bottom: -4px;
 }
 
 /* Color-classes */
