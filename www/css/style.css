@@ -120,7 +120,7 @@ html .soeg input[type="text"] {
     min-width: 50px;
     background: #016699;
     padding: 0;
-    margin: 14px 0 0 3px;
+    margin: 14px 0 0 2px;
     font-family: "Ionicons";
     font-style: normal;
     font-variant: normal;
@@ -129,6 +129,7 @@ html .soeg input[type="text"] {
     text-rendering: auto;
     text-transform: none;
     content: "\f21f";
+    -webkit-appearance: none;
     border: 1px solid #99c2d6;
     border-radius: 0.5em;
 }
