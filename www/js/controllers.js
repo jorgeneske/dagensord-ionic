@@ -154,7 +154,7 @@ angular.module('dagensord.controllers', [])
                 }
                 if(device.platform == "iOS"){
                     if(device.model.match(/(iPhone)/)){
-                        videoSource = $scope.vistord.video.ipone['0'];
+                        videoSource = $scope.vistord.video.iphone['0'];
                         mimetype = "type='"+$scope.vistord.video.iphone['@attributes']['mimetype']+"'";
                     }
                     if(device.model.match(/(iPad)/)){
