@@ -98,15 +98,52 @@ img {
     max-width: 100px;
 }
 
-/* Listview */
+/* Listview + søg */
 .soeg {
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: none;
+    margin: 0.3em;
+}
+html .soeg input[type="text"] {
+    color: #111;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 16px;
+    padding-left: 10px;
+    padding-top: 2px;
+    vertical-align: middle;
+    border: 2px solid #FFF;
+    border-radius: 0.5em;
+}
+.soeg .button {
+    min-height: 34px;
+    min-width: 50px;
+    background: #016699;
+    padding: 0;
+    margin: 14px 0 0 0;
+    font-family: "Ionicons";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    text-transform: none;
+    content: "\f21f";
+    border: 1px solid #99c2d6;
+    border-radius: 0.5em;
+}
+.soeg .button .icon:before, .soeg .button.icon:before, .soeg .button.icon-left:before, .soeg .button.icon-right:before {
+    font-size: 26px;
+    line-height: 30px;
+    padding: 0 0 1px;
+    pointer-events: none;
+    vertical-align: inherit;
+    color: #FFF;
+    opacity: .6;
 }
 .listview {
-    margin: 0.3em;
+    margin: 0 0.3em 0.3em 0.3em;
+    border-left: 1px solid #FFF;
+    border-right: 1px solid #FFF;
 }
 .listview .item {
     border-left: none;
@@ -129,6 +166,7 @@ img {
     color: #FFF;
     font-weight: bold;
     padding-top: 0.4em;
+    font-size: 0.95em;
 }
 .listview img {
     /*max-width: 100px;*/
