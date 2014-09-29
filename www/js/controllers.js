@@ -154,12 +154,12 @@ angular.module('dagensord.controllers', [])
                 }
                 if(device.platform == "iOS"){
                     if(device.model.match(/(iPhone)/)){
-                        videoSource = $scope.vistord.video.android['0'];
-                        mimetype = "type='"+$scope.vistord.video.android['@attributes']['mimetype']+"'";
+                        videoSource = $scope.vistord.video.ipone['0'];
+                        mimetype = "type='"+$scope.vistord.video.iphone['@attributes']['mimetype']+"'";
                     }
                     if(device.model.match(/(iPad)/)){
-                        videoSource = $scope.vistord.video.android['0'];
-                        mimetype = "type='"+$scope.vistord.video.android['@attributes']['mimetype']+"'";
+                        videoSource = $scope.vistord.video.ipad['0'];
+                        mimetype = "type='"+$scope.vistord.video.ipad['@attributes']['mimetype']+"'";
                     }
                 }
             }
