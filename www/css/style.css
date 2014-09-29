@@ -98,6 +98,26 @@ img {
     max-width: 100px;
 }
 
+/* Listview */
+.listview {
+    margin: 0.3em;
+}
+.listview .item {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #FFF;
+    border-bottom: none;
+}
+.listview .item-complex .item-content, .listview .item-radio .item-content {
+    background-color: transparent;
+    padding: 0;
+}
+.listview h2 {
+    color: #FFF;
+    font-weight: bold;
+}
+
+
 /* Color-classes */
 .black{
     background: #000000;
@@ -282,7 +302,7 @@ p.dagens span {
 /* Audio play */
 #playbutton {
     background: transparent url("../img/play.png");
-    background-size: 30px 30px;
+    background-size: 50px 50px;
     width: 50px;
     height: 50px;
     border: none;
@@ -290,7 +310,7 @@ p.dagens span {
 }
 #pausebutton {
     background: transparent url("../img/pause.png");
-    background-size: 30px 30px;
+    background-size: 50px 50px;
     width: 50px;
     height: 50px;
     border: none;
@@ -299,7 +319,7 @@ p.dagens span {
 }
 #stopbutton {
     background: transparent url("../img/stop.png");
-    background-size: 30px 30px;
+    background-size: 50px 50px;
     width: 50px;
     height: 50px;
     border: none;

@@ -4,10 +4,19 @@
   </ion-nav-buttons>
   <ion-content class="has-header" on-infinite-scroll="addMoreItem">
     <ion-list>
-      <ion-item ng-repeat="item in ord" href="#/app/ord/{{item.id}}">
-        {{item.title}}
-      </ion-item>
+        <div class="listview">
+          <ion-item ng-repeat="item in ord" href="#/app/ord/{{item.id}}">
+              <div class="row nopadding">
+                  <div class="col col-25 green nopadding">
 
+                  </div>
+                  <div class="col blue nopadding">
+                      <h2>{{item.title}}</h2>
+                      <p class="meta">{{item.performer}}</p>
+                  </div>
+              </div>
+          </ion-item>
+        </div>
     </ion-list>
   </ion-content>
 </ion-view>
