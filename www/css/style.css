@@ -111,6 +111,7 @@ html .soeg input[type="text"] {
     padding-left: 10px;
     padding-top: 2px;
     vertical-align: middle;
+    -webkit-appearance: none;
     border: 2px solid #FFF;
     border-radius: 0.5em;
     background: #FFF;
@@ -129,7 +130,6 @@ html .soeg input[type="text"] {
     text-rendering: auto;
     text-transform: none;
     content: "\f21f";
-    -webkit-appearance: none;
     border: 1px solid #99c2d6;
     border-radius: 0.5em;
 }
