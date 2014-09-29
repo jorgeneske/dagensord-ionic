@@ -161,6 +161,7 @@ html .soeg input[type="text"] {
 .listview p.meta {
     font-style: italic;
     font-size: 0.8em;
+    padding-bottom: 0.4em;
 }
 .listview h2 {
     color: #FFF;
