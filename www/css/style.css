@@ -99,7 +99,12 @@ img {
 }
 
 /* Listview */
-
+.soeg {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+}
 .listview {
     margin: 0.3em;
 }
@@ -126,8 +131,9 @@ img {
     padding-top: 0.4em;
 }
 .listview img {
-    max-width: 100px;
-    height: auto;
+    /*max-width: 100px;*/
+    /*height: auto;*/
+    display: inline;
     margin-bottom: -4px;
 }
 
@@ -253,6 +259,9 @@ p.dagens span {
 }
 .padding_leftright2 {
     padding: 1em 2em 1em 2em;
+}
+.listpadding {
+    padding: 0 0.5em 0 0.5em;
 }
 .green h2 {
     color: #FFF;
