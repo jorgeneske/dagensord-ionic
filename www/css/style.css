@@ -113,13 +113,14 @@ html .soeg input[type="text"] {
     vertical-align: middle;
     border: 2px solid #FFF;
     border-radius: 0.5em;
+    background: #FFF;
 }
 .soeg .button {
     min-height: 34px;
     min-width: 50px;
     background: #016699;
     padding: 0;
-    margin: 14px 0 0 0;
+    margin: 14px 0 0 3px;
     font-family: "Ionicons";
     font-style: normal;
     font-variant: normal;
