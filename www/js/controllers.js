@@ -3,6 +3,17 @@ angular.module('dagensord.controllers', [])
 
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
 
+        $scope.boennerHandler = {
+            // Variabler til at styre load og unload af bønner
+            maxLength:50, // Hvor mange bønner må der ligge i slideren
+            startIndex:0, // Styrer hvor man er i bønner i backenden
+            loadAmount:20, // Hvor mange hentes ad gangnen, når man når til vejs ende (og hvor mange smides ud i den anden ende)
+            preloadSlide:2, // Hvor mange slides før enden kaldes de nye (1 = sidste slide // 2 = sliden før osv.) OBS: Gælder kun opad
+            currentBoen:0, // Holder styr på hvor vi er i samlede bønne liste
+            onChangeUpdate:true // Sættes til 'false' hvis der skal skiftes plads i slideren når der smides bønner ud
+
+        }
+
         $scope.showload = function() {
             $ionicLoading.show({
                 content: 'Loading Data',
@@ -68,29 +79,100 @@ angular.module('dagensord.controllers', [])
     }
 })
 
-.controller('BoennerCtrl', function($scope, boenner, $ionicSlideBoxDelegate, getData) {
-        $scope.boenner = boenner;
+.controller('BoennerCtrl', function($scope, $ionicSlideBoxDelegate, getData) {
 
-        $scope.boenneSlideChange = function(i){
-            console.log('slide change', i);
-            var current = i;
-            var end = $ionicSlideBoxDelegate.slidesCount()-1;
-            if(current == end){
-                console.log('this is the end');
-                $scope.showload();
-                var loadString = ''+(current+1)+',10';
-                console.log(loadString);
-                getData.all(3, loadString).then(
-                    function(newboenner) {
-                        //$scope.ord = ord;
-                        $scope.hideload();
-                        console.log(newboenner, $scope.boenner);
-                        $scope.boenner = $scope.boenner.concat(newboenner);
-                        console.log($scope.boenner);
-                        $ionicSlideBoxDelegate.update();
+
+        if(!$scope.boenner){ // Hvis der ikke er hentet bønner endnu:
+            console.log('load first boenner');
+            getData.all(3, $scope.boennerHandler.loadAmount).then(
+                function(loadBoenner){
+                    $scope.boenner = loadBoenner;
+                    $ionicSlideBoxDelegate.update();
+                }
+            );
+        }
+
+        $scope.boenneSlideChange = function(i){ // Hver gang der blades i bønne slider:
+            if($scope.boennerHandler.onChangeUpdate){
+                // 'onChangeUpdate' sættes til 'false' når man skifter plads i slider efter af have smidt bønner ud så denne funktion kun køres ved swipes
+                console.log('slide change', i);
+                var current = i;
+                var end = $ionicSlideBoxDelegate.slidesCount()-$scope.boennerHandler.preloadSlide;
+
+                $scope.boennerHandler.currentBoen = $scope.boennerHandler.startIndex + current;
+
+                if(current == end){ // Så er vi på vej opad
+                    console.log('this is the end', current);
+                    $scope.showload();
+                    var loadString = ''+($scope.boennerHandler.currentBoen+$scope.boennerHandler.preloadSlide)+','+$scope.boennerHandler.loadAmount;
+                    console.log(loadString);
+
+                    getData.all(3, loadString).then(
+                        function(newboenner) {
+                            console.log(newboenner);
+                            $scope.hideload();
+                            $scope.boenner = $scope.boenner.concat(newboenner);
+                            $ionicSlideBoxDelegate.update();
+
+                            if($ionicSlideBoxDelegate.slidesCount() > $scope.boennerHandler.maxLength){
+                                throwOut(current - $scope.boennerHandler.loadAmount, true);
+                                $scope.boennerHandler.startIndex += $scope.boennerHandler.loadAmount;
+                            }
+                        }
+                    )
+                }
+                if(current == 0){ // så er vi på vej nedad
+                    console.log('this is the beginning', $scope.boennerHandler.startIndex);
+                    if($scope.boennerHandler.startIndex > 0){
+                        $scope.showload();
+                        var loadString;
+                        if($scope.boennerHandler.startIndex-$scope.boennerHandler.loadAmount==0){
+                            loadString=$scope.boennerHandler.loadAmount;
+                        }else{
+                            loadString = ''+($scope.boennerHandler.startIndex-$scope.boennerHandler.loadAmount)+','+$scope.boennerHandler.loadAmount;
+                        }
+                        console.log(loadString);
+
+                        getData.all(3, loadString).then(
+                            function(newboenner) {
+                                console.log(newboenner);
+
+                                $scope.hideload();
+                                //var tempArray = newboenner.concat($scope.boenner);
+                                $scope.boenner = newboenner.concat($scope.boenner);
+                                $ionicSlideBoxDelegate.update();
+                                $scope.boennerHandler.startIndex -= $scope.boennerHandler.loadAmount;
+
+                                throwOut($scope.boenner.length - $scope.boennerHandler.loadAmount, false);
+                            }
+                        )
                     }
-                )
 
+                }
+
+                var throwOut = function(start, upwards){ // Til at smide bønner ud
+
+                    console.log('throw out', start)
+                    if(upwards){ // så er vi på vej opad
+                        $scope.boenner.splice(0, $scope.boennerHandler.loadAmount);
+                    }else{ // Så er vi på vej nedad
+                        $scope.boenner.splice($scope.boenner.length - $scope.boennerHandler.loadAmount);
+                    }
+                    $ionicSlideBoxDelegate.update();
+                    $scope.boennerHandler.onChangeUpdate = false;
+                    if(upwards){
+                        $ionicSlideBoxDelegate.slide(current - $scope.boennerHandler.loadAmount, 1);
+                    }else{
+                        $ionicSlideBoxDelegate.slide(current + $scope.boennerHandler.loadAmount, 1);
+                    }
+                    $scope.boennerHandler.onChangeUpdate = true;
+
+                    setTimeout(function(){
+                        $ionicSlideBoxDelegate.update();
+                    }, 500)
+
+
+                }
             }
         }
 
@@ -181,9 +263,7 @@ angular.module('dagensord.controllers', [])
             console.log(compWidth, compheight);
 
             $scope.vistord['videotag'] = $sce.trustAsHtml("<video id='theVideo'style='margin-bottom:-5px' autobuffer controls width="+compWidth+" height="+compheight+" poster='"+imageurl + imagename+"'>"+sourceString+"</video>");
-        };
-
-
+        }
         console.log(dagensord[0]);
         console.log($scope.vistord['image']);
         console.log($scope.vistord['videotag']);
