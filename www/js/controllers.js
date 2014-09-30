@@ -195,8 +195,26 @@ angular.module('dagensord.controllers', [])
 
     })
 
-.controller('SalmerCtrl', function($scope, salmer) {
-        $scope.salmer = salmer;
+.controller('SalmerCtrl', function($scope, getData) {
+        $scope.showload();
+        getData.all(1).then(
+            function(salmer) {
+                $scope.salmer = salmer;
+                $scope.hideload();
+            }
+        )
+})
+
+.controller('SoegSalmeCtrl', function($scope, $stateParams, getData) {
+    $scope.showload();
+
+    getData.soeg(1,encodeURIComponent($stateParams.soeg)).then(
+        function(salmer) {
+            $scope.salmer = salmer;
+            $scope.hideload();
+        }
+    )
+
 })
 
 .controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv, $ionicPlatform) {

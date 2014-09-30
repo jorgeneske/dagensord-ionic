@@ -120,6 +120,20 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
               }
           }
       })
+      .state('app.soegsalme', {
+          url: "/soegsalme/:soeg",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/salmer.html",
+                  controller: 'SoegSalmeCtrl',
+                  resolve: {
+                      salmer: function(getData,$stateParams){
+                          return getData.soeg(1,$stateParams.soeg);
+                      }
+                  }
+              }
+          }
+      })
       .state('app.salmer', {
           url: "/salmer",
           views: {
