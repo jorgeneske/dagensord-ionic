@@ -85,9 +85,13 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   templateUrl: "templates/boenner.html",
                   controller: 'BoennerCtrl',
                   resolve: {
+/*
                       boenner: function(getData){
-                          return getData.all(3, '10');
+                          console.log('get prayers');
+                          return[];
+                          //return getData.all(3, '5');
                       }
+*/
                   }
               }
           }
