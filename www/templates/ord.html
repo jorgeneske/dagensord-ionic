@@ -8,7 +8,7 @@
         <form ng-submit="sendSoeg('text')" class="soeg">
             <div class="row nopadding">
                 <div class="col blue">
-                    <input type="text" ng-model="soeg.text" placeholder="Søg i dagens ord" class="form-control" />
+                    <input type="text" ng-model="soeg.text" ng-click="soeg.text = ''" placeholder="Søg i dagens ord" class="form-control" />
                 </div>
                 <div class="col col-20 blue nopadding">
                     <button class="button icon ion-search"></button>

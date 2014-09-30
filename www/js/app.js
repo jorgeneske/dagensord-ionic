@@ -83,10 +83,10 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           views: {
               'menuContent' :{
                   templateUrl: "templates/ord.html",
-                  controller: 'SoegOrdCtrl',
+                  controller: 'SoegTextCtrl',
                   resolve: {
-                      ord: function(getData){
-                          return getData.all(2,1);
+                      ord: function(getData,$stateParams){
+                          return getData.soeg(2,$stateParams.soeg);
                       }
                   }
               }

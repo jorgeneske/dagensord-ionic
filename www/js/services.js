@@ -45,8 +45,8 @@ angular.module('dagensord.services',[])
                     });
                 return deferred.promise;
             },
-            soeg: function (query) {
-                var url = adminurl+"?soeg="+query+"&callback=JSON_CALLBACK";
+            soeg: function (cat,query) {
+                var url = adminurl+"?cat="+cat+"&soeg="+query+"&callback=JSON_CALLBACK";
                 var deferred = $q.defer();
                 $http.jsonp(url, {
                     cache: true

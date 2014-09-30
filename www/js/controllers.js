@@ -120,14 +120,16 @@ angular.module('dagensord.controllers', [])
 
 })
 
-.controller('SoegOrdCtrl', function($scope, getData) {
+.controller('SoegTextCtrl', function($scope, $stateParams, getData) {
     $scope.showload();
 
-    getData.all(2,1).then(
+    getData.soeg(2,encodeURIComponent($stateParams.soeg)).then(
         function(ord) {
             $scope.ord = ord;
             for (i = 0; i < ord.length; ++i) {
-                ord[i]['image'] = '<img src="'+imageurl+ord[i]['image']+'" alt="'+ord[i]['performer']+'" />';
+                if(ord[i]['image']) {
+                    ord[i]['image'] = '<img src="' + imageurl + ord[i]['image'] + '" alt="' + ord[i]['performer'] + '" />';
+                }
             }
             $scope.hideload();
         }
