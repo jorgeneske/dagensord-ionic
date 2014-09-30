@@ -4,9 +4,25 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="salme in salmer" href="#/app/salmer/{{salme.id}}">
-        {{salme.title}}
-      </ion-item>
+        <form ng-submit="sendSoeg('salme')" class="soegsalme">
+            <div class="row nopadding">
+                <div class="col grey">
+                    <input type="text" ng-model="soeg.salme" ng-click="soeg.salme = ''" placeholder="Søg efter salme" class="form-control" />
+                </div>
+                <div class="col col-20 grey nopadding">
+                    <button class="button icon ion-search"></button>
+                </div>
+            </div>
+        </form>
+        <div class="listview">
+            <ion-item ng-repeat="salme in salmer" href="#/app/salmer/{{salme.id}}">
+            <div class="col grey salme">
+                <p>Salme nr: {{salme.nr}}</p>
+                <h2>{{salme.title}}</h2>
+            </div>
+            </ion-item>
+        </div>
+        </div>
     </ion-list>
   </ion-content>
 </ion-view>

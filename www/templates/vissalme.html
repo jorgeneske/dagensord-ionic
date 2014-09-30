@@ -9,9 +9,18 @@
             <ion-item href="#/app/salmer"><img class="logo_small" src="img/LOGO_salmer.png" alt="" /></ion-item>
           </div>
           <div class="col col-offset-1 text-center grey">
-              <button id="playbutton" ng-click="playAudio()"></button>
-              <button id="pausebutton" ng-click="pauseAudio()"></button>
-              <button id="stopbutton" ng-click="stopAudio()"></button>
+              <div class="row">
+                  <div class="col">
+                  <button id="playbutton" ng-click="playAudio()"></button>
+                  <button id="pausebutton" ng-click="pauseAudio()"></button>
+                  <button id="stopbutton" ng-click="stopAudio()"></button>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col light nobackground">
+                      <p class="meta">Salmen synges af:  {{vistsalme.performer}}</p>
+                  </div>
+              </div>
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>

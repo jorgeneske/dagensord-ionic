@@ -98,9 +98,82 @@ img {
     max-width: 100px;
 }
 
-/* Listview */
-.listview {
+/* Listview + søg */
+.soeg,
+.soegsalme {
     margin: 0.3em;
+}
+html .soeg input[type="text"],
+html .soegsalme input[type="text"]{
+    color: #111;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 16px;
+    padding-left: 10px;
+    padding-top: 2px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    border: 2px solid #FFF;
+    border-radius: 0.5em;
+    background: #FFF;
+}
+.soeg .button {
+    min-height: 34px;
+    min-width: 50px;
+    background: #016699;
+    padding: 0;
+    margin: 14px 0 0 2px;
+    font-family: "Ionicons";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    text-transform: none;
+    content: "\f21f";
+    border: 1px solid #99c2d6;
+    border-radius: 0.5em;
+}
+.soeg .button .icon:before, .soeg .button.icon:before, .soeg .button.icon-left:before, .soeg .button.icon-right:before {
+    font-size: 26px;
+    line-height: 30px;
+    padding: 0 0 1px;
+    pointer-events: none;
+    vertical-align: inherit;
+    color: #FFF;
+    opacity: .6;
+}
+.soegsalme .button {
+    min-height: 34px;
+    min-width: 50px;
+    background: #989898;
+    padding: 0;
+    margin: 14px 0 0 2px;
+    font-family: "Ionicons";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    text-transform: none;
+    content: "\f21f";
+    border: 1px solid #d6d6d6;
+    border-radius: 0.5em;
+}
+.soegsalme .button .icon:before, .soegsalme .button.icon:before, .soegsalme .button.icon-left:before, .soegsalme .button.icon-right:before {
+    font-size: 26px;
+    line-height: 30px;
+    padding: 0 0 1px;
+    pointer-events: none;
+    vertical-align: inherit;
+    color: #FFF;
+    opacity: .6;
+}
+.listview {
+    margin: 0 0.3em 0.3em 0.3em;
+    border-left: 1px solid #FFF;
+    border-right: 1px solid #FFF;
 }
 .listview .item {
     border-left: none;
@@ -112,11 +185,37 @@ img {
     background-color: transparent;
     padding: 0;
 }
+.listview p {
+    color: #FFF;
+}
+.listview p.meta {
+    font-style: italic;
+    font-size: 0.8em;
+    padding-bottom: 0.4em;
+}
 .listview h2 {
     color: #FFF;
     font-weight: bold;
+    padding-top: 0.4em;
+    font-size: 0.95em;
 }
-
+.listview img {
+    /*max-width: 100px;*/
+    /*height: auto;*/
+    display: inline;
+    margin-bottom: -4px;
+}
+.listview .salme p {
+    font-size: 0.8em;
+    font-style: italic;
+    line-height: auto;
+    margin: 0 0 0.2em 0;
+}
+.listview .salme h2 {
+    padding-top: 0;
+    font-size: 1em;
+    line-height: 1.1em;
+}
 
 /* Color-classes */
 .black{
@@ -240,6 +339,9 @@ p.dagens span {
 }
 .padding_leftright2 {
     padding: 1em 2em 1em 2em;
+}
+.listpadding {
+    padding: 0 0.5em 0 0.5em;
 }
 .green h2 {
     color: #FFF;

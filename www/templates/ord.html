@@ -2,15 +2,25 @@
   <ion-nav-buttons side="right">
     <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header" on-infinite-scroll="addMoreItem">
+  <ion-content class="has-header">
     <ion-list>
+        <form ng-submit="sendSoeg('text')" class="soeg">
+            <div class="row nopadding">
+                <div class="col blue">
+                    <input type="text" ng-model="soeg.text" ng-click="soeg.text = ''" placeholder="Søg i dagens ord" class="form-control" />
+                </div>
+                <div class="col col-20 blue nopadding">
+                    <button class="button icon ion-search"></button>
+                </div>
+            </div>
+        </form>
         <div class="listview">
           <ion-item ng-repeat="item in ord" href="#/app/ord/{{item.id}}">
               <div class="row nopadding">
-                  <div class="col col-25 green nopadding">
-
+                  <div class="col col-25 blue nopadding">
+                      <div ng-bind-html="item.image"></div>
                   </div>
-                  <div class="col blue nopadding">
+                  <div class="col blue listpadding">
                       <h2>{{item.title}}</h2>
                       <p class="meta">{{item.performer}}</p>
                   </div>

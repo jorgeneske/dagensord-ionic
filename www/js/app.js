@@ -78,6 +78,20 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
               }
           }
       })
+      .state('app.soegtext', {
+          url: "/soegtext/:soeg",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/ord.html",
+                  controller: 'SoegTextCtrl',
+                  resolve: {
+                      ord: function(getData,$stateParams){
+                          return getData.soeg(2,$stateParams.soeg);
+                      }
+                  }
+              }
+          }
+      })
       .state('app.boenner', {
           url: "/boenner",
           views: {
@@ -105,6 +119,20 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   resolve: {
                       boen: function(getData,$stateParams){
                           return getData.get($stateParams.boenId);
+                      }
+                  }
+              }
+          }
+      })
+      .state('app.soegsalme', {
+          url: "/soegsalme/:soeg",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/salmer.html",
+                  controller: 'SoegSalmeCtrl',
+                  resolve: {
+                      salmer: function(getData,$stateParams){
+                          return getData.soeg(1,$stateParams.soeg);
                       }
                   }
               }
