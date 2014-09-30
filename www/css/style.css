@@ -198,6 +198,7 @@ html .soegsalme input[type="text"]{
     font-weight: bold;
     padding-top: 0.4em;
     font-size: 0.95em;
+    line-height: 1.3em;
 }
 .listview img {
     /*max-width: 100px;*/
@@ -213,8 +214,8 @@ html .soegsalme input[type="text"]{
 }
 .listview .salme h2 {
     padding-top: 0;
-    font-size: 1.1em;
-    line-height: 1.5em;
+    font-size: 0.95em;
+    line-height: 1.3em;
 }
 
 /* Color-classes */
