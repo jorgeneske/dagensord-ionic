@@ -209,9 +209,12 @@ html .soegsalme input[type="text"]{
     font-size: 0.8em;
     font-style: italic;
     line-height: auto;
+    margin: 0 0 0.2em 0;
 }
 .listview .salme h2 {
     padding-top: 0;
+    font-size: 1em;
+    line-height: 1.1em;
 }
 
 /* Color-classes */
