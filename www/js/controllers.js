@@ -1,5 +1,5 @@
 angular.module('dagensord.controllers', [])
-.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout, $ionicLoading,$ionicSlideBoxDelegate, getData) {
+.controller('MainCtrl', function($scope, $ionicModal, $http, $timeout, $ionicLoading,$ionicSlideBoxDelegate, getData, $ionicPlatform) {
 
     $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
 
@@ -32,7 +32,6 @@ angular.module('dagensord.controllers', [])
         };
 
         $scope.sendFormular = function() {
-            //console.log('Sender', $scope.formularData);
             var postUrl = adminurl + "getboen.php";
             console.log(postUrl);
             $http({
@@ -137,7 +136,15 @@ angular.module('dagensord.controllers', [])
 
 })
 
-.controller('VisOrdCtrl', function($scope, $stateParams, dagensord, $sce) {
+.controller('VisOrdCtrl', function($scope, $stateParams, dagensord, $sce, $ionicPlatform) {
+        //$ionicPlatform.ready(function() {
+        //    if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
+        //        var share = document.getElementById("share");
+        //        var webshare = document.getElementById("webshare");
+        //        share.style.display = "none";
+        //        webshare.style.display = "inline";
+        //    }
+        //});
     $scope.vistord = dagensord[0];
         var imagename;
         if ($scope.vistord['image']) {
@@ -226,13 +233,13 @@ angular.module('dagensord.controllers', [])
         clearInterval(mediaTimer);
         mediaTimer = null;
     }
-        $ionicPlatform.ready(function() {
-            if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
-                var share = document.getElementById("share");
-                var webshare = document.getElementById("webshare");
-                share.style.display = "none";
-                webshare.style.display = "inline";
-            }
-        });
+        //$ionicPlatform.ready(function() {
+        //    if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
+        //        var share = document.getElementById("share");
+        //        var webshare = document.getElementById("webshare");
+        //        share.style.display = "none";
+        //        webshare.style.display = "inline";
+        //    }
+        //});
 
 });
