@@ -124,6 +124,14 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
               }
           }
       })
+      .state('app.boenok', {
+          url: "/ok",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/boenmodtaget.html",
+              }
+          }
+      })
       .state('app.soegsalme', {
           url: "/soegsalme/:soeg",
           views: {

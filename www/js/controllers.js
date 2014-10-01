@@ -57,6 +57,8 @@ angular.module('dagensord.controllers', [])
                     //    $scope.closeFormular();
                     //}, 1000);
                     $scope.closeFormular();
+                    cordova.plugins.Keyboard.close();
+                    location.href="#/app/ok";
                 })
                 .error(function(data, status, headers, config) {
                     alert("Der er desværre gået noget galt - prøv igen");

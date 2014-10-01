@@ -267,6 +267,20 @@ html .soegsalme input[type="text"]{
     border-radius: 1em;
     text-align: center;
 }
+.lightgreen {
+    background: #659940;
+    border: 2px solid #659940;
+    border-radius: 1em;
+    text-align: center;
+    min-height: 367px;
+}
+.lightgreen p {
+    white-space: pre-wrap;
+    font-size: 1.15em;
+    line-height: 1.4em;
+    word-wrap: normal;
+    color: #FFF;
+}
 .light p {
     white-space: pre-wrap;
     font-size: 1.15em;
