@@ -213,10 +213,10 @@ html .soegsalme input[type="text"]{
 }
 .listview .salme h2 {
     padding-top: 0;
-    font-size: 1em;
-    line-height: 1.1em;
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 1.5em;
 }
-
 /* Color-classes */
 .black{
     background: #000000;
