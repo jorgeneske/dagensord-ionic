@@ -59,7 +59,9 @@ angular.module('dagensord.services',[])
                         deferred.reject();
                     });
                 return deferred.promise;
-            }
+            },
+            salmer : [], // Array til at holde salmer til listen
+            moreSalmerInDB:true // Sættes til 'false' når alle salmer fra databasen er hentet i listen
         };
     })
     .factory('MediaSrv', function($q, $ionicPlatform, $window){

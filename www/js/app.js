@@ -18,7 +18,6 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
       StatusBar.styleDefault();
     }
 
-
   });
 })
 
@@ -146,7 +145,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   controller: 'SalmerCtrl',
                   resolve: {
                       salmer: function(getData){
-                          return getData.all(1);
+                          return getData.all(1, 20);
                       }
                   }
               }

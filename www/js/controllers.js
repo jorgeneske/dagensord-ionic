@@ -26,6 +26,7 @@ angular.module('dagensord.controllers', [])
         $scope.hideload = function(){
             $ionicLoading.hide();
         };
+
         $scope.formularData = {};
 
         $ionicModal.fromTemplateUrl('templates/overlay.html', {
@@ -275,14 +276,39 @@ angular.module('dagensord.controllers', [])
 
     })
 
-.controller('SalmerCtrl', function($scope, getData) {
-        $scope.showload();
-        getData.all(1).then(
-            function(salmer) {
-                $scope.salmer = salmer;
-                $scope.hideload();
+.controller('SalmerCtrl', function ($scope, getData) {
+
+        $scope.moreSalmer = true;
+
+        // Salme liste view  fodres med data fra globale variabler
+        $scope.salmer = getData.salmer;
+        $scope.moreSalmer = getData.moreSalmerInDB;
+
+
+    $scope.loadMoreSalmer = function () {
+
+        var loadString;
+        if (getData.salmer.length < 1) {
+            loadString = '20';
+        } else {
+            loadString = '' + (getData.salmer.length + 1) + ',20';
+        }
+        getData.all(1, loadString).then(
+            function (salmer) {
+                if(salmer.length > 0 && !salmer[0].emptyfield){
+                    // Hvis der er mindst ét ordentligt item i DB
+                    getData.salmer = getData.salmer.concat(salmer);
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+
+                    $scope.salmer = getData.salmer;
+                }else{
+                    // Hvis der kommer 0 items tilbage eller 1 item med emptyfield = true;
+                    $scope.moreSalmer = getData.moreSalmerInDB = false;
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                }
             }
         )
+    }
 })
 
 .controller('SoegSalmeCtrl', function($scope, $stateParams, getData) {
@@ -294,7 +320,6 @@ angular.module('dagensord.controllers', [])
             $scope.hideload();
         }
     )
-
 })
 
 .controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv, $ionicPlatform) {

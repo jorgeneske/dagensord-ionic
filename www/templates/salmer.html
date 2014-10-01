@@ -24,5 +24,9 @@
         </div>
         </div>
     </ion-list>
+    <ion-infinite-scroll ng-if="moreSalmer"
+          on-infinite="loadMoreSalmer()"
+          distance="1%">
+    </ion-infinite-scroll>
   </ion-content>
 </ion-view>
