@@ -16,18 +16,16 @@
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
           <div class="col green padding_leftright2">
-            <ion-slide-box show-pager="false" on-slide-changed="boenneSlideChange($index)">
-                <ion-slide class=" col greenbean col-center text-center" ng-repeat="bon in boenner">
-                    <p>{{bon.text}}</p>
-                </ion-slide>
-            </ion-slide-box>
-<!--
-              <div class="row">
-                  <div class="col greenbean col-center text-center">
-                      <p>Herren gir, herren tar'<br/>Herren er en guitar</p>
-                  </div>
+              <div style="width: 10%; !important padding: 0;">1</div>
+              <div style="width: 50%; !important padding: 0;">
+              <ion-slide-box show-pager="false" on-slide-changed="boenneSlideChange($index)">
+                  <ion-slide class="greenbean" ng-repeat="bon in boenner">
+                      <p>{{bon.text}}</p>
+                  </ion-slide>
+              </ion-slide-box>
               </div>
--->
+              <div style="width: 10%; !important padding: 0;">2</div>
+              </div>
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
