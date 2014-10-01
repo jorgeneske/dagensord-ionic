@@ -89,7 +89,7 @@ angular.module('dagensord.controllers', [])
 
 
         if(!$scope.boenner){ // Hvis der ikke er hentet bønner endnu:
-            console.log('load first boenner');
+            //console.log('load first boenner');
             getData.all(3, $scope.boennerHandler.loadAmount).then(
                 function(loadBoenner){
                     $scope.boenner = loadBoenner;
@@ -98,17 +98,26 @@ angular.module('dagensord.controllers', [])
             );
         }
 
+        $scope.boenneGoRight = function(){
+            //console.log('boenne go right');
+            $ionicSlideBoxDelegate.next();
+        }
+        $scope.boenneGoLeft = function(){
+            //console.log('boenne go left');
+            $ionicSlideBoxDelegate.previous();
+        }
+
         $scope.boenneSlideChange = function(i){ // Hver gang der blades i bønne slider:
             if($scope.boennerHandler.onChangeUpdate){
                 // 'onChangeUpdate' sættes til 'false' når man skifter plads i slider efter af have smidt bønner ud så denne funktion kun køres ved swipes
-                console.log('slide change', i);
+                //console.log('slide change', i);
                 var current = i;
                 var end = $ionicSlideBoxDelegate.slidesCount()-$scope.boennerHandler.preloadSlide;
 
                 $scope.boennerHandler.currentBoen = $scope.boennerHandler.startIndex + current;
 
                 if(current == end){ // Så er vi på vej opad
-                    console.log('this is the end', current);
+                    //console.log('this is the end', current);
                     $scope.showload();
                     var loadString = ''+($scope.boennerHandler.currentBoen+$scope.boennerHandler.preloadSlide)+','+$scope.boennerHandler.loadAmount;
                     console.log(loadString);
@@ -128,7 +137,7 @@ angular.module('dagensord.controllers', [])
                     )
                 }
                 if(current == 0){ // så er vi på vej nedad
-                    console.log('this is the beginning', $scope.boennerHandler.startIndex);
+                    //console.log('this is the beginning', $scope.boennerHandler.startIndex);
                     if($scope.boennerHandler.startIndex > 0){
                         $scope.showload();
                         var loadString;
@@ -141,7 +150,7 @@ angular.module('dagensord.controllers', [])
 
                         getData.all(3, loadString).then(
                             function(newboenner) {
-                                console.log(newboenner);
+                                //console.log(newboenner);
 
                                 $scope.hideload();
                                 //var tempArray = newboenner.concat($scope.boenner);
@@ -158,7 +167,7 @@ angular.module('dagensord.controllers', [])
 
                 var throwOut = function(start, upwards){ // Til at smide bønner ud
 
-                    console.log('throw out', start)
+                    //console.log('throw out', start)
                     if(upwards){ // så er vi på vej opad
                         $scope.boenner.splice(0, $scope.boennerHandler.loadAmount);
                     }else{ // Så er vi på vej nedad
