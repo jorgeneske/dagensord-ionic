@@ -28,5 +28,10 @@
           </ion-item>
         </div>
     </ion-list>
+      <ion-infinite-scroll ng-if="moreOrd"
+                           on-infinite="loadMoreOrd()"
+                           distance="1%">
+      </ion-infinite-scroll>
+
   </ion-content>
 </ion-view>

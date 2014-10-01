@@ -193,6 +193,45 @@ angular.module('dagensord.controllers', [])
 //})
 
 .controller('OrdCtrl', function($scope, getData) {
+        $scope.moreOrd = true;
+
+        // Dagens Ord liste view  fodres med data fra globale variabler
+        $scope.ord = getData.ord;
+        $scope.moreOrd = getData.moreOrdInDB;
+
+
+        $scope.loadMoreOrd = function () {
+
+            var loadString;
+            if (getData.ord.length < 1) {
+                loadString = '20';
+            } else {
+                loadString = '' + (getData.ord.length + 1) + ',20';
+            }
+            getData.all(2, loadString).then(
+                function (ord) {
+
+                    if(ord.length > 0 && !ord[0].emptyfield){
+                        // Billed fil navn sættes ind i et ordentligt billed tag:
+                        for (var i = 0; i < ord.length; ++i) {
+                            ord[i]['image'] = '<img src="'+imageurl+ord[i]['image']+'" alt="'+ord[i]['performer']+'" />';
+                        }
+
+                        // Hvis der er mindst ét ordentligt item i DB
+                        getData.ord = getData.ord.concat(ord);
+                        $scope.$broadcast('scroll.infiniteScrollComplete');
+
+                        $scope.ord = getData.ord;
+                    }else{
+                        // Hvis der kommer 0 items tilbage eller 1 item med emptyfield = true;
+                        $scope.moreOrd = getData.moreOrdInDB = false;
+                        $scope.$broadcast('scroll.infiniteScrollComplete');
+                    }
+                }
+            )
+        }
+
+/*
     $scope.showload();
 
     getData.all(2).then(
@@ -204,6 +243,9 @@ angular.module('dagensord.controllers', [])
             $scope.hideload();
         }
     )
+
+*/
+
 
 })
 
