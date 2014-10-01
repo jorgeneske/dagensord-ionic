@@ -9,25 +9,14 @@
           </div>
           <div class="col col-offset-1 text-center col-center green">
               <ion-item ng-click="formular()">
-                  <h2>Skriv en bøn</h2>
+                  <h2>Skriv en ny bøn</h2>
               </ion-item>
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
-          <div class="col green padding_leftright2">
-            <ion-slide-box show-pager="false" on-slide-changed="boenneSlideChange($index)">
-                <ion-slide class=" col greenbean col-center text-center" ng-repeat="bon in boenner">
-                    <p>{{bon.text}}</p>
-                </ion-slide>
-            </ion-slide-box>
-<!--
-              <div class="row">
-                  <div class="col greenbean col-center text-center">
-                      <p>Herren gir, herren tar'<br/>Herren er en guitar</p>
-                  </div>
-              </div>
--->
+          <div class="col green padding_leftright2 lightgreen">
+            <p>Vi har modtaget din bøn, og efter godkendelse vil den være synlig her.</p>
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
@@ -36,8 +25,7 @@
 
           </div>
           <div class="col col-40 col-offset-1 green">
-              <!--<ion-item href="#/app/boenner" class="search"><h3>Alle bønner</h3></ion-item>-->
-              <h3 class="search">&nbsp;</h3>
+              <ion-item href="#/app/boenner" class="search"><h3>Se bønner</h3></ion-item>
           </div>
       </div>
 

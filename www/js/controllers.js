@@ -52,13 +52,18 @@ angular.module('dagensord.controllers', [])
                 data    : $scope.formularData,//'[{ title: "test"}]',
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
             })
-                .success(function(data) {
-                    console.log(data);
+                .success(function() {
+                    //console.log(data);
+                    //$timeout(function() {
+                    //    $scope.closeFormular();
+                    //}, 1000);
+                    $scope.closeFormular();
+                    cordova.plugins.Keyboard.close();
+                    location.href="#/app/ok";
+                })
+                .error(function(data, status, headers, config) {
+                    alert("Der er desværre gået noget galt - prøv igen");
                 });
-
-            $timeout(function() {
-                $scope.closeFormular();
-            }, 1000);
         };
 
         $scope.soeg = {};
