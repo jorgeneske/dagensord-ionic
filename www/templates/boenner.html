@@ -23,6 +23,9 @@
                       <p>{{bon.text}}</p>
                   </ion-slide>
               </ion-slide-box>
+              </div>
+              <div style="width: 10%; !important padding: 0;">2</div>
+              </div>
           </div>
           <div class="col col-10 yellow"><ion-item ng-click="">2</ion-item></div>
               <!--</div>-->
@@ -30,10 +33,11 @@
       </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
-          <div class="col green">
+          <div class="col green" ng-click="boenneGoLeft()">
 
           </div>
-          <div class="col col-40 col-offset-1 green">
+          <div class="col col-40 col-offset-1 green" ng-click="boenneGoRight()">
+              <!--<ion-item href="#/app/boenner" class="search"><h3>Alle bønner</h3></ion-item>-->
               <h3 class="search">&nbsp;</h3>
           </div>
       </div>
