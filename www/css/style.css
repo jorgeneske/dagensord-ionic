@@ -365,10 +365,11 @@ p.dagens span {
     padding-top: 0.3em;
 }
 .greenbean {
-    background: #659940 url("../img/skriveboble.png") center no-repeat;
-    background-size: 100% 100%;
-    height: 285px;
-    width: 300px;
+    /*background: #659940 url("../img/skriveboble.png") center no-repeat;*/
+    /*background-size: 100% 100%;*/
+    background: #CE0000;
+    /*height: 285px;*/
+    /*width: 300px;*/
     padding: 3em;
 }
 .greenbean p {

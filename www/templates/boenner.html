@@ -15,17 +15,17 @@
       </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
-          <div class="col green padding_leftright2">
-              <div style="width: 10%; !important padding: 0;">1</div>
-              <div style="width: 50%; !important padding: 0;">
-              <ion-slide-box show-pager="false" on-slide-changed="boenneSlideChange($index)">
+          <!--<div class="col green padding_leftright2">-->
+          <div class="col col-10 yellow"><ion-item ng-click="">1</ion-item></div>
+          <div class="col">
+              <ion-slide-box style="max-width: 300px;" show-pager="false" on-slide-changed="boenneSlideChange($index)">
                   <ion-slide class="greenbean" ng-repeat="bon in boenner">
                       <p>{{bon.text}}</p>
                   </ion-slide>
               </ion-slide-box>
-              </div>
-              <div style="width: 10%; !important padding: 0;">2</div>
-              </div>
+          </div>
+          <div class="col col-10 yellow"><ion-item ng-click="">2</ion-item></div>
+              <!--</div>-->
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
