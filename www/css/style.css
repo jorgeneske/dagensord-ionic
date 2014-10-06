@@ -383,9 +383,9 @@ p.dagens span {
     max-width: 310px;
 }
 .beantext {
-    width: 200px;
-    height: 200px;
-    /*background: #CCC;*/
+    width: 180px;
+    height: 180px;
+    background: #CCC;
     margin-left: 30px;
     margin-top: 55px;
 }
