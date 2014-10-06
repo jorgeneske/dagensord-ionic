@@ -395,7 +395,8 @@ p.dagens span {
 }
 #prev_yellow,
 #next_yellow {
-    /*min-height: 300px;*/
+    min-height: 300px;
+    height: auto;
 }
 #prev {
     background: #659940 url("../img/prev.jpg") center no-repeat;
