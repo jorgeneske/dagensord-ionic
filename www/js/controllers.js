@@ -87,7 +87,6 @@ angular.module('dagensord.controllers', [])
 
 .controller('BoennerCtrl', function($scope, $ionicSlideBoxDelegate, getData) {
 
-        alert (window.screen.Width+" - "+window.screen.Height);
         if(!$scope.boenner){ // Hvis der ikke er hentet bønner endnu:
             //console.log('load first boenner');
             getData.all(3, $scope.boennerHandler.loadAmount).then(
