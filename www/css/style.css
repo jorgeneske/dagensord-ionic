@@ -380,6 +380,9 @@ p.dagens span {
     color: #FFFFFF;
     padding-top: 2em;
 }
+.beanslider {
+    max-width: 310px;
+}
 
 /* Share */
 #share {
