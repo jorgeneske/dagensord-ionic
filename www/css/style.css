@@ -365,12 +365,11 @@ p.dagens span {
     padding-top: 0.3em;
 }
 .greenbean {
-    /*background: #659940 url("../img/skriveboble.png") center no-repeat;*/
-    /*background-size: 100% 100%;*/
-    background: #CE0000;
-    /*height: 285px;*/
-    /*width: 300px;*/
-    padding: 3em;
+    height: 300px;
+    width: 310px;
+    background: #659940 url("../img/skriveboble.png") center no-repeat;
+    background-size: 100%;
+    /*padding: 3em 0 3em 0;*/
 }
 .greenbean p {
     white-space: pre-wrap;
@@ -378,10 +377,29 @@ p.dagens span {
     line-height: 1.4em;
     word-wrap: normal;
     color: #FFFFFF;
-    padding-top: 2em;
+    padding-top: 1em;
 }
 .beanslider {
     max-width: 310px;
+}
+.beantext {
+    width: 220px;
+    height: 220px;
+    /*background: #CCC;*/
+    margin-left: 30px;
+    margin-top: 55px;
+}
+.prev,
+.next {
+    height: 300px;
+}
+.prev {
+    background: #659940 url("../img/prev.jpg") center no-repeat;
+    background-size: 60%;
+}
+.next {
+    background: #659940 url("../img/next.jpg") center no-repeat;
+    background-size: 60%;
 }
 
 /* Share */

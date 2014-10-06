@@ -14,17 +14,19 @@
           </div>
       </div>
       <div class="row"><div class="spacer"></div></div>
-      <!--<div class="row">-->
-          <!--<div class="col col-10 yellow col-center text-center" ng-click="boenneGoLeft()">b</div>-->
-          <!--<div class="col green text-center">-->
-              <!--<ion-slide-box class="beanslider" show-pager="false" on-slide-changed="boenneSlideChange($index)">-->
-                  <!--<ion-slide class="greenbean" ng-repeat="bon in boenner">-->
-                      <!--<p>{{bon.text}}</p>-->
-                  <!--</ion-slide>-->
-              <!--</ion-slide-box>-->
-          <!--</div>-->
-          <!--<div class="col col-10 yellow col-center text-center"  ng-click="boenneGoRight()">f</div>-->
-      <!--</div>-->
+      <div class="row">
+          <div class="col col-10 green col-center text-center prev" ng-click="boenneGoLeft()"></div>
+          <div class="col green text-center nopadding text-center col-center">
+              <ion-slide-box class="beanslider" show-pager="false" on-slide-changed="boenneSlideChange($index)">
+                  <ion-slide class="greenbean" ng-repeat="bon in boenner">
+                      <div class="beantext">
+                      <p>{{bon.text}}</p>
+                      </div>
+                  </ion-slide>
+              </ion-slide-box>
+          </div>
+          <div class="col col-10 green col-center text-center next"  ng-click="boenneGoRight()"></div>
+      </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
           <div class="col green">
