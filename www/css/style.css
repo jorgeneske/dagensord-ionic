@@ -317,7 +317,7 @@ img.logo {
     width: auto;
 }
 img.logo_small {
-    max-height: 55px;
+    max-height: 60px;
     width: auto;
 }
 img.logo.more {
@@ -373,8 +373,8 @@ p.dagens span {
 }
 .greenbean p {
     white-space: pre-wrap;
-    font-size: 1.15em;
-    line-height: 1.4em;
+    font-size: 1.05em;
+    line-height: 1.2em;
     word-wrap: normal;
     color: #FFFFFF;
     padding-top: 1em;
@@ -385,8 +385,7 @@ p.dagens span {
 .beantext {
     width: 180px;
     height: 180px;
-    background: #CCC;
-    margin-left: 30px;
+    margin-left: 40px;
     margin-top: 55px;
 }
 .prev,
@@ -469,8 +468,12 @@ p.dagens span {
 
 @media (min-width: 480px) {
     img.logo_small {
-        max-height: 55px;
+        max-height: 65px;
         width: auto;
+    }
+    .greenbean p {
+        font-size: 1.15em;
+        line-height: 1.4em;
     }
     .beantext {
         width: 220px;
