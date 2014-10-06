@@ -393,6 +393,10 @@ p.dagens span {
 #next {
     height: 300px;
 }
+#prev_yellow,
+#next_yellow {
+    /*min-height: 300px;*/
+}
 #prev {
     background: #659940 url("../img/prev.jpg") center no-repeat;
     background-size: 60%;
@@ -400,6 +404,36 @@ p.dagens span {
 #next {
     background: #659940 url("../img/next.jpg") center no-repeat;
     background-size: 60%;
+}
+#prev_yellow {
+    background: #ffcd0a url("../img/prev_yellow.jpg") center no-repeat;
+    background-size: 60%;
+}
+#next_yellow {
+    background: #ffcd0a url("../img/next_yellow.jpg") center no-repeat;
+    background-size: 60%;
+}
+.meretxt {
+    margin: 0.5em 0.5em 1em 0.5em;
+    padding: 0.5em;
+    border: 2px solid #FFF;
+    border-radius: 0.5em;
+    background: #FFF;
+    min-height: 400px;
+}
+.mere {
+    /*min-height: 300px;*/
+}
+.mere h2 {
+    color: #FFF;
+    padding: 0.5em 0 0 0;
+}
+.mere p {
+    white-space: pre-wrap;
+    font-size: 1em;
+    line-height: 1.2em;
+    word-wrap: normal;
+    color: #231f20;
 }
 
 /* Share */

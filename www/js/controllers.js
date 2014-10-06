@@ -14,6 +14,17 @@ angular.module('dagensord.controllers', [])
 
         }
 
+        $scope.mereHandler = {
+            // Variabler til at styre load og unload af mere
+            maxLength:3, // Hvor mange må der ligge i slideren
+            startIndex:0, // Styrer hvor man er i backenden
+            loadAmount:3, // Hvor mange hentes ad gangnen, når man når til vejs ende (og hvor mange smides ud i den anden ende)
+            preloadSlide:2, // Hvor mange slides før enden kaldes de nye (1 = sidste slide // 2 = sliden før osv.) OBS: Gælder kun opad
+            currentMere:0, // Holder styr på hvor vi er i samlede liste
+            onChangeUpdate:true // Sættes til 'false' hvis der skal skiftes plads i slideren når der smides bønner ud
+
+        }
+
         $scope.showload = function() {
             $ionicLoading.show({
                 content: 'Loading Data',
@@ -192,13 +203,6 @@ angular.module('dagensord.controllers', [])
 
 })
 
-.controller('VisBoenCtrl', function($scope, $stateParams, boen) {
-    $scope.vistboen = boen[0];
-})
-
-//.controller('OrdCtrl', function($scope, ord) {
-//        $scope.ord = ord;
-//})
 
 .controller('OrdCtrl', function($scope, getData) {
         $scope.moreOrd = true;
@@ -420,4 +424,27 @@ angular.module('dagensord.controllers', [])
         //    }
         //});
 
-});
+})
+
+
+.controller('MereCtrl', function($scope, $ionicSlideBoxDelegate, getData) {
+
+    if(!$scope.mere){ // Hvis der ikke er hentet endnu:
+        getData.all(4, $scope.mereHandler.loadAmount).then(
+            function(loadMere){
+                $scope.mere = loadMere;
+                $ionicSlideBoxDelegate.update();
+            }
+        );
+    }
+
+    $scope.mereGoRight = function(){
+        $ionicSlideBoxDelegate.next();
+    }
+    $scope.mereGoLeft = function(){
+        $ionicSlideBoxDelegate.previous();
+    }
+
+
+
+})

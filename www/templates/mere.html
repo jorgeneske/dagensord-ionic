@@ -1,0 +1,48 @@
+<ion-view>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+      <div class="row">
+          <div class="col col-25 yellow">
+              <ion-item href="#/app/mere"><img class="logo_small" src="img/LOGO_mere.png" alt="" /></ion-item>
+          </div>
+          <div class="col col-offset-1 text-center yellow">
+
+          </div>
+      </div>
+      <div class="row"><div class="spacer"></div></div>
+      <div class="row">
+          <div class="col col-10 yellow col-center text-center" id="prev_yellow" ng-click="mereGoLeft()"></div>
+          <div class="col yellow text-center nopadding">
+              <ion-slide-box class="beanslider" show-pager="false">
+                  <ion-slide ng-repeat="mer in mere">
+                      <div class="mere">
+                      <h2>{{mer.title}}</h2>
+                      <div class="meretxt">
+                        <p>{{mer.text}}</p>
+                      </div>
+                      </div>
+                  </ion-slide>
+              </ion-slide-box>
+          </div>
+          <div class="col col-10 yellow col-center text-center"  id="next_yellow" ng-click="mereGoRight()"></div>
+      </div>
+      <div class="row"><div class="spacer"></div></div>
+      <div class="row">
+          <div class="col yellow minheight">
+          </div>
+          <div class="col col-40 col-offset-1 yellow">
+              <h3 class="search">&nbsp;</h3>
+          </div>
+      </div>
+
+
+
+  </ion-content>
+    <ion-footer-bar align-title="left" class="bar-positive">
+
+    </ion-footer-bar>
+</ion-view>
+
+
