@@ -387,7 +387,6 @@ p.dagens span {
     height: 180px;
     margin-left: 35px;
     margin-top: 60px;
-    background: #CCC;
 }
 .prev,
 .next {
@@ -467,7 +466,7 @@ p.dagens span {
 }
 
 
-@media (min-width: 480px) {
+@media (min-width: 321px) {
     img.logo_small {
         max-height: 65px;
         width: auto;
@@ -479,7 +478,7 @@ p.dagens span {
     .beantext {
         width: 220px;
         height: 220px;
-        /*background: #CCC;*/
+        background: #CCC;
         margin-left: 30px;
         margin-top: 55px;
     }
