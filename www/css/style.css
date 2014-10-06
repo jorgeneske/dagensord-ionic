@@ -475,27 +475,27 @@ p.dagens span {
 
 /* Audio play */
 #playbutton {
-    background: transparent url("../img/play.png");
-    background-size: 50px 50px;
-    width: 50px;
-    height: 50px;
+    background: transparent url("../img/playknap_stor.png");
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
     border: none;
     margin: 0 30px 0 0;
 }
 #pausebutton {
-    background: transparent url("../img/pause.png");
-    background-size: 50px 50px;
-    width: 50px;
-    height: 50px;
+    background: transparent url("../img/pause_ikon.png");
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
     border: none;
     margin: 0 30px 0 0;
     display: none;
 }
 #stopbutton {
-    background: transparent url("../img/stop.png");
-    background-size: 50px 50px;
-    width: 50px;
-    height: 50px;
+    background: transparent url("../img/stop_ikon.png");
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
     border: none;
     margin: 0;
     display: none;
