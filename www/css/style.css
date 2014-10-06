@@ -387,16 +387,17 @@ p.dagens span {
     height: 180px;
     margin-left: 33px;
     margin-top: 70px;
+    overflow: hidden;
 }
-.prev,
-.next {
+#prev,
+#next {
     height: 300px;
 }
-.prev {
+#prev {
     background: #659940 url("../img/prev.jpg") center no-repeat;
     background-size: 60%;
 }
-.next {
+#next {
     background: #659940 url("../img/next.jpg") center no-repeat;
     background-size: 60%;
 }
@@ -478,9 +479,11 @@ p.dagens span {
     .beantext {
         width: 220px;
         height: 220px;
-        background: #CCC;
         margin-left: 30px;
         margin-top: 55px;
+    }
+    .minheight {
+        min-height: 115px;
     }
 }
 @media (min-width: 567px) {

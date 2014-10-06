@@ -15,7 +15,7 @@
       </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
-          <div class="col col-10 green col-center text-center prev" ng-click="boenneGoLeft()"></div>
+          <div class="col col-10 green col-center text-center" id="prev" ng-click="boenneGoLeft()"></div>
           <div class="col green text-center nopadding text-center col-center">
               <ion-slide-box class="beanslider" show-pager="false" on-slide-changed="boenneSlideChange($index)">
                   <ion-slide class="greenbean" ng-repeat="bon in boenner">
@@ -25,11 +25,11 @@
                   </ion-slide>
               </ion-slide-box>
           </div>
-          <div class="col col-10 green col-center text-center next"  ng-click="boenneGoRight()"></div>
+          <div class="col col-10 green col-center text-center"  id="next" ng-click="boenneGoRight()"></div>
       </div>
       <div class="row"><div class="spacer"></div></div>
       <div class="row">
-          <div class="col green">
+          <div class="col green minheight">
           </div>
           <div class="col col-40 col-offset-1 green">
               <h3 class="search">&nbsp;</h3>
