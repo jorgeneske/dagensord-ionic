@@ -453,11 +453,6 @@ textarea {
     padding: 1em;
     -webkit-appearance: none;
 }
-button.green {
-    color: #FFF;
-}
-
-
 
 /* Share */
 #share {
@@ -542,6 +537,8 @@ button.green {
     .minheight {
         min-height: 115px;
     }
+}
+@media (min-height: 639px) {
     .bottomfill {
         display: block;
         min-height: 78px;
