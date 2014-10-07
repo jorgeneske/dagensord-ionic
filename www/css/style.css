@@ -518,7 +518,11 @@ textarea {
     display: none;
 }
 
-
+@media (max-height: 461px) {
+    .bottomfill {
+        display: none;
+    }
+}
 @media (min-width: 321px) {
     img.logo_small {
         max-height: 65px;
