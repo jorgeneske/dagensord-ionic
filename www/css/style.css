@@ -520,7 +520,7 @@ textarea {
 .bottomfill {
     display: none;
 }
-@media (min-height: 600px ){
+@media (min-height: 540px ){
     .bottomfill {
         display: block;
     }
