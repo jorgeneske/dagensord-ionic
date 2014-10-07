@@ -427,24 +427,22 @@ angular.module('dagensord.controllers', [])
 })
 
 
-.controller('MereCtrl', function($scope, $ionicSlideBoxDelegate, getData) {
+.controller('MereCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, getData) {
 
     if(!$scope.mere){ // Hvis der ikke er hentet endnu:
         getData.all(4, $scope.mereHandler.loadAmount).then(
             function(loadMere){
                 $scope.mere = loadMere;
                 $ionicSlideBoxDelegate.update();
+                //$ionicSlideBoxDelegate.slide(1,1);
             }
         );
     }
-
+        $scope.myActiveSlide = $stateParams.slide;
     $scope.mereGoRight = function(){
         $ionicSlideBoxDelegate.next();
     }
     $scope.mereGoLeft = function(){
         $ionicSlideBoxDelegate.previous();
     }
-
-
-
 })

@@ -132,7 +132,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           }
       })
       .state('app.mere', {
-          url: "/mere",
+          url: "/mere/:slide",
           views: {
               'menuContent' :{
                   templateUrl: "templates/mere.html",
