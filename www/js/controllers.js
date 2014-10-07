@@ -435,6 +435,7 @@ angular.module('dagensord.controllers', [])
             function(loadMere){
                 $scope.mere = loadMere;
                 $ionicSlideBoxDelegate.update();
+                console.log($scope.mere);
             }
         );
     }

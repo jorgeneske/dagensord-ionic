@@ -37,7 +37,11 @@
     max-width: 107px;
 }
 .spacer {
-    min-height: 0.3em;}
+    min-height: 0.3em;
+}
+.bottomfill {
+    display: none;
+}
 img {
     width: 100%;
     border: none;
@@ -453,6 +457,8 @@ button.green {
     color: #FFF;
 }
 
+
+
 /* Share */
 #share {
     width: 100%;
@@ -535,6 +541,11 @@ button.green {
     }
     .minheight {
         min-height: 115px;
+    }
+    .bottomfill {
+        display: block;
+        min-height: 78px;
+        margin-top: -2px;
     }
 }
 @media (min-width: 567px) {
