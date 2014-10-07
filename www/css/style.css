@@ -447,6 +447,7 @@ textarea {
     border: 1px solid #CCC;
     border-radius: 0.5em;
     padding: 1em;
+    -webkit-appearance: none;
 }
 button.green {
     color: #FFF;
