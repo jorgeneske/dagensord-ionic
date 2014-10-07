@@ -517,10 +517,12 @@ textarea {
     margin: 0;
     display: none;
 }
-
-@media (max-height: 461px) {
+.bottomfill {
+    display: none;
+}
+@media (min-device-height: 461px) {
     .bottomfill {
-        display: none;
+        display: block;
     }
 }
 @media (min-width: 321px) {
