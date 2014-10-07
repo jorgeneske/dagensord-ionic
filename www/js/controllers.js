@@ -90,6 +90,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
+        alert(window.screen.availHeight+" - "+window.screen.availWidth)
     $scope.dagenssalme = dagenssalme[0];
     $scope.dagenstext = dagenstext[0];
     if ($scope.dagenstext['image']) {

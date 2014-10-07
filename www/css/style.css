@@ -40,7 +40,7 @@
     min-height: 0.3em;
 }
 .bottomfill {
-    display: none;
+    min-height: 80px;
 }
 img {
     width: 100%;
@@ -536,13 +536,6 @@ textarea {
     }
     .minheight {
         min-height: 115px;
-    }
-}
-@media (min-height: 639px) {
-    .bottomfill {
-        display: block;
-        min-height: 78px;
-        margin-top: -2px;
     }
 }
 @media (min-width: 567px) {
