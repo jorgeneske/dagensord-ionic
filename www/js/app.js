@@ -127,7 +127,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           url: "/ok",
           views: {
               'menuContent' :{
-                  templateUrl: "templates/boenmodtaget.html",
+                  templateUrl: "templates/boenmodtaget.html"
               }
           }
       })

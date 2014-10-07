@@ -358,6 +358,9 @@ p.dagens span {
 .listpadding {
     padding: 0 0.5em 0 0.5em;
 }
+
+/* Bønner */
+
 .green h2 {
     color: #FFF;
     font-size: 1.3em;
@@ -435,6 +438,18 @@ p.dagens span {
     line-height: 1.3em;
     word-wrap: normal;
     color: #231f20;
+}
+
+/* Input */
+textarea {
+    height: 12em;
+    background: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+button.green {
+    color: #FFF;
 }
 
 /* Share */

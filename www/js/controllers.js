@@ -68,6 +68,7 @@ angular.module('dagensord.controllers', [])
                     //$timeout(function() {
                     //    $scope.closeFormular();
                     //}, 1000);
+                    $scope.formularData = {};
                     $scope.closeFormular();
                     cordova.plugins.Keyboard.close();
                     location.href="#/app/ok";
@@ -434,11 +435,12 @@ angular.module('dagensord.controllers', [])
             function(loadMere){
                 $scope.mere = loadMere;
                 $ionicSlideBoxDelegate.update();
-                //$ionicSlideBoxDelegate.slide(1,1);
             }
         );
     }
-        $scope.myActiveSlide = $stateParams.slide;
+
+    $scope.myActiveSlide = $stateParams.slide;
+
     $scope.mereGoRight = function(){
         $ionicSlideBoxDelegate.next();
     }
