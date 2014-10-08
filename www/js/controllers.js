@@ -392,12 +392,10 @@ angular.module('dagensord.controllers', [])
     $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
 
     MediaSrv.loadMedia($scope.vistsalme['qbrickAudio']).then(function(media){
-        //$scope.mediaplay = media;
         getData.resetSounds[0] = media;
     });
 
     $scope.playAudio = function(ev){
-        //$scope.showload();
         playbt.style.display = "none";
         pausebt.style.display = "inline";
         stopbt.style.display = "inline";

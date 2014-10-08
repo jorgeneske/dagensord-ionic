@@ -18,5 +18,8 @@
   <preference name="SplashScreenDelay" value="2000" />
     <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
-  </feature>
+    </feature>
+    <feature name="Media">
+        <param name="ios-package" value="CDVSound" />
+    </feature>
 </widget>
