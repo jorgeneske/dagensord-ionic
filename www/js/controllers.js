@@ -452,8 +452,6 @@ angular.module('dagensord.controllers', [])
 
     $scope.myActiveSlide = $stateParams.slide;
 
-    //$scope.mediaplay = sound[$stateParams.slide];
-
     $scope.mereGoRight = function(){
         playbt.style.display = "inline";
         pausebt.style.display = "none";
