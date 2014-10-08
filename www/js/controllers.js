@@ -90,6 +90,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
+    alert("W: "+window.screen.availWidth+" H: "+window.screen.availHeight);
     $scope.dagenssalme = dagenssalme[0];
     $scope.dagenstext = dagenstext[0];
     if ($scope.dagenstext['image']) {
@@ -449,6 +450,12 @@ angular.module('dagensord.controllers', [])
     }
 
     $scope.myActiveSlide = $stateParams.slide;
+
+    $scope.slideChange = function(){
+        playbt.style.display = "inline";
+        pausebt.style.display = "none";
+        stopbt.style.display = "none";
+    }
 
     $scope.mereGoRight = function(){
         playbt.style.display = "inline";
