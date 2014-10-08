@@ -64,7 +64,8 @@ angular.module('dagensord.services',[])
             moreSalmerInDB:true, // Sættes til 'false' når alle salmer fra databasen er hentet i listen
             ord : [], // Array til at holde 'dagens ord' til listen
             moreOrdInDB:true, // Sættes til 'false' når alle 'dagens ord' fra databasen er hentet i listen
-            moreSounds:[]
+            moreSounds:[], // Styrer rækkefølgen under menupunktet "Mere" (Velsignelsen, Fadervor ...)
+            resetSounds:[] // Bruges til nulstille lyd på salmer
         };
     })
     .factory('MediaSrv', function($q, $ionicPlatform, $window){

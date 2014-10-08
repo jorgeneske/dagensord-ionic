@@ -141,6 +141,11 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
 
                   }
               }
+          },
+          onExit: function(getData) {
+              for (i = 0; i < getData.moreSounds.length; ++i) {
+                  getData.moreSounds[i].stop();
+              }
           }
       })
       .state('app.soegsalme', {
@@ -184,8 +189,10 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                   }
               }
           },
-          onExit: function() {
-              console.log("Here we go");
+          onExit: function(getData) {
+              for (i = 0; i < getData.resetSounds.length; ++i) {
+                  getData.resetSounds[i].stop();
+              }
           }
       });
 

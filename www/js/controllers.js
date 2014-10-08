@@ -382,7 +382,7 @@ angular.module('dagensord.controllers', [])
     )
 })
 
-.controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv, $ionicPlatform) {
+.controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv, $ionicPlatform, getData) {
 
     var playbt = document.getElementById("playbutton");
     var pausebt = document.getElementById("pausebutton");
@@ -392,7 +392,8 @@ angular.module('dagensord.controllers', [])
     $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
 
     MediaSrv.loadMedia($scope.vistsalme['qbrickAudio']).then(function(media){
-        $scope.mediaplay = media;
+        //$scope.mediaplay = media;
+        getData.resetSounds[0] = media;
     });
 
     $scope.playAudio = function(ev){
@@ -400,19 +401,19 @@ angular.module('dagensord.controllers', [])
         playbt.style.display = "none";
         pausebt.style.display = "inline";
         stopbt.style.display = "inline";
-        $scope.mediaplay.play();
+        getData.resetSounds[0].play();
     }
     $scope.pauseAudio = function(){
         playbt.style.display = "inline";
         pausebt.style.display = "none";
         stopbt.style.display = "inline";
-        $scope.mediaplay.pause();
+        getData.resetSounds[0].pause();
         }
     $scope.stopAudio = function(){
         playbt.style.display = "inline";
         pausebt.style.display = "none";
         stopbt.style.display = "none";
-        $scope.mediaplay.stop();
+        getData.resetSounds[0].stop();
         clearInterval(mediaTimer);
         mediaTimer = null;
     }
@@ -451,7 +452,6 @@ angular.module('dagensord.controllers', [])
 
     $scope.myActiveSlide = $stateParams.slide;
 
-
     //$scope.mediaplay = sound[$stateParams.slide];
 
     $scope.mereGoRight = function(){
@@ -468,7 +468,6 @@ angular.module('dagensord.controllers', [])
     }
 
     $scope.playAudio = function(ev){
-        console.log("Hallo 2 "+$ionicSlideBoxDelegate.currentIndex());
         playbt.style.display = "none";
         pausebt.style.display = "inline";
         stopbt.style.display = "inline";
@@ -488,7 +487,7 @@ angular.module('dagensord.controllers', [])
         pausebt.style.display = "none";
         stopbt.style.display = "none";
         getData.moreSounds[$ionicSlideBoxDelegate.currentIndex()].stop();
-        //clearInterval(mediaTimer);
-        //mediaTimer = null;
+        clearInterval(mediaTimer);
+        mediaTimer = null;
     }
 })
