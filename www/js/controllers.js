@@ -90,7 +90,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
-    alert("W: "+window.screen.availWidth+" H: "+window.screen.availHeight);
+    //alert("W: "+window.screen.availWidth+" H: "+window.screen.availHeight);
     $scope.dagenssalme = dagenssalme[0];
     $scope.dagenstext = dagenstext[0];
     if ($scope.dagenstext['image']) {
