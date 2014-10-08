@@ -183,6 +183,9 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                       }
                   }
               }
+          },
+          onExit: function() {
+              console.log("Here we go");
           }
       });
 
@@ -193,7 +196,8 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
   $sceDelegateProvider.resourceUrlWhitelist([
       'self',
       'http://qstream-down.qbrick.com/**',
-      'http://77.66.32.233/**'
+      'http://77.66.32.233/**',
+      'http://downol.dr.dk/**'
   ]);
 
 });

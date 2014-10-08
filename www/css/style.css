@@ -493,26 +493,26 @@ textarea {
 /* Audio play */
 #playbutton {
     background: transparent url("../img/playknap_stor.png");
-    background-size: 30px 30px;
-    width: 30px;
-    height: 30px;
+    background-size: 3em 3em;
+    width: 3em;
+    height: 3em;
     border: none;
     margin: 0 30px 0 0;
 }
 #pausebutton {
     background: transparent url("../img/pause_ikon.png");
-    background-size: 30px 30px;
-    width: 30px;
-    height: 30px;
+    background-size: 3em 3em;
+    width: 3em;
+    height: 3em;
     border: none;
     margin: 0 30px 0 0;
     display: none;
 }
 #stopbutton {
     background: transparent url("../img/stop_ikon.png");
-    background-size: 30px 30px;
-    width: 30px;
-    height: 30px;
+    background-size: 3em 3em;
+    width: 3em;
+    height: 3em;
     border: none;
     margin: 0;
     display: none;

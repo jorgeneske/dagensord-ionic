@@ -428,24 +428,67 @@ angular.module('dagensord.controllers', [])
 })
 
 
-.controller('MereCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, getData) {
+.controller('MereCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, getData,MediaSrv) {
+
+    var playbt = document.getElementById("playbutton");
+    var pausebt = document.getElementById("pausebutton");
+    var stopbt = document.getElementById("stopbutton");
 
     if(!$scope.mere){ // Hvis der ikke er hentet endnu:
         getData.all(4, $scope.mereHandler.loadAmount).then(
             function(loadMere){
                 $scope.mere = loadMere;
+                for (i = 0; i < loadMere.length; ++i) {
+                    loadMere[i]['qbrickAudio'] = decodeURIComponent(loadMere[i]['qbrickAudio']);
+                    MediaSrv.loadMedia(loadMere[i]['qbrickAudio']).then(function(media){
+                        getData.moreSounds.push(media);
+                    });
+                }
                 $ionicSlideBoxDelegate.update();
-                console.log($scope.mere);
             }
         );
     }
 
     $scope.myActiveSlide = $stateParams.slide;
 
+
+    //$scope.mediaplay = sound[$stateParams.slide];
+
     $scope.mereGoRight = function(){
+        playbt.style.display = "inline";
+        pausebt.style.display = "none";
+        stopbt.style.display = "none";
         $ionicSlideBoxDelegate.next();
     }
     $scope.mereGoLeft = function(){
+        playbt.style.display = "inline";
+        pausebt.style.display = "none";
+        stopbt.style.display = "none";
         $ionicSlideBoxDelegate.previous();
+    }
+
+    $scope.playAudio = function(ev){
+        console.log("Hallo 2 "+$ionicSlideBoxDelegate.currentIndex());
+        playbt.style.display = "none";
+        pausebt.style.display = "inline";
+        stopbt.style.display = "inline";
+        for (i = 0; i < getData.moreSounds.length; ++i) {
+            getData.moreSounds[i].stop();
+        }
+        getData.moreSounds[$ionicSlideBoxDelegate.currentIndex()].play();
+    }
+    $scope.pauseAudio = function(){
+        playbt.style.display = "inline";
+        pausebt.style.display = "none";
+        stopbt.style.display = "inline";
+        getData.moreSounds[$ionicSlideBoxDelegate.currentIndex()].pause();
+    }
+    $scope.stopAudio = function(){
+        playbt.style.display = "inline";
+        pausebt.style.display = "none";
+        stopbt.style.display = "none";
+        getData.moreSounds[$ionicSlideBoxDelegate.currentIndex()].stop();
+        //clearInterval(mediaTimer);
+        //mediaTimer = null;
     }
 })

@@ -63,7 +63,8 @@ angular.module('dagensord.services',[])
             salmer : [], // Array til at holde salmer til listen
             moreSalmerInDB:true, // Sættes til 'false' når alle salmer fra databasen er hentet i listen
             ord : [], // Array til at holde 'dagens ord' til listen
-            moreOrdInDB:true // Sættes til 'false' når alle 'dagens ord' fra databasen er hentet i listen
+            moreOrdInDB:true, // Sættes til 'false' når alle 'dagens ord' fra databasen er hentet i listen
+            moreSounds:[]
         };
     })
     .factory('MediaSrv', function($q, $ionicPlatform, $window){
