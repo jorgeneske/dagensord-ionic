@@ -82,6 +82,7 @@ angular.module('dagensord.controllers', [])
 
         $scope.sendSoeg = function(q) {
             if ($scope.soeg[q]) {
+                cordova.plugins.Keyboard.close();
                 location.href = "#/app/soeg"+q+"/" + $scope.soeg[q];
             }
         };
@@ -280,6 +281,46 @@ angular.module('dagensord.controllers', [])
 
 })
 
+//.controller('SoegTextCtrl', function($scope, $stateParams, getData) {
+//        $scope.moreOrd = true;
+//
+//        // Dagens Ord liste view  fodres med data fra globale variabler
+//        $scope.ord = getData.ord;
+//        $scope.moreOrd = getData.moreOrdInDB;
+//
+//
+//        $scope.loadMoreOrd = function () {
+//
+//            var loadString;
+//            if (getData.ord.length < 1) {
+//                loadString = '20';
+//            } else {
+//                loadString = '' + (getData.ord.length + 1) + ',20';
+//            }
+//            getData.soeg(2, encodeURIComponent($stateParams.soeg), loadString).then(
+//                function (ord) {
+//
+//                    if (ord.length > 0 && !ord[0].emptyfield) {
+//                        // Billed fil navn sættes ind i et ordentligt billed tag:
+//                        for (var i = 0; i < ord.length; ++i) {
+//                            ord[i]['image'] = '<img src="' + imageurl + ord[i]['image'] + '" alt="' + ord[i]['performer'] + '" />';
+//                        }
+//
+//                        // Hvis der er mindst ét ordentligt item i DB
+//                        getData.ord = getData.ord.concat(ord);
+//                        $scope.$broadcast('scroll.infiniteScrollComplete');
+//
+//                        $scope.ord = getData.ord;
+//                    } else {
+//                        // Hvis der kommer 0 items tilbage eller 1 item med emptyfield = true;
+//                        $scope.moreOrd = getData.moreOrdInDB = false;
+//                        $scope.$broadcast('scroll.infiniteScrollComplete');
+//                    }
+//                }
+//            )
+//        }
+//})
+
 .controller('OmCtrl', function($scope, getData) {
     $scope.showload();
     getData.about(apptype).then(
@@ -384,15 +425,50 @@ angular.module('dagensord.controllers', [])
     }
 })
 
-.controller('SoegSalmeCtrl', function($scope, $stateParams, getData) {
-    $scope.showload();
+    .controller('SoegSalmeCtrl', function($scope, $stateParams, getData) {
+        $scope.showload();
 
-    getData.soeg(1,encodeURIComponent($stateParams.soeg)).then(
-        function(salmer) {
-            $scope.salmer = salmer;
-            $scope.hideload();
+        getData.soeg(1,encodeURIComponent($stateParams.soeg)).then(
+            function(salmer) {
+                $scope.salmer = salmer;
+                $scope.hideload();
+            }
+        )
+    })
+
+.controller('SoegSalmeCtrl_temp', function ($scope, $stateParams, getData) {
+
+    $scope.moreSalmer = true;
+
+    // Salme liste view  fodres med data fra globale variabler
+    $scope.salmer = getData.salmer;
+    $scope.moreSalmer = getData.moreSalmerInDB;
+
+
+    $scope.loadMoreSalmer = function () {
+
+        var loadString;
+        if (getData.salmer.length < 1) {
+            loadString = '20';
+        } else {
+            loadString = '' + (getData.salmer.length + 1) + ',20';
         }
-    )
+        getData.soeg(1,encodeURIComponent($stateParams.soeg), loadString).then(
+            function (salmer) {
+                if(salmer.length > 0 && !salmer[0].emptyfield){
+                    // Hvis der er mindst ét ordentligt item i DB
+                    getData.salmer = getData.salmer.concat(salmer);
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+
+                    $scope.salmer = getData.salmer;
+                }else{
+                    // Hvis der kommer 0 items tilbage eller 1 item med emptyfield = true;
+                    $scope.moreSalmer = getData.moreSalmerInDB = false;
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                }
+            }
+        )
+    }
 })
 
 .controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv, $ionicPlatform, getData) {
@@ -438,7 +514,6 @@ angular.module('dagensord.controllers', [])
         //});
 
 })
-
 
 .controller('MereCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, getData,MediaSrv) {
 
