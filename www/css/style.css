@@ -285,6 +285,24 @@ html .soegsalme input[type="text"]{
     word-wrap: normal;
     color: #FFF;
 }
+.lightblue {
+    background: #1b76a3;
+    border: 2px solid #1b76a3;
+    border-radius: 1em;
+    text-align: left;
+}
+.lightblue p {
+    white-space: pre-wrap;
+    font-size: 1.15em;
+    line-height: 1.4em;
+    word-wrap: normal;
+    color: #FFF;
+}
+.lightblue p b,
+.lightblue p strong{
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
 .light p {
     white-space: pre-wrap;
     font-size: 1.15em;

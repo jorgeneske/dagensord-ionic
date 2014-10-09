@@ -280,6 +280,18 @@ angular.module('dagensord.controllers', [])
 
 })
 
+.controller('OmCtrl', function($scope, getData) {
+    $scope.showload();
+    getData.about(apptype).then(
+        function(om) {
+            $scope.about = om[0];
+            console.log($scope.about);
+            $scope.hideload();
+        }
+    )
+
+})
+
 .controller('VisOrdCtrl', function($scope, $stateParams, dagensord, $sce, $ionicPlatform) {
         //$ionicPlatform.ready(function() {
         //    if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){

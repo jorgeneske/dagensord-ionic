@@ -1,6 +1,7 @@
 
 var adminurl = "http://77.66.32.233/php/aktualitet/dagensord_version_2/";
 var imageurl = "http://77.66.32.233/php/aktualitet/dagensord/media/picts/";
+var apptype = "app";
 
 // Ionic Starter App
 
@@ -145,6 +146,20 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           onExit: function(getData) {
               for (i = 0; i < getData.moreSounds.length; ++i) {
                   getData.moreSounds[i].stop();
+              }
+          }
+      })
+      .state('app.om', {
+          url: "/om",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/om.html",
+                  controller: 'OmCtrl',
+                  resolve: {
+                      om: function(getData){
+                          return getData.about(apptype);
+                      }
+                  }
               }
           }
       })
