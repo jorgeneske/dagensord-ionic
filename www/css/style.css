@@ -151,7 +151,7 @@ html .soegsalme input[type="text"]{
 .soegsalme .button {
     min-height: 34px;
     min-width: 50px;
-    background: #989898;
+    background: #7152a2;
     padding: 0;
     margin: 14px 0 0 2px;
     font-family: "Ionicons";
@@ -162,7 +162,7 @@ html .soegsalme input[type="text"]{
     text-rendering: auto;
     text-transform: none;
     content: "\f21f";
-    border: 1px solid #d6d6d6;
+    border: 1px solid #c6b9da;
     border-radius: 0.5em;
 }
 .soegsalme .button .icon:before, .soegsalme .button.icon:before, .soegsalme .button.icon-left:before, .soegsalme .button.icon-right:before {
@@ -231,6 +231,10 @@ html .soegsalme input[type="text"]{
     background: #989898;
     padding: 1em;
 }
+.purple {
+    background: #7152a2;
+    padding: 1em;
+}
 .yellow {
     background: #FFCC05;
     padding: 1em;
@@ -247,27 +251,30 @@ html .soegsalme input[type="text"]{
 .blue .item,
 .green .item,
 .yellow .item,
-.grey .item {
+.grey .item,
+.purple .item {
     border: none;
     background-color: transparent;
 }
 .blue .item p,
 .green .item p,
 .yellow .item p,
-.grey .item p {
+.grey .item p,
+.purple .item p{
     color: #FFF;
 }
 .image .item-complex .item-content, .image .item-radio .item-content,
 .blue .item-complex .item-content, .blue .item-radio .item-content,
 .green .item-complex .item-content, .green .item-radio .item-content,
 .yellow .item-complex .item-content, .yellow .item-radio .item-content,
-.grey .item-complex .item-content, .grey .item-radio .item-content {
+.grey .item-complex .item-content, .grey .item-radio .item-content,
+.purple .item-complex .item-content, .purple .item-radio .item-content {
     background-color: transparent;
     padding: 0;
 }
 .light {
-    background: #abaaaa;
-    border: 2px solid #abaaaa;
+    background: #7f64ab;
+    border: 2px solid #7f64ab;
     border-radius: 1em;
     text-align: center;
 }
