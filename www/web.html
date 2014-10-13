@@ -2,8 +2,26 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        body{
+            text-align:center; /*For IE6 Shenanigans*/
+        }
+
+        #wrapper{
+            width:960px;
+            margin:0 auto;
+            text-align:center;
+        }
+    </style>
 </head>
-<body style="width: 320px; height: 568px;">
-    <iframe src="index.html" style="width: 768px; height: 1024px; border: none" scrolling="no"></iframe>
+<body>
+<div id="wrapper">
+    <iframe src="index.html" style="width: 320px; height: 460px; border: none" scrolling="no"></iframe>
+</div>
 </body>
 </html>
