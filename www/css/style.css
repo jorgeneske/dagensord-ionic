@@ -604,8 +604,9 @@ textarea {
 
 
     .title img {
-    margin-top: 13px;
+    margin-top: 23px;
     max-width: 180px;
+        padding: 0;
     }
     .ion-ios7-arrow-back {
     font-size: 2em;
@@ -639,14 +640,26 @@ textarea {
         z-index: 10;
     }
     .bar .title {
+        font-size: 17px;
         height: 87px;
+        left: 0;
         line-height: 88px;
+        margin: 0 10px;
+        min-width: 30px;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        text-overflow: ellipsis;
+        top: 0;
+        white-space: nowrap;
+        z-index: 0;
     }
     .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
-    font-size: 50px;
+    font-size: 64px;
     }
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
-    font-size: 64px;
+    font-size: 50px;
     line-height: 80px;
     vertical-align: top;
     /*margin-top: 22px;*/
