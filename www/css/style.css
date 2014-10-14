@@ -606,52 +606,49 @@ textarea {
     .title img {
     /*margin-top: 23px;*/
     max-width: 180px;
-        padding: 0;
-    }
-    .ion-ios7-arrow-back {
-    font-size: 2em;
+    padding: 0;
     }
     .has-footer {
         bottom: 88px;
     }
     .has-header {
-        top: 88px;
+        top: 110px;
     }
 
-    .bar {
-        -moz-user-select: none;
-        background-color: white;
-        background-size: 0 auto;
-        border-bottom: 1px solid #ddd;
-        border-style: solid;
-        border-top: 1px solid transparent;
-        border-width: 1px 0;
-        box-sizing: border-box;
-        display: flex;
+    /*.bar {*/
+        /*-moz-user-select: none;*/
+        /*background-color: white;*/
+        /*background-size: 0 auto;*/
+        /*border-bottom: 1px solid #ddd;*/
+        /*border-style: solid;*/
+        /*border-top: 1px solid transparent;*/
+        /*border-width: 1px 0;*/
+        /*box-sizing: border-box;*/
+        /*display: flex;*/
         /*min-height: 88px;*/
-        left: 0;
-        padding: 5px;
-        position: absolute;
-        right: 0;
-        transform: translate3d(0px, 0px, 0px);
-        width: 100%;
-        z-index: 10;
-    }
-    .bar .title {
+        /*left: 0;*/
+        /*padding: 5px;*/
+        /*position: absolute;*/
+        /*right: 0;*/
+        /*transform: translate3d(0px, 0px, 0px);*/
+        /*width: 100%;*/
+        /*z-index: 10;*/
+    /*}*/
+    /*.bar .title {*/
         /*height: 87px;*/
-        line-height: 88px;
-    }
+        /*line-height: 88px;*/
+    /*}*/
     .bar.bar-stable {
         background: #CE0000;
-        /*height: 110px;*/
+        min-height: 110px;
     }
-    .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
-    font-size: 64px;
-    }
+    /*.bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {*/
+    /*font-size: 64px;*/
+    /*}*/
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
     font-size: 50px;
     /*line-height: 80px;*/
-    vertical-align: top;
+    /*vertical-align: top;*/
     /*margin-top: 22px;*/
     }
     .bottomfill {
