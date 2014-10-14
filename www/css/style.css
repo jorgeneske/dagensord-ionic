@@ -612,7 +612,7 @@ textarea {
         bottom: 88px;
     }
     .has-header {
-        top: 88px;
+        top: 108px;
     }
 
     .bar {
@@ -626,7 +626,7 @@ textarea {
         /*box-sizing: border-box;*/
         /*display: flex;*/
         height: auto;
-        min-height: 88px;
+        min-height: 108px;
 
         /*left: 0;*/
         /*padding: 5px;*/
@@ -648,9 +648,9 @@ textarea {
     /*}*/
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
     font-size: 50px;
-    line-height: 80px;
+    /*line-height: 80px;*/
     /*vertical-align: top;*/
-    /*margin-top: 22px;*/
+    margin-top: 32px;
     }
     .bottomfill {
         min-height: 203px;
