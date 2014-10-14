@@ -573,12 +573,13 @@ textarea {
 
 }
 @media (min-width: 768px) {
-/*
+
     #doWrapper {
         zoom: 2;
     }
     p.dagens {
         line-height: 1.3em;
+        padding-right: 1em;
     }
     .light p {
         white-space: pre-wrap;
@@ -588,7 +589,6 @@ textarea {
     .light h3 {
         line-height: 1.4;
     }
-*/
 }
 
 
