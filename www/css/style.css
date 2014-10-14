@@ -641,14 +641,14 @@ textarea {
         /*line-height: 88px;*/
     /*}*/
     .bar.bar-stable {
-        min-height: 88px;
+        /*min-height: 88px;*/
     }
     /*.bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {*/
     /*font-size: 64px;*/
     /*}*/
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
     font-size: 50px;
-    /*line-height: 80px;*/
+    line-height: 80px;
     /*vertical-align: top;*/
     /*margin-top: 22px;*/
     }
