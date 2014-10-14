@@ -614,7 +614,10 @@ textarea {
         bottom: 88px;
     }
     .has-header {
-        top: 100px;
+        top: 88px;
+    }
+    .bar-stable {
+        height: 88px;
     }
     .bar {
         -moz-user-select: none;
@@ -626,7 +629,7 @@ textarea {
         border-width: 1px 0;
         box-sizing: border-box;
         display: flex;
-        height: 100px;
+        min-height: 88px;
         left: 0;
         padding: 5px;
         position: absolute;
