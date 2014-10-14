@@ -636,10 +636,21 @@ textarea {
         /*width: 100%;*/
         z-index: 100;
     }
-    /*.bar .title {*/
-        /*height: 87px;*/
-        /*line-height: 88px;*/
-    /*}*/
+    .bar .title {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 0;
+        overflow: hidden;
+        margin: 0 10px;
+        min-width: 30px;
+        height: 86px;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 24px;
+        line-height: 88px; }
     .bar.bar-stable {
         /*min-height: 88px;*/
     }
@@ -648,7 +659,7 @@ textarea {
     /*}*/
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
     font-size: 50px;
-    line-height: 60px;
+    /*line-height: 60px;*/
     /*vertical-align: top;*/
     /*margin-top: 32px;*/
     }
