@@ -604,7 +604,7 @@ textarea {
         padding-left: 1em;
     }
     .title img {
-    padding-top: 25px;
+    margin-top: 13px;
     max-width: 180px;
     }
     .ion-ios7-arrow-back {
@@ -636,8 +636,9 @@ textarea {
     }
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
     font-size: 64px;
+    line-height: 80px;
     vertical-align: top;
-    padding-top: 22px;
+    /*margin-top: 22px;*/
     }
     .ion-ios7-arrow-back {
     font-size: 2em;
