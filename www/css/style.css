@@ -194,17 +194,22 @@ html .soegsalme input[type="text"]{
 }
 .listview p.meta {
     font-style: italic;
-    font-size: 0.8em;
+    font-size: 0.7em;
     padding-bottom: 0.4em;
+    line-height: 1em;
 }
 .listview h2 {
     color: #FFF;
     font-weight: bold;
     padding-top: 0.4em;
-    font-size: 0.95em;
+    font-size: 0.90em;
     line-height: 1.3em;
     /*white-space: pre-wrap;*/
     /*word-wrap: normal;*/
+}
+.h2ord {
+    padding-bottom: 0;
+    padding-top: 0;
 }
 .listview img {
     /*max-width: 100px;*/
@@ -776,7 +781,7 @@ textarea {
         font-size: 1.2em;
         padding-bottom: 0.7em;
         padding-left: 10px;
-        padding-left: 5px;
+        padding-right: 5px;
     }
     .listview h2 {
         color: #FFF;
@@ -791,7 +796,7 @@ textarea {
         padding-bottom: 0.4em;
         padding-top: 0.4em;
         padding-left: 10px;
-        padding-left: 5px;
+        padding-right: 5px;
     }
     .listview img {
         /*max-width: 100px;*/
