@@ -634,20 +634,31 @@ textarea {
         height: 88px;
         z-index: 10;
     }
-
-    /*.bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {*/
-    /*font-size: 64px;*/
-    /*}*/
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
-    font-size: 64px;
-    line-height: 77px;
-    vertical-align: top;
+        font-size: 64px;
+        line-height: 77px;
+        vertical-align: top;
+    }
+    .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
+        font-size: 50px;
+        line-height: 77px;
+        vertical-align: top;
+        padding-left: 16px;
     }
     .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
         height: 108px;
     }
     .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
         top: 108px;
+    }
+
+    .menu .item-complex .item-content, .menu .item-radio .item-content {
+        background-color: #404041;
+        color: #fff;
+        font-size: 1.6em;
+    }
+    .item-complex .item-content, .item-radio .item-content {
+        padding: 24px 49px 24px 16px;
     }
 
     .bottomfill {
