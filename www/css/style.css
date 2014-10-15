@@ -522,7 +522,7 @@ textarea {
     width: 3em;
     height: 3em;
     border: none;
-    margin: 0 30px 0 0;
+    margin: 0;
 }
 #pausebutton {
     background: transparent url("../img/pause_ikon.png");
@@ -530,7 +530,7 @@ textarea {
     width: 3em;
     height: 3em;
     border: none;
-    margin: 0 30px 0 0;
+    margin: 0;
     display: none;
 }
 #stopbutton {
@@ -539,7 +539,7 @@ textarea {
     width: 3em;
     height: 3em;
     border: none;
-    margin: 0;
+    margin: 0 0 0 30px;
     display: none;
 }
 .bottomfill {
@@ -589,32 +589,7 @@ textarea {
 
 
 @media (min-width: 768px) {
-    p.dagens {
-        line-height: 1.3em;
-        padding-right: 1em;
-        font-size: 1.6em;
-    }
-    .light p {
-        white-space: pre-wrap;
-        line-height: 1.3em;
-        word-wrap: normal;
-        font-size: 2.3em;
-    }
-    .light h3 {
-        line-height: 1.4;
-    }
-    img.logo {
-        max-height: 180px;
-        width: auto;
-    }
-    img.logo.more {
-        max-height: 110px;
-        padding-top: 1em;
-        width: auto;
-    }
-    .leftlogo {
-        padding-left: 1em;
-    }
+    /* Top + menu */
     .title img {
     margin-top: 23px;
     max-width: 190px;
@@ -651,7 +626,6 @@ textarea {
     .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
         top: 108px;
     }
-
     .menu .item-complex .item-content, .menu .item-radio .item-content {
         background-color: #404041;
         color: #fff;
@@ -660,9 +634,104 @@ textarea {
     .item-complex .item-content, .item-radio .item-content {
         padding: 24px 49px 24px 16px;
     }
-
+    /* Bund */
     .bottomfill {
         min-height: 205px;
+    }
+    /* Forsiden */
+    p.dagens {
+        line-height: 1.3em;
+        padding-right: 1em;
+        font-size: 1.6em;
+    }
+    img.logo {
+        max-height: 180px;
+        width: auto;
+    }
+    img.logo.more {
+        max-height: 110px;
+        padding-top: 1em;
+        width: auto;
+    }
+    .leftlogo {
+        padding-left: 1em;
+    }
+    /* Audio Playikoner */
+    #playbutton {
+        background: transparent url("../img/play_ikon.png") center no-repeat;
+        background-size: 50px 50px;
+        width: 90px;
+        height: 70px;
+        border: none;
+        margin: 10px 0 0 0;
+    }
+    #pausebutton {
+        background: transparent url("../img/pause_ikon.png") center no-repeat;
+        background-size: 50px 50px;
+        width: 90px;
+        height: 70px;
+        border: none;
+        margin: 10px 0 0 0;
+        display: none;
+    }
+    #stopbutton {
+        background: transparent url("../img/stop_ikon.png") center no-repeat;
+        background-size: 50px 50px;
+        width: 90px;
+        height: 70px;
+        border: none;
+        margin: 10px 0 0 50px;
+        display: none;
+    }
+    /* Share */
+    .facebook {
+        background: transparent url("../img/FB-f-Logo__blue_144.png");
+        background-size: 45px 45px;
+        width: 45px;
+        height: 45px;
+        border: none;
+        margin: 15px 45px 0 0;
+    }
+    .twitter {
+        background: transparent url("../img/Twitter_logo_blue.png");
+        background-size: 45px 45px;
+        width: 45px;
+        height: 45px;
+        border: none;
+        margin: 15px 45px 0 0;
+    }
+    .sms {
+        background: transparent url("../img/sms_logo.png");
+        background-size: 45px 45px;
+        width: 45px;
+        height: 45px;
+        border: none;
+        margin: 15px 0 0 0;
+    }
+    /* Vis salme */
+    img.logo_small {
+        max-height: 160px;
+        width: auto;
+        padding-left: 1em;
+    }
+    .light p {
+        white-space: pre-wrap;
+        line-height: 1.4em;
+        word-wrap: normal;
+        font-size: 1.7em;
+    }
+    .light p.meta {
+        font-size: 1.2em;
+        font-style: italic;
+    }
+    .light h3 {
+        line-height: 1.1em;
+        font-size: 2.1em;
+    }
+    .search h3 {
+        color: #fff;
+        font-size: 1.8em;
+        font-weight: bold;
     }
 }
 
