@@ -617,8 +617,12 @@ textarea {
     }
     .title img {
     margin-top: 23px;
-    max-width: 180px;
+    max-width: 190px;
     padding: 0;
+    }
+    .bar .title {
+        height: 87px;
+        line-height: 88px;
     }
     .has-footer {
         bottom: 88px;
@@ -635,10 +639,9 @@ textarea {
     /*font-size: 64px;*/
     /*}*/
     .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
-    font-size: 50px;
-    line-height: 80px;
-    /*vertical-align: top;*/
-    /*margin-top: 32px;*/
+    font-size: 64px;
+    line-height: 77px;
+    vertical-align: top;
     }
     .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
         height: 108px;
@@ -646,24 +649,9 @@ textarea {
     .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
         top: 108px;
     }
-    .bar .title {
-        /*font-size: 17px;*/
-        height: 87px;
-        /*left: 0;*/
-        line-height: 88px;
-        /*margin: 0 10px;*/
-        /*min-width: 30px;*/
-        /*overflow: hidden;*/
-        /*position: absolute;*/
-        /*right: 0;*/
-        /*text-align: center;*/
-        /*text-overflow: ellipsis;*/
-        /*top: 0;*/
-        /*white-space: nowrap;*/
-        /*z-index: 0;*/
-    }
+
     .bottomfill {
-        min-height: 203px;
+        min-height: 205px;
     }
 }
 
