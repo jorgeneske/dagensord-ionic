@@ -634,11 +634,11 @@ textarea {
         /*right: 0;*/
         /*transform: translate3d(0px, 0px, 0px);*/
         /*width: 100%;*/
-        z-index: 100;
+        z-index: 10;
     }
 
     .bar.bar-stable {
-        min-height: 88px;
+        /*min-height: 88px;*/
     }
     /*.bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {*/
     /*font-size: 64px;*/
@@ -649,6 +649,14 @@ textarea {
     /*vertical-align: top;*/
     /*margin-top: 32px;*/
     }
+
+
+    .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+        height: 108px; }
+    .platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
+        top: 108px; }
+
+
     .bottomfill {
         min-height: 203px;
     }
