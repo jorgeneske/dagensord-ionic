@@ -195,14 +195,14 @@ html .soegsalme input[type="text"]{
 .listview p.meta {
     font-style: italic;
     font-size: 0.7em;
-    padding-bottom: 0.4em;
+    padding-bottom: 0.7em;
     line-height: 1em;
 }
 .listview h2 {
     color: #FFF;
     font-weight: bold;
     padding-top: 0.4em;
-    font-size: 0.90em;
+    font-size: 0.95em;
     line-height: 1.3em;
     /*white-space: pre-wrap;*/
     /*word-wrap: normal;*/
