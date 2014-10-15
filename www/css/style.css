@@ -203,6 +203,8 @@ html .soegsalme input[type="text"]{
     padding-top: 0.4em;
     font-size: 0.95em;
     line-height: 1.3em;
+    /*white-space: pre-wrap;*/
+    /*word-wrap: normal;*/
 }
 .listview img {
     /*max-width: 100px;*/
@@ -779,7 +781,7 @@ textarea {
     .listview h2 {
         color: #FFF;
         font-weight: bold;
-        padding-top: 0.8em;
+        padding-top: 0.7em;
         /*padding-bottom: 0.4em;*/
         /*padding-left: 10px;*/
         font-size: 1.6em;
@@ -787,6 +789,7 @@ textarea {
     }
     .h2ord {
         padding-bottom: 0.4em;
+        padding-top: 0.4em;
         padding-left: 10px;
         padding-left: 5px;
     }
