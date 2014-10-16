@@ -504,6 +504,7 @@ angular.module('dagensord.controllers', [])
         clearInterval(mediaTimer);
         mediaTimer = null;
     }
+
         //$ionicPlatform.ready(function() {
         //    if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
         //        var share = document.getElementById("share");

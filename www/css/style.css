@@ -198,23 +198,31 @@ html .soegsalme input[type="text"]{
     padding-bottom: 0.7em;
     line-height: 1em;
 }
+.listview p.meta_small {
+    font-style: italic;
+    font-size: 0.6em;
+    padding-top: 0.6em;
+    padding-bottom: 0.4em;
+    line-height: 1.6em;
+    margin: 0;
+}
 .listview h2 {
     color: #FFF;
     font-weight: bold;
-    padding-top: 0.4em;
+    padding-top: 0.6em;
     font-size: 0.95em;
     line-height: 1.3em;
     /*white-space: pre-wrap;*/
     /*word-wrap: normal;*/
 }
-.h2ord {
+h2.h2ord {
     padding-bottom: 0;
     padding-top: 0;
 }
 .listview img {
-    /*max-width: 100px;*/
+    /*max-width: 200px;*/
     /*height: auto;*/
-    display: inline;
+    display: inherit;
     margin-bottom: -4px;
 }
 .listview .salme p {
@@ -783,6 +791,15 @@ textarea {
         padding-left: 10px;
         padding-right: 5px;
     }
+    .listview p.meta_small {
+        font-style: italic;
+        font-size: 0.9em;
+        padding-top: 1.1em;
+        padding-bottom: 0.7em;
+        padding-left: 10px;
+        padding-right: 5px;
+        line-height: 1.6em;
+    }
     .listview h2 {
         color: #FFF;
         font-weight: bold;
@@ -792,18 +809,18 @@ textarea {
         font-size: 1.6em;
         line-height: 1.1em;
     }
-    .h2ord {
+    h2.h2ord {
         padding-bottom: 0.4em;
-        padding-top: 0.4em;
+        padding-top: 0;
         padding-left: 10px;
         padding-right: 5px;
     }
-    .listview img {
+    /*.listview img {*/
         /*max-width: 100px;*/
         /*height: auto;*/
-        display: inline;
-        margin-bottom: -4px;
-    }
+        /*display: inline;*/
+        /*margin-bottom: -4px;*/
+    /*}*/
 }
 
 
