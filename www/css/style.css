@@ -612,7 +612,9 @@ textarea {
 
 
 
-@media (min-width: 768px) {
+@media (min-width: 768px)
+or (-webkit-min-device-pixel-ratio: 2)
+or (device-aspect-ratio: 25/38){
     /* Top + menu */
     .title img {
     margin-top: 23px;
