@@ -842,6 +842,8 @@ textarea {
         display: inline;
         background: #659940 url("../img/skriveboble.png") center no-repeat;
         background-size: 600px 570px;
+        margin-top: 50px;
+        margin-bottom: 50px;
         /*padding: 3em 0 3em 0;*/
     }
     .greenbean p {
@@ -864,7 +866,10 @@ textarea {
         overflow: hidden;
     }
     #prev, #next {
-        height: 630px;
+        height: 730px;
+    }
+    .minheight {
+        min-height: 140px;
     }
     /* Mere*/
     img.logo_small_2 {
