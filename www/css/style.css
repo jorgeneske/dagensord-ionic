@@ -568,6 +568,9 @@ textarea {
     .bottomfill {
         display: block;
     }
+    .setheight {
+        min-height: 345px;
+    }
 }
 
 
@@ -822,9 +825,6 @@ textarea {
         margin-bottom: 2em;
         padding: 15px 0 0;
         width: auto;
-    }
-    .setheight {
-        min-height: 345px;
     }
 }
 
