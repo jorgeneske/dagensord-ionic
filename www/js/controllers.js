@@ -533,6 +533,7 @@ angular.module('dagensord.controllers', [])
                     });
                 }
                 $ionicSlideBoxDelegate.update();
+
             }
         );
     }

@@ -866,15 +866,26 @@ textarea {
     #prev, #next {
         height: 630px;
     }
-}
-
-@media screen
-and (max-device-width: 601px)
-and (orientation : portrait)
-and (-webkit-min-device-pixel-ratio: 2)
-and (device-aspect-ratio: 25/38){
-    .green {
-        background: #CE0000;
+    /* Mere*/
+    img.logo_small_2 {
+        max-height: 110px;
+        width: auto;
+        padding-left: 3em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    .mere p {
+        font-size: 1.7em;
+        line-height: 1.5em;
+        white-space: pre-wrap;
+        word-wrap: normal;
+    }
+    .meretxt {
+        min-height: 800px;
+        padding: 2em;
+    }
+    .mere h2 {
+        font-size: 3em;
     }
 }
 
