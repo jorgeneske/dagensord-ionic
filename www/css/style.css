@@ -201,9 +201,9 @@ html .soegsalme input[type="text"]{
 .listview p.meta_small {
     font-style: italic;
     font-size: 0.6em;
-    padding-top: 0.6em;
-    padding-bottom: 0.4em;
-    line-height: 1.6em;
+    padding-top: 0.5em;
+    padding-bottom: 0.35em;
+    line-height: 1.3em;
     margin: 0;
 }
 .listview h2 {
