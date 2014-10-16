@@ -591,6 +591,9 @@ textarea {
     .minheight {
         min-height: 115px;
     }
+    .setheight {
+        min-height: 155px;
+    }
 }
 
 
@@ -758,7 +761,7 @@ textarea {
     .listview .salme h2 {
         padding-top: 0;
         font-size: 2.1em;
-        line-height: 1.1em;
+        line-height: 1.3em;
         margin: 0 0 0.2em 0;
     }
     /* Søgefelter */
@@ -804,8 +807,6 @@ textarea {
         color: #FFF;
         font-weight: bold;
         padding-top: 0.7em;
-        /*padding-bottom: 0.4em;*/
-        /*padding-left: 10px;*/
         font-size: 1.6em;
         line-height: 1.1em;
     }
@@ -815,12 +816,16 @@ textarea {
         padding-left: 10px;
         padding-right: 5px;
     }
-    /*.listview img {*/
-        /*max-width: 100px;*/
-        /*height: auto;*/
-        /*display: inline;*/
-        /*margin-bottom: -4px;*/
-    /*}*/
+    /* Vis dagens ord*/
+    img.dagensord {
+        max-height: 150px;
+        margin-bottom: 2em;
+        padding: 15px 0 0;
+        width: auto;
+    }
+    .setheight {
+        min-height: 345px;
+    }
 }
 
 
