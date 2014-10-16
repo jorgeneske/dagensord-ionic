@@ -612,9 +612,7 @@ textarea {
 
 
 
-@media (min-width: 768px)
-or (-webkit-min-device-pixel-ratio: 2)
-or (device-aspect-ratio: 25/38){
+@media (min-width: 768px) {
     /* Top + menu */
     .title img {
     margin-top: 23px;
@@ -867,6 +865,16 @@ or (device-aspect-ratio: 25/38){
     }
     #prev, #next {
         height: 630px;
+    }
+}
+
+@media screen
+and (max-device-width: 601px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 2)
+and (device-aspect-ratio: 25/38){
+    .green {
+        background: #CE0000;
     }
 }
 
