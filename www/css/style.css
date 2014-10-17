@@ -73,7 +73,6 @@ img {
     box-shadow: none; }
 
 /* Navigation */
-
 .bar.bar-stable {
     background-color: #656565;
     background-image: none;
@@ -360,7 +359,8 @@ img.logo {
     max-height: 90px;
     width: auto;
 }
-img.logo_small {
+img.logo_small,
+img.logo_small_2{
     max-height: 55px;
     width: auto;
 }
