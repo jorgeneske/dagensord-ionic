@@ -14,8 +14,12 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
   <preference name="Orientation" value="portrait" />
-  <preference name="SplashScreen" value="screen" />
-  <preference name="AutoHideSplashScreen" value="false" />
+
+  <!-- de næste to linier skal bruges på Android -->
+
+  <!--<preference name="SplashScreen" value="screen" />-->
+  <!--<preference name="AutoHideSplashScreen" value="false" />-->
+
   <!--<preference name="SplashScreenDelay" value="5000" />-->
     <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>

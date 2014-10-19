@@ -411,6 +411,11 @@ angular.module('dagensord.controllers', [])
             function (salmer) {
                 if(salmer.length > 0 && !salmer[0].emptyfield){
                     // Hvis der er mindst ét ordentligt item i DB
+                    for (i = 0; i < salmer.length; ++i) {
+                        if (salmer[i]['nr']!=undefined && salmer[i]['nr']!="" ) {
+                            salmer[i]['nr'] = "Salme nr: "+salmer[i]['nr'];
+                        }
+                    }
                     getData.salmer = getData.salmer.concat(salmer);
                     $scope.$broadcast('scroll.infiniteScrollComplete');
 
@@ -430,6 +435,11 @@ angular.module('dagensord.controllers', [])
 
         getData.soeg(1,encodeURIComponent($stateParams.soeg)).then(
             function(salmer) {
+                for (i = 0; i < salmer.length; ++i) {
+                    if (salmer[i]['nr']!=undefined && salmer[i]['nr']!="" ) {
+                        salmer[i]['nr'] = "Salme nr: "+salmer[i]['nr'];
+                    }
+                }
                 $scope.salmer = salmer;
                 $scope.hideload();
             }
