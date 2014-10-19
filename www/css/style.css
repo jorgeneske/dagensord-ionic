@@ -470,7 +470,7 @@ p.maxtxt {
     border: 2px solid #FFF;
     border-radius: 0.5em;
     background: #FFF;
-    min-height: 460px;
+    min-height: 500px;
 }
 .mere {
     /*min-height: 300px;*/
@@ -485,6 +485,9 @@ p.maxtxt {
     line-height: 1.3em;
     word-wrap: normal;
     color: #231f20;
+}
+.slider-pager {
+    margin: 20px 0 20px 0;
 }
 
 /* Input */
@@ -884,11 +887,15 @@ textarea {
         word-wrap: normal;
     }
     .meretxt {
-        min-height: 800px;
+        min-height: 820px;
         padding: 2em;
     }
     .mere h2 {
         font-size: 3em;
+    }
+    .slider-pager {
+        margin: 20px 0 20px 0;
+        height: 20px;
     }
     /* Om */
     .lightblue p {
