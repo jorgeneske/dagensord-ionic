@@ -250,7 +250,7 @@ h2.h2ord {
     padding: 1em;
 }
 .yellow {
-    background: #FFCC05;
+    background: #F89933;
     padding: 1em;
 }
 .blue {
@@ -377,7 +377,7 @@ img.dagensord {
 }
 p.dagens {
     white-space: pre-wrap;
-    font-size: 0.8em;
+    font-size: 0.9em;
     word-wrap: normal;
     font-style: italic;
 }
