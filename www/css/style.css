@@ -386,6 +386,11 @@ p.dagens span {
     font-weight: bold;
     display: block;
 }
+.dagens.performer {
+    font-style: normal;
+    font-weight: normal;
+    display: block;
+}
 .nobackground {
     background: transparent none;
     border: none;
@@ -457,11 +462,11 @@ p.maxtxt {
     background-size: 60%;
 }
 #prev_yellow {
-    background: #ffcd0a url("../img/prev_yellow.jpg") center no-repeat;
+    background: #F89933 url("../img/prev_yellow.jpg") center no-repeat;
     background-size: 60%;
 }
 #next_yellow {
-    background: #ffcd0a url("../img/next_yellow.jpg") center no-repeat;
+    background: #F89933 url("../img/next_yellow.jpg") center no-repeat;
     background-size: 60%;
 }
 .meretxt {
