@@ -31,7 +31,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                 })
                     .then(function(result) {
                         //if(!result) {
-                        //    ionic.Platform.exitApp();
+                            ionic.Platform.exitApp();
                         //}
                     });
             }
