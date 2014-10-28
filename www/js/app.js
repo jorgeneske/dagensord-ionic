@@ -43,21 +43,6 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           StatusBar.styleDefault();
         }
     });
-        $ionicPlatform.resume(function() {
-            if(window.Connection) {
-                if(navigator.connection.type == Connection.NONE) {
-                    $ionicPopup.alert({
-                        title: "Ingen netforbindelse",
-                        content: "Der er ikke forbindelse til internettet, og Dagens Ord kan derfor ikke vises"
-                    })
-                        .then(function(result) {
-                            //if(!result) {
-                            ionic.Platform.exitApp();
-                            //}
-                        });
-                }
-            }
-        });
 })
 
 .config(function($stateProvider, $locationProvider, $urlRouterProvider, $sceDelegateProvider) {
