@@ -1,25 +1,48 @@
 
 var adminurl = "http://77.66.32.233/php/aktualitet/dagensord_version_2/";
-var imageurl = "http://77.66.32.233/php/aktualitet/dagensord/media/picts/";
 var apptype = "app";
 
 // Ionic Starter App
 
 angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.services','angular-data.DSCacheFactory'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
+//.run(function($ionicPlatform) {
+//  $ionicPlatform.ready(function() {
+//    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+//    // for form inputs)
+//    if(window.cordova && window.cordova.plugins.Keyboard) {
+//      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+//    }
+//    if(window.StatusBar) {
+//      // org.apache.cordova.statusbar required
+//      StatusBar.styleDefault();
+//    }
+//
+//  });
+//})
 
-  });
+.run(function($ionicPlatform, $ionicPopup) {
+    $ionicPlatform.ready(function() {
+        if(window.Connection) {
+            if(navigator.connection.type == Connection.NONE) {
+                $ionicPopup.alert({
+                    title: "Ingen netforbindelse",
+                    content: "Der er ikke forbindelse til internettet, og Dagens Ord kan derfor ikke vises"
+                })
+                    .then(function(result) {
+                        //if(!result) {
+                            ionic.Platform.exitApp();
+                        //}
+                    });
+            }
+        }
+        if(window.cordova && window.cordova.plugins.Keyboard) {
+          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+          StatusBar.styleDefault();
+        }
+    });
 })
 
 .config(function($stateProvider, $locationProvider, $urlRouterProvider, $sceDelegateProvider) {

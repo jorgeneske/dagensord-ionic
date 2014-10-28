@@ -95,7 +95,7 @@ angular.module('dagensord.controllers', [])
     $scope.dagenssalme = dagenssalme[0];
     $scope.dagenstext = dagenstext[0];
     if ($scope.dagenstext['image']) {
-        $scope.dagenstext['image'] = "<img src='"+ imageurl + $scope.dagenstext['image']+"' alt='"+$scope.dagenstext['performer']+"'/>"
+        $scope.dagenstext['image'] = "<img src='"+ $scope.dagenstext['image']+"' alt='"+$scope.dagenstext['performer']+"'/>"
     }
 })
 
@@ -229,7 +229,7 @@ angular.module('dagensord.controllers', [])
                     if(ord.length > 0 && !ord[0].emptyfield){
                         // Billed fil navn sættes ind i et ordentligt billed tag:
                         for (var i = 0; i < ord.length; ++i) {
-                            ord[i]['image'] = '<img src="'+imageurl+ord[i]['image']+'" alt="'+ord[i]['performer']+'" />';
+                            ord[i]['image'] = '<img src="'+ord[i]['image']+'" alt="'+ord[i]['performer']+'" />';
                         }
 
                         // Hvis der er mindst ét ordentligt item i DB
@@ -253,7 +253,7 @@ angular.module('dagensord.controllers', [])
         function(ord) {
             $scope.ord = ord;
             for (i = 0; i < ord.length; ++i) {
-                ord[i]['image'] = '<img src="'+imageurl+ord[i]['image']+'" alt="'+ord[i]['performer']+'" />';
+                ord[i]['image'] = '<img src="'+ord[i]['image']+'" alt="'+ord[i]['performer']+'" />';
             }
             $scope.hideload();
         }
@@ -272,7 +272,7 @@ angular.module('dagensord.controllers', [])
             $scope.ord = ord;
             for (i = 0; i < ord.length; ++i) {
                 if(ord[i]['image']) {
-                    ord[i]['image'] = '<img src="' + imageurl + ord[i]['image'] + '" alt="' + ord[i]['performer'] + '" />';
+                    ord[i]['image'] = '<img src="' + ord[i]['image'] + '" alt="' + ord[i]['performer'] + '" />';
                 }
             }
             $scope.hideload();
@@ -303,7 +303,7 @@ angular.module('dagensord.controllers', [])
 //                    if (ord.length > 0 && !ord[0].emptyfield) {
 //                        // Billed fil navn sættes ind i et ordentligt billed tag:
 //                        for (var i = 0; i < ord.length; ++i) {
-//                            ord[i]['image'] = '<img src="' + imageurl + ord[i]['image'] + '" alt="' + ord[i]['performer'] + '" />';
+//                            ord[i]['image'] = '<img src="' + ord[i]['image'] + '" alt="' + ord[i]['performer'] + '" />';
 //                        }
 //
 //                        // Hvis der er mindst ét ordentligt item i DB
@@ -346,7 +346,7 @@ angular.module('dagensord.controllers', [])
         var imagename;
         if ($scope.vistord['image']) {
             imagename = $scope.vistord['image'];
-            $scope.vistord['image'] = "<img src='"+ imageurl + $scope.vistord['image']+"' alt='"+$scope.vistord['performer']+"'/>"
+            $scope.vistord['image'] = "<img src='"+ $scope.vistord['image']+"' alt='"+$scope.vistord['performer']+"'/>"
         }
         if ($scope.vistord['qbrick']) {
             var videoSource = $scope.vistord.video.aoshq['0'];
@@ -377,7 +377,7 @@ angular.module('dagensord.controllers', [])
 
             console.log(compWidth, compheight);
 
-            $scope.vistord['videotag'] = $sce.trustAsHtml("<video id='theVideo'style='margin-bottom:-5px' autobuffer controls width="+compWidth+" height="+compheight+" poster='"+imageurl + imagename+"'>"+sourceString+"</video>");
+            $scope.vistord['videotag'] = $sce.trustAsHtml("<video id='theVideo'style='margin-bottom:-5px' autobuffer controls width="+compWidth+" height="+compheight+" poster='"+ imagename+"'>"+sourceString+"</video>");
         }
         console.log(dagensord[0]);
         console.log($scope.vistord['image']);
