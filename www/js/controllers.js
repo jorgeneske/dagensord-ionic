@@ -82,7 +82,9 @@ angular.module('dagensord.controllers', [])
 
         $scope.sendSoeg = function(q) {
             if ($scope.soeg[q]) {
-                cordova.plugins.Keyboard.close();
+                if(window.cordova) {
+                    cordova.plugins.Keyboard.close();
+                }
                 location.href = "#/app/soeg"+q+"/" + $scope.soeg[q];
             }
         };
