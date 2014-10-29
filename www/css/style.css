@@ -434,7 +434,7 @@ p.dagens span {
 .greenbean p {
     white-space: pre-wrap;
     font-size: 1.05em;
-    line-height: 1.2em;
+    line-height: 1.15em;
     word-wrap: normal;
     color: #FFFFFF;
     /*padding-top: 1em;*/
@@ -629,7 +629,273 @@ textarea {
 
 
 @media (min-width: 567px) {
+    /* Top + menu */
+    .title img {
+        margin-top: 20px;
+        max-width: 140px;
+        padding: 0;
+    }
+    .bar .title {
+        height: 65px;
+        line-height: 66px;
+    }
+    .has-footer {
+        bottom: 66px;
+    }
+    .has-header {
+        top: 66px;
+    }
+    .bar {
+        height: 66px;
+        z-index: 10;
+    }
+    .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
+        font-size: 48px;
+        line-height: 56px;
+        vertical-align: top;
+    }
+    .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
+        font-size: 36px;
+        line-height: 56px;
+        vertical-align: top;
+        padding-left: 16px;
+    }
+    .menu .item-complex .item-content, .menu .item-radio .item-content {
+        background-color: #404041;
+        color: #fff;
+        font-size: 1.3em;
+    }
+    .item-complex .item-content, .item-radio .item-content {
+        padding: 18px 49px 18px 16px;
+    }
+    /* Forsiden */
+    p.dagens {
+        line-height: 1.25em;
+        padding-right: 1em;
+        font-size: 1.2em;
+    }
+    img.logo {
+        max-height: 130px;
+        width: auto;
+    }
+    img.logo.more {
+        max-height: 80px;
+        padding-top: 0.7em;
+        width: auto;
+    }
+    .leftlogo {
+        padding-left: 1em;
+    }
+    /* Bund */
+    .bottomfill {
+        min-height: 150px;
+    }
+    /* Vis salme */
 
+    img.logo_small {
+        max-height: 100px;
+        width: auto;
+        padding-left: 1em;
+    }
+    .light p {
+        white-space: pre-wrap;
+        line-height: 1.3em;
+        word-wrap: normal;
+        font-size: 1.4em;
+    }
+    .light p.meta {
+        font-size: 1.2em;
+        font-style: italic;
+    }
+    .nobackground p.meta {
+        margin-top: 5px;
+    }
+    .light h3 {
+        line-height: 1.2em;
+        font-size: 1.6em;
+    }
+    .search h3 {
+        color: #fff;
+        font-size: 1.4em;
+        font-weight: bold;
+    }
+     /*Listeview */
+    .listview .salme p {
+        font-size: 1.1em;
+        font-style: italic;
+        line-height: 1.1em;
+        margin: 0 0 0.25em 0;
+    }
+    .listview .salme h2 {
+        padding-top: 0;
+        font-size: 1.4em;
+        line-height: 1.2em;
+        margin: 0 0 0.25em 0;
+    }
+    /* Audio Playikoner */
+    #playbutton,
+    #pausebutton {
+        margin: 15px 0 0 0;
+    }
+    #stopbutton {
+        margin: 15px 0 0 30px;
+    }
+
+    /* Søgefelter */
+    html .soeg input[type="text"],
+    html .soegsalme input[type="text"]{
+        font-size: 18px;
+        height: 46px;
+        line-height: 24px;
+    }
+    .soeg .button {
+        min-height: 46px;
+        min-width: 80px;
+    }
+    .soeg .button .icon:before, .soeg .button.icon:before, .soeg .button.icon-left:before, .soeg .button.icon-right:before {
+        font-size: 36px;
+        line-height: 36px;
+    }
+    .soegsalme .button {
+        min-height: 46px;
+        min-width: 80px;
+    }
+    .soegsalme .button .icon:before, .soegsalme .button.icon:before, .soegsalme .button.icon-left:before, .soegsalme .button.icon-right:before {
+        font-size: 36px;
+        line-height: 36px;
+    }
+    /* Share */
+    .facebook {
+        background: transparent url("../img/FB-f-Logo__blue_144.png");
+        background-size: 36px 36px;
+        width: 36px;
+        height: 36px;
+        border: none;
+        margin: 8px 36px 0 0;
+    }
+    .twitter {
+        background: transparent url("../img/Twitter_logo_blue.png");
+        background-size: 36px 36px;
+        width: 36px;
+        height: 36px;
+        border: none;
+        margin: 8px 36px 0 0;
+    }
+    .sms {
+        background: transparent url("../img/sms_logo.png");
+        background-size: 36px 36px;
+        width: 36px;
+        height: 36px;
+        border: none;
+        margin: 8px 0 0 0;
+    }
+    /* Dagens ord*/
+    .listview p.meta {
+        font-style: italic;
+        font-size: 1.1em;
+        padding-bottom: 0.7em;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+    .listview p.meta_small {
+        font-style: italic;
+        font-size: 1em;
+        padding-top: 1em;
+        padding-bottom: 0.4em;
+        padding-left: 10px;
+        padding-right: 5px;
+        line-height: 1.1em;
+    }
+    .listview h2 {
+        color: #FFF;
+        font-weight: bold;
+        font-size: 1.4em;
+        line-height: 1.2em;
+    }
+    h2.h2ord {
+        padding-bottom: 0.1em;
+        padding-top: 0;
+        padding-left: 10px;
+    }
+    /* Vis dagens ord*/
+    img.dagensord {
+        max-height: 130px;
+        margin-bottom: 1.2em;
+        padding: 15px 0 0;
+        width: auto;
+    }
+    /* vis bønner */
+    .green h2 {
+        color: #fff;
+        font-size: 1.7em;
+        font-weight: bold;
+        padding-top: 0.6em;
+    }
+    .greenbean {
+        height: 420px;
+        width: 100%;
+        display: inline;
+        background: #659940 url("../img/skriveboble.png") center no-repeat;
+        background-size: 420px 400px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 3em 0 3em 0;
+    }
+    .greenbean p {
+        white-space: pre-wrap;
+        font-size: 1.45em;
+        line-height: 1.25em;
+        word-wrap: normal;
+        color: #FFFFFF;
+        padding-top: 1em;
+    }
+    .beanslider {
+        max-width: 768px;
+    }
+    .beantext {
+        width: 310px;
+        max-height: 1700px;
+        height: 310px;
+        margin-left: 75px;
+        margin-top: 40px;
+        overflow: hidden;
+    }
+    #prev, #next {
+        height: 480px;
+    }
+    .minheight {
+        min-height: 128px;
+    }
+    /* Mere*/
+    img.logo_small_2 {
+        max-height: 80px;
+        width: auto;
+        padding-left: 1.4em;
+    }
+    .mere p {
+        font-size: 1.6em;
+        line-height: 1.5em;
+        white-space: pre-wrap;
+        word-wrap: normal;
+    }
+    .meretxt {
+        min-height: 850px;
+        padding: 1.4em;
+    }
+    .mere h2 {
+        font-size: 2.5em;
+    }
+    .slider-pager {
+        margin: 15px 0 15px 0;
+        height: 15px;
+    }
+    /* Om */
+    .lightblue p {
+        font-size: 1.5em;
+        line-height: 1.6em;
+        white-space: pre-wrap;
+        word-wrap: normal;
+    }
 }
 
 
@@ -697,9 +963,6 @@ textarea {
         max-height: 110px;
         padding-top: 1em;
         width: auto;
-    }
-    .leftlogo {
-        padding-left: 1em;
     }
     /* Audio Playikoner */
     #playbutton {

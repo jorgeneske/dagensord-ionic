@@ -56,26 +56,26 @@ angular.module('dagensord.controllers', [])
 
         $scope.sendFormular = function() {
             var postUrl = adminurl + "getboen.php";
-            console.log(postUrl);
-            $http({
-                method  : 'POST',
-                url     : postUrl,
-                data    : $scope.formularData,//'[{ title: "test"}]',
-                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
-            })
-                .success(function() {
-                    //console.log(data);
-                    //$timeout(function() {
-                    //    $scope.closeFormular();
-                    //}, 1000);
-                    $scope.formularData = {};
-                    $scope.closeFormular();
-                    cordova.plugins.Keyboard.close();
-                    location.href="#/app/ok";
+            if ($scope.formularData.text!=undefined) {
+                $http({
+                    method: 'POST',
+                    url: postUrl,
+                    data: $scope.formularData,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 })
-                .error(function(data, status, headers, config) {
-                    alert("Der er desværre gået noget galt - prøv igen");
-                });
+                    .success(function () {
+                        $scope.formularData = {};
+                        $scope.closeFormular();
+                        cordova.plugins.Keyboard.close();
+                        location.href = "#/app/ok";
+                    })
+                    .error(function (data, status, headers, config) {
+                        alert("Der er desværre gået noget galt - prøv igen");
+                    });
+            }
+            else {
+                $scope.closeFormular();
+            }
         };
 
         $scope.soeg = {};
