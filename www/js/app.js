@@ -23,6 +23,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
 
 .run(function($ionicPlatform, $ionicPopup) {
     $ionicPlatform.ready(function() {
+        alert(navigator.connection.type);
         if(window.Connection) {
             if(navigator.connection.type == Connection.NONE) {
                 $ionicPopup.alert({
@@ -31,7 +32,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                 })
                     .then(function(result) {
                         //if(!result) {
-                            ionic.Platform.exitApp();
+                            ionic.Platform.exitApp(0);
                         //}
                     });
             }
