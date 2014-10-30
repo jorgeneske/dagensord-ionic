@@ -1,5 +1,5 @@
 
-var adminurl = "http://77.66.32.233/php/aktualitet/dagensord_version_2/";
+var adminurl = "http://77.66.32.233/php/aktualitet/dagensord_version_2/datafeed.php";
 var apptype = "app";
 
 // Ionic Starter App
