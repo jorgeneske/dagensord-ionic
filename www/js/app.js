@@ -23,8 +23,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
 
 .run(function($ionicPlatform, $ionicPopup) {
     $ionicPlatform.ready(function() {
-        alert(navigator.connection.type);
-        if(window.Connection) {
+        if(window.Connection && ionic.Platform.isAndroid()) {
             if(navigator.connection.type == Connection.NONE) {
                 $ionicPopup.alert({
                     title: "Ingen netforbindelse",
@@ -32,7 +31,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
                 })
                     .then(function(result) {
                         //if(!result) {
-                            ionic.Platform.exitApp(0);
+                            ionic.Platform.exitApp();
                         //}
                     });
             }
