@@ -1,5 +1,4 @@
 
-//var adminurl = "http://77.66.32.233/php/aktualitet/dagensord_version_2/datafeed.php";
 var adminurl = "http://www.dr.dk/php/aktualitet/dagensord/datafeed.php";
 var apptype = "app";
 
