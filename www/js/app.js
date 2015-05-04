@@ -1,5 +1,5 @@
 
-var adminurl = "http://www.dr.dk/php/aktualitet/dagensord/datafeed.php";
+var adminurl = "http://dagensord.folkekirken.dk/datafeed.php";
 var apptype = "app";
 
 // Ionic Starter App
@@ -242,7 +242,9 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
       'self',
       'http://qstream-down.qbrick.com/**',
       'http://77.66.32.233/**',
-      'http://downol.dr.dk/**'
+      'http://downol.dr.dk/**',
+      'http://dagensord.folkekirken.dk/**',
+      'http://dagensord.lombard.pil.dk/**'
   ]);
 
 });
