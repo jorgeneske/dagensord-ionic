@@ -1,5 +1,3 @@
-// Feedurl
-
 var adminurl = "http://dagensord.folkekirken.dk/datafeed.php";
 var apptype = "app";
 
