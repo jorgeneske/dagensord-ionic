@@ -492,6 +492,8 @@ angular.module('dagensord.controllers', [])
     $scope.vistsalme = salme[0];
     $scope.vistsalme['qbrickAudio'] = decodeURIComponent($scope.vistsalme['qbrickAudio']);
 
+    var id=$scope.vistsalme['id'];
+
     MediaSrv.loadMedia($scope.vistsalme['qbrickAudio']).then(function(media){
         getData.resetSounds[0] = media;
     });
@@ -516,6 +518,23 @@ angular.module('dagensord.controllers', [])
         clearInterval(mediaTimer);
         mediaTimer = null;
     }
+
+        $scope.shareViaSMS = function() {
+            var sms = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\n\nDu kan høre den via dette link:\n\nhttp://dagensord.folkekirken.dk/?salme='+$scope.vistsalme['id'];
+            window.plugins.socialsharing.shareViaSMS(sms, null, function(msg) {console.log('ok: ' + msg)}, function() {alert('Det er ikke muligt at dele via sms på denne enhed')});
+        };
+
+        $scope.shareViaFacebook = function() {
+            var fbmessage = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\nDu kan høre den via dette link:';
+            var fblink = "http://dagensord.folkekirken.dk/?salme="+$scope.vistsalme['id'];
+            window.plugins.socialsharing.shareViaFacebook(fbmessage, null /* img */, fblink, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Facebook på denne enhed')})
+        };
+
+        $scope.shareViaTwitter = function() {
+            var twittermessage = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\nDu kan høre den via dette link:';
+            var twitterlink = "http://dagensord.folkekirken.dk/?salme="+$scope.vistsalme['id'];
+            window.plugins.socialsharing.shareViaTwitter(twittermessage, null /* img */, twitterlink, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Twitter på denne enhed')})
+        };
 
         //$ionicPlatform.ready(function() {
         //    if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){

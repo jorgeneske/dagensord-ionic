@@ -48,9 +48,9 @@
 
     <ion-footer-bar class="bar-positive">
         <div id="share">
-            <button class="twitter" onclick="window.plugins.socialsharing.shareViaTwitter('Her skal stå et eller andet', null /* img */, null /* url */, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Twitter på denne enhed')})"></button>
-            <button class="facebook" onclick="window.plugins.socialsharing.shareViaFacebook('Facebook: Jeg slår noget op :-)', null /* img */, null /* url */, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Facebook på denne enhed')})"></button>
-            <button class="sms" onclick="window.plugins.socialsharing.shareViaSMS('Her får du lige en sms fra Dagens Ord', null, function(msg) {console.log('ok: ' + msg)}, function() {alert('Det er ikke muligt at dele via sms på denne enhed')})"></button>
+            <button class="twitter" ng-click="shareViaTwitter()"></button>
+            <button class="facebook" ng-click="shareViaFacebook()"></button>
+            <button class="sms" ng-click="shareViaSMS()"></button>
         </div>
         <div id="webshare">
             <div class="addthis_sharing_toolbox"></div>
