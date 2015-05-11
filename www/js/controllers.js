@@ -525,14 +525,14 @@ angular.module('dagensord.controllers', [])
         };
 
         $scope.shareViaFacebook = function() {
-            var fbmessage = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\nDu kan høre den via dette link:';
+            var fbmessage = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\nDu kan høre den via dette link: http://dagensord.folkekirken.dk/?salme='+$scope.vistsalme['id'];
             var fblink = "http://dagensord.folkekirken.dk/?salme="+$scope.vistsalme['id'];
-            window.plugins.socialsharing.shareViaFacebook(fbmessage, null /* img */, fblink, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Facebook på denne enhed')})
+            window.plugins.socialsharing.shareViaFacebook(fbmessage, null, fblink, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Facebook på denne enhed')})
         };
 
         $scope.shareViaTwitter = function() {
             var twittermessage = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\nDu kan høre den via dette link: http://dagensord.folkekirken.dk/?salme='+$scope.vistsalme['id'];
-            window.plugins.socialsharing.shareViaTwitter(twittermessage, null /* img */, null, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Twitter på denne enhed')})
+            window.plugins.socialsharing.shareViaTwitter(twittermessage, 'http://dagensord.folkekirken.dk/graphics/180.png', null, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Twitter på denne enhed')})
         };
 
         //$ionicPlatform.ready(function() {
