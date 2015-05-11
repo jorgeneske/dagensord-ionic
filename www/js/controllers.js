@@ -390,6 +390,22 @@ angular.module('dagensord.controllers', [])
             video.addEventListener('click', function(){video.play()}, false);
         }
 
+        $scope.shareViaSMS = function() {
+            var sms = 'Jeg har fundet videoen "'+$scope.vistord['title']+'" på Dagens Ord.\n\nDu kan se den via dette link:\n\nhttp://dagensord.folkekirken.dk/?ord='+$scope.vistord['id'];
+            window.plugins.socialsharing.shareViaSMS(sms, null, function(msg) {console.log('ok: ' + msg)}, function() {alert('Det er ikke muligt at dele via sms på denne enhed')});
+        };
+
+        $scope.shareViaFacebook = function() {
+            var fbmessage = 'Jeg har fundet videoen "'+$scope.vistord['title']+'" på Dagens Ord.\n\nDu kan se den via dette link:\n\nhttp://dagensord.folkekirken.dk/?ord='+$scope.vistord['id'];
+            var fblink = "http://dagensord.folkekirken.dk/?ord="+$scope.vistord['id'];
+            window.plugins.socialsharing.shareViaFacebook(fbmessage, null, fblink, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Facebook på denne enhed')})
+        };
+
+        $scope.shareViaTwitter = function() {
+            var twittermessage = 'Jeg har fundet videoen "'+$scope.vistord['title']+'" på Dagens Ord.\n\nDu kan se den via dette link:\n\nhttp://dagensord.folkekirken.dk/?ord='+$scope.vistord['id'];
+            window.plugins.socialsharing.shareViaTwitter(twittermessage, 'http://dagensord.folkekirken.dk/graphics/180.png', null, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Twitter på denne enhed')})
+        };
+
     })
 
 .controller('SalmerCtrl', function ($scope, getData) {
