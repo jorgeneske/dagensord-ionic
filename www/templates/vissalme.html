@@ -50,6 +50,8 @@
         <div id="share">
             <button class="twitter" ng-click="shareViaTwitter()"></button>
             <button class="facebook" ng-click="shareViaFacebook()"></button>
+            <button class="facebook" onclick="shareViaFacebook()"></button>
+            <button class="facebook" onclick="window.plugins.socialsharing.shareViaFacebook('Facebook: Jeg slår noget op :-)', null /* img */, null /* url */, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Facebook på denne enhed')})"></button>
             <button class="sms" ng-click="shareViaSMS()"></button>
         </div>
         <div id="webshare">
