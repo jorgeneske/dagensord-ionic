@@ -1,3 +1,4 @@
+//test
 angular.module('dagensord.controllers', [])
 .controller('MainCtrl', function($scope, $ionicModal, $http, $timeout, $ionicLoading,$ionicSlideBoxDelegate, getData, $ionicPlatform) {
 
