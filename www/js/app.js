@@ -41,6 +41,9 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
         if(window.StatusBar) {
           StatusBar.styleDefault();
         }
+        if(typeof analytics !== undefined) {
+            analytics.startTrackerWithId("UA-36215325-3");
+        }
     });
 })
 
