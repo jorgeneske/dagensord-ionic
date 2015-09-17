@@ -93,15 +93,16 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
-    if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Forsiden"); }
-    $scope.dagenssalme = dagenssalme[0];
-    $scope.dagenstext = dagenstext[0];
-    if ($scope.dagenstext['image']) {
-        $scope.dagenstext['image'] = "<img src='"+ $scope.dagenstext['image']+"' alt='"+$scope.dagenstext['performer']+"'/>"
-    }
+        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Forsiden"); }
+        $scope.dagenssalme = dagenssalme[0];
+        $scope.dagenstext = dagenstext[0];
+        if ($scope.dagenstext['image']) {
+            $scope.dagenstext['image'] = "<img src='"+ $scope.dagenstext['image']+"' alt='"+$scope.dagenstext['performer']+"'/>"
+        }
 })
 
 .controller('BoennerCtrl', function($scope, $ionicSlideBoxDelegate, getData) {
+        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Bønner"); }
         if(!$scope.boenner){ // Hvis der ikke er hentet bønner endnu:
             //console.log('load first boenner');
             getData.all(3, $scope.boennerHandler.loadAmount).then(
@@ -209,6 +210,7 @@ angular.module('dagensord.controllers', [])
 
 
 .controller('OrdCtrl', function($scope, getData) {
+        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Dagens ord oversigt"); }
         $scope.moreOrd = true;
 
         // Dagens Ord liste view  fodres med data fra globale variabler
@@ -266,6 +268,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('SoegTextCtrl', function($scope, $stateParams, getData) {
+    if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Søg dagens ord"); }
     $scope.showload();
 
     getData.soeg(2,encodeURIComponent($stateParams.soeg)).then(
@@ -282,47 +285,8 @@ angular.module('dagensord.controllers', [])
 
 })
 
-//.controller('SoegTextCtrl', function($scope, $stateParams, getData) {
-//        $scope.moreOrd = true;
-//
-//        // Dagens Ord liste view  fodres med data fra globale variabler
-//        $scope.ord = getData.ord;
-//        $scope.moreOrd = getData.moreOrdInDB;
-//
-//
-//        $scope.loadMoreOrd = function () {
-//
-//            var loadString;
-//            if (getData.ord.length < 1) {
-//                loadString = '20';
-//            } else {
-//                loadString = '' + (getData.ord.length + 1) + ',20';
-//            }
-//            getData.soeg(2, encodeURIComponent($stateParams.soeg), loadString).then(
-//                function (ord) {
-//
-//                    if (ord.length > 0 && !ord[0].emptyfield) {
-//                        // Billed fil navn sættes ind i et ordentligt billed tag:
-//                        for (var i = 0; i < ord.length; ++i) {
-//                            ord[i]['image'] = '<img src="' + ord[i]['image'] + '" alt="' + ord[i]['performer'] + '" />';
-//                        }
-//
-//                        // Hvis der er mindst ét ordentligt item i DB
-//                        getData.ord = getData.ord.concat(ord);
-//                        $scope.$broadcast('scroll.infiniteScrollComplete');
-//
-//                        $scope.ord = getData.ord;
-//                    } else {
-//                        // Hvis der kommer 0 items tilbage eller 1 item med emptyfield = true;
-//                        $scope.moreOrd = getData.moreOrdInDB = false;
-//                        $scope.$broadcast('scroll.infiniteScrollComplete');
-//                    }
-//                }
-//            )
-//        }
-//})
-
 .controller('OmCtrl', function($scope, getData) {
+    if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Om"); }
     $scope.showload();
     getData.about(apptype).then(
         function(om) {
@@ -335,6 +299,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('VisOrdCtrl', function($scope, $stateParams, dagensord, $sce, $ionicPlatform) {
+        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Vis ord"); }
         //$ionicPlatform.ready(function() {
         //    if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
         //        var share = document.getElementById("share");
@@ -390,25 +355,27 @@ angular.module('dagensord.controllers', [])
         }
 
         $scope.shareViaSMS = function() {
-            var sms = 'Jeg har fundet videoen "'+$scope.vistord['title']+'" på Dagens Ord.\n\nDu kan se den via dette link:\n\nhttp://dagensord.folkekirken.dk/?ord='+$scope.vistord['id'];
+            var sms = 'Jeg har fundet videoen "'+$scope.vistord['title']+'" på Dagens Ord.\n\nDu kan se den via dette link:\n\nhttp://www.folkekirken.dk/dagensord/?ord='+$scope.vistord['id'];
             window.plugins.socialsharing.shareViaSMS(sms, null, function(msg) {console.log('ok: ' + msg)}, function() {alert('Det er ikke muligt at dele via sms på denne enhed')});
         };
 
         $scope.shareViaFacebook = function() {
-            var fbmessage = 'Jeg har fundet videoen "'+$scope.vistord['title']+'" på Dagens Ord.\n\nDu kan se den via dette link:\n\nhttp://dagensord.folkekirken.dk/?ord='+$scope.vistord['id'];
-            var fblink = "http://dagensord.folkekirken.dk/?ord="+$scope.vistord['id'];
+            var fbmessage = 'Jeg har fundet videoen "'+$scope.vistord['title']+'" på Dagens Ord.\n\nDu kan se den via dette link:\n\nhttp://www.folkekirken.dk/dagensord/?ord='+$scope.vistord['id'];
+            var fblink = "http://www.folkekirken.dk/dagensord/?ord="+$scope.vistord['id'];
             window.plugins.socialsharing.shareViaFacebook(fbmessage, null, fblink, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Facebook på denne enhed')})
         };
 
         $scope.shareViaTwitter = function() {
-            var twittermessage = 'Jeg har fundet videoen "'+$scope.vistord['title']+'" på Dagens Ord.\n\nDu kan se den via dette link:\n\nhttp://dagensord.folkekirken.dk/?ord='+$scope.vistord['id'];
+            var twittermessage = 'Jeg har fundet videoen "'+$scope.vistord['title']+'" på Dagens Ord.\n\nDu kan se den via dette link:\n\nhttp://www.folkekirken.dk/dagensord/?ord='+$scope.vistord['id'];
             window.plugins.socialsharing.shareViaTwitter(twittermessage, 'http://dagensord.folkekirken.dk/graphics/180.png', null, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Twitter på denne enhed')})
         };
 
     })
 
 .controller('SalmerCtrl', function ($scope, getData) {
-        if(typeof analytics !== undefined) { analytics.trackView("DagensOrd: Salmer - oversigt"); }
+
+        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd salmeoversigt"); }
+
         $scope.moreSalmer = true;
 
         // Salme liste view  fodres med data fra globale variabler
@@ -448,6 +415,9 @@ angular.module('dagensord.controllers', [])
 })
 
     .controller('SoegSalmeCtrl', function($scope, $stateParams, getData) {
+
+        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd søg salme"); }
+
         $scope.showload();
 
         getData.soeg(1,encodeURIComponent($stateParams.soeg)).then(
@@ -500,6 +470,8 @@ angular.module('dagensord.controllers', [])
 
 .controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv, $ionicPlatform, getData) {
 
+        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd vis salme"); }
+
     var playbt = document.getElementById("playbutton");
     var pausebt = document.getElementById("pausebutton");
     var stopbt = document.getElementById("stopbutton");
@@ -535,18 +507,18 @@ angular.module('dagensord.controllers', [])
     }
 
         $scope.shareViaSMS = function() {
-            var sms = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\n\nDu kan høre den via dette link:\n\nhttp://dagensord.folkekirken.dk/?salme='+$scope.vistsalme['id'];
+            var sms = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\n\nDu kan høre den via dette link:\n\nhttp://www.folkekirken.dk/dagensord/?salme='+$scope.vistsalme['id'];
             window.plugins.socialsharing.shareViaSMS(sms, null, function(msg) {console.log('ok: ' + msg)}, function() {alert('Det er ikke muligt at dele via sms på denne enhed')});
         };
 
         $scope.shareViaFacebook = function() {
-            var fbmessage = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\nDu kan høre den via dette link: http://dagensord.folkekirken.dk/?salme='+$scope.vistsalme['id'];
-            var fblink = "http://dagensord.folkekirken.dk/?salme="+$scope.vistsalme['id'];
+            var fbmessage = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\nDu kan høre den via dette link: http://www.folkekirken.dk/dagensord/?salme='+$scope.vistsalme['id'];
+            var fblink = "http://www.folkekirken.dk/dagensord/?salme="+$scope.vistsalme['id'];
             window.plugins.socialsharing.shareViaFacebook(fbmessage, null, fblink, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Facebook på denne enhed')})
         };
 
         $scope.shareViaTwitter = function() {
-            var twittermessage = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\nDu kan høre den via dette link: http://dagensord.folkekirken.dk/?salme='+$scope.vistsalme['id'];
+            var twittermessage = 'Jeg har fundet salmen "'+$scope.vistsalme['title']+'" på Dagens Ord.\nDu kan høre den via dette link: http://www.folkekirken.dk/dagensord/?salme='+$scope.vistsalme['id'];
             window.plugins.socialsharing.shareViaTwitter(twittermessage, 'http://dagensord.folkekirken.dk/graphics/180.png', null, function() {console.log('share ok')}, function(){alert('Det er ikke muligt at dele via Twitter på denne enhed')})
         };
 
@@ -562,7 +534,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('MereCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, getData,MediaSrv) {
-
+    if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Velsignelser"); }
     var playbt = document.getElementById("playbutton");
     var pausebt = document.getElementById("pausebutton");
     var stopbt = document.getElementById("stopbutton");
