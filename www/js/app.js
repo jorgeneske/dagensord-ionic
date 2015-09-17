@@ -42,17 +42,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
           StatusBar.styleDefault();
         }
         if(typeof analytics !== undefined) {
-            //analytics.startTrackerWithId("UA-36215325-3");
-            $ionicPopup.alert({
-                title: "analitics",
-                content: "alt ok"
-            });
-        }
-        else {
-            $ionicPopup.alert({
-                title: "analitics missing",
-                content: "not ok"
-            });
+            analytics.startTrackerWithId("UA-36215325-3");
         }
     });
 })

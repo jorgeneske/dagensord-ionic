@@ -93,6 +93,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
+    if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Forsiden"); }
     $scope.dagenssalme = dagenssalme[0];
     $scope.dagenstext = dagenstext[0];
     if ($scope.dagenstext['image']) {
