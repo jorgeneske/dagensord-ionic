@@ -1,4 +1,4 @@
-var adminurl = "http://dagensord.folkekirken.dk/datafeed.php";
+var adminurl = "http://dagensord.lombard.pil.dk/";
 var apptype = "app";
 
 // Ionic Starter App

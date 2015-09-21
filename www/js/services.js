@@ -4,7 +4,7 @@ angular.module('dagensord.services',[])
         return {
             all: function(cat,limit) {
                 limit = limit || 15;
-                var url = adminurl+'?cat='+cat+'&limit='+limit+'&callback=JSON_CALLBACK';
+                var url = adminurl+'datafeed.php?cat='+cat+'&limit='+limit+'&callback=JSON_CALLBACK';
                 var deferred = $q.defer();
                 $http.jsonp(url, {
                     cache: true
@@ -18,7 +18,7 @@ angular.module('dagensord.services',[])
                 return deferred.promise;
             },
             get: function (id) {
-                var url = adminurl+"?itemid="+id+"&callback=JSON_CALLBACK";
+                var url = adminurl+"datafeed.php?itemid="+id+"&callback=JSON_CALLBACK";
                   var deferred = $q.defer();
                   $http.jsonp(url, {
                       cache: true
@@ -32,7 +32,7 @@ angular.module('dagensord.services',[])
                   return deferred.promise;
             },
             dagens: function (cat) {
-                var url = adminurl+"?dagens="+cat+"&callback=JSON_CALLBACK";
+                var url = adminurl+"datafeed.php?dagens="+cat+"&callback=JSON_CALLBACK";
                 var deferred = $q.defer();
                 $http.jsonp(url, {
                     cache: true
@@ -46,7 +46,7 @@ angular.module('dagensord.services',[])
                 return deferred.promise;
             },
             about: function (type) {
-                var url = adminurl+"?about="+type+"&callback=JSON_CALLBACK";
+                var url = adminurl+"datafeed.php?about="+type+"&callback=JSON_CALLBACK";
                 var deferred = $q.defer();
                 $http.jsonp(url, {
                     cache: true
@@ -61,7 +61,7 @@ angular.module('dagensord.services',[])
             },
             soeg: function (cat,query,limit) {
                 limit = limit || 3000;
-                var url = adminurl+"?cat="+cat+"&soeg="+query+"&limit="+limit+"&callback=JSON_CALLBACK";
+                var url = adminurl+"datafeed.php?cat="+cat+"&soeg="+query+"&limit="+limit+"&callback=JSON_CALLBACK";
                 console.log(url);
                 var deferred = $q.defer();
                 $http.jsonp(url, {
