@@ -94,7 +94,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('FrontCtrl', function($scope,dagenssalme, dagenstext) {
-        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Forsiden"); }
+        //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Forsiden"); }
         $scope.dagenssalme = dagenssalme[0];
         $scope.dagenstext = dagenstext[0];
         if ($scope.dagenstext['image']) {
@@ -103,7 +103,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('BoennerCtrl', function($scope, $ionicSlideBoxDelegate, getData) {
-        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Bønner"); }
+        //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Bønner"); }
         if(!$scope.boenner){ // Hvis der ikke er hentet bønner endnu:
             //console.log('load first boenner');
             getData.all(3, $scope.boennerHandler.loadAmount).then(
@@ -211,7 +211,7 @@ angular.module('dagensord.controllers', [])
 
 
 .controller('OrdCtrl', function($scope, getData) {
-        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Dagens ord oversigt"); }
+        //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Dagens ord oversigt"); }
         $scope.moreOrd = true;
 
         // Dagens Ord liste view  fodres med data fra globale variabler
@@ -269,7 +269,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('SoegTextCtrl', function($scope, $stateParams, getData) {
-    if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Søg dagens ord"); }
+    //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Søg dagens ord"); }
     $scope.showload();
 
     getData.soeg(2,encodeURIComponent($stateParams.soeg)).then(
@@ -287,7 +287,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('OmCtrl', function($scope, getData) {
-    if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Om"); }
+    //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Om"); }
     $scope.showload();
     getData.about(apptype).then(
         function(om) {
@@ -300,7 +300,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('VisOrdCtrl', function($scope, $stateParams, dagensord, $sce, $ionicPlatform) {
-        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Vis ord"); }
+        //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Vis ord"); }
         //$ionicPlatform.ready(function() {
         //    if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
         //        var share = document.getElementById("share");
@@ -375,7 +375,7 @@ angular.module('dagensord.controllers', [])
 
 .controller('SalmerCtrl', function ($scope, getData) {
 
-        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd salmeoversigt"); }
+        //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd salmeoversigt"); }
 
         $scope.moreSalmer = true;
 
@@ -417,7 +417,7 @@ angular.module('dagensord.controllers', [])
 
     .controller('SoegSalmeCtrl', function($scope, $stateParams, getData) {
 
-        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd søg salme"); }
+        //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd søg salme"); }
 
         $scope.showload();
 
@@ -471,7 +471,7 @@ angular.module('dagensord.controllers', [])
 
 .controller('VisSalmeCtrl', function($scope, $stateParams, salme, MediaSrv, $ionicPlatform, getData) {
 
-        if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd vis salme"); }
+        //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd vis salme"); }
 
     var playbt = document.getElementById("playbutton");
     var pausebt = document.getElementById("pausebutton");
@@ -535,7 +535,7 @@ angular.module('dagensord.controllers', [])
 })
 
 .controller('MereCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, getData,MediaSrv) {
-    if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Velsignelser"); }
+    //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Velsignelser"); }
     var playbt = document.getElementById("playbutton");
     var pausebt = document.getElementById("pausebutton");
     var stopbt = document.getElementById("stopbutton");
