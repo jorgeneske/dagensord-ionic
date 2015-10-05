@@ -57,6 +57,7 @@ angular.module('dagensord.controllers', [])
         $scope.sendFormular = function() {
             var postUrl = adminurl + "getboen.php";
             if ($scope.formularData.text!=undefined) {
+                $scope.formularData.text = encodeURIComponent($scope.formularData.text);
                 $http({
                     method: 'POST',
                     url: postUrl,
