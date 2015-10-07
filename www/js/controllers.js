@@ -533,9 +533,8 @@ angular.module('dagensord.controllers', [])
         //});
 
 })
-
 .controller('MereCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, getData,MediaSrv) {
-    //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Velsignelser"); }
+    //if(typeof analytics !== "undefined") { analytics.trackView("DagensOrd Velsignelser"); } //analitics
     var playbt = document.getElementById("playbutton");
     var pausebt = document.getElementById("pausebutton");
     var stopbt = document.getElementById("stopbutton");
