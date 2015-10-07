@@ -22,19 +22,19 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
 
 .run(function($ionicPlatform, $ionicPopup) {
     $ionicPlatform.ready(function() {
-        //if(window.Connection && ionic.Platform.isAndroid()) {
-        //    if(navigator.connection.type == Connection.NONE) {
-        //        $ionicPopup.alert({
-        //            title: "Ingen netforbindelse",
-        //            content: "Der er ikke forbindelse til internettet, og Dagens Ord kan derfor ikke vises"
-        //        })
-        //            .then(function(result) {
-        //                //if(!result) {
-        //                    ionic.Platform.exitApp();
-        //                //}
-        //            });
-        //    }
-        //}
+        if(window.Connection && ionic.Platform.isAndroid()) {
+            if(navigator.connection.type == Connection.NONE) {
+                $ionicPopup.alert({
+                    title: "Ingen netforbindelse",
+                    content: "Der er ikke forbindelse til internettet, og Dagens Ord kan derfor ikke vises"
+                })
+                    .then(function(result) {
+                        //if(!result) {
+                            ionic.Platform.exitApp();
+                        //}
+                    });
+            }
+        }
         if(window.cordova && window.cordova.plugins.Keyboard) {
           cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
