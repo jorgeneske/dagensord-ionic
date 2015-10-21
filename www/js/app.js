@@ -47,7 +47,9 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
     });
 })
 
-.config(function($stateProvider, $locationProvider, $urlRouterProvider, $sceDelegateProvider) {
+.config(function($stateProvider, $locationProvider, $urlRouterProvider, $sceDelegateProvider, $ionicConfigProvider) {
+
+        $ionicConfigProvider.backButton.previousTitleText(false).text('');
 
   $stateProvider
 
@@ -248,5 +250,7 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
       'http://dagensord.folkekirken.dk/**',
       'http://dagensord.lombard.pil.dk/**'
   ]);
+
+  //$ionicConfigProvider.backButton.text('Go Back').icon('ion-chevron-left');
 
 });
