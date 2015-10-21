@@ -303,7 +303,7 @@ h2.h2ord {
 .lightgreen {
     background: #659940;
     border: 2px solid #659940;
-    border-radius: 1em;
+    /*border-radius: 1em;*/
     text-align: center;
     min-height: 367px;
 }
@@ -444,7 +444,7 @@ p.dagens span {
 }
 .beantext {
     width: 180px;
-    max-height: 170px;
+    max-height: 185px;
     margin-left: 33px;
     margin-top: 75px;
     overflow: hidden;

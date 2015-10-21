@@ -1,7 +1,7 @@
 angular.module('dagensord.controllers', [])
 .controller('MainCtrl', function($scope, $ionicModal, $http, $timeout, $ionicLoading,$ionicSlideBoxDelegate, getData, $ionicPlatform) {
 
-    $scope.title = '<img src="img/LOGO.png">';
+        $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
 
         $scope.boennerHandler = {
             // Variabler til at styre load og unload af bønner
@@ -56,7 +56,9 @@ angular.module('dagensord.controllers', [])
 
         $scope.sendFormular = function() {
             var postUrl = adminurl + "getboen.php";
-            if ($scope.formularData.text!=undefined) {
+            var tx = $scope.formularData.text;
+            tx = tx.trim();
+            if ($scope.formularData.text!=undefined && tx!='') {
                 $scope.formularData.text = encodeURIComponent($scope.formularData.text);
                 $http({
                     method: 'POST',
