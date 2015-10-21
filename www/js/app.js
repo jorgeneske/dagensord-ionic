@@ -50,6 +50,8 @@ angular.module('dagensord', ['ionic', 'dagensord.controllers', 'dagensord.servic
 .config(function($stateProvider, $locationProvider, $urlRouterProvider, $sceDelegateProvider, $ionicConfigProvider) {
 
         $ionicConfigProvider.backButton.previousTitleText(false).text('');
+        $ionicConfigProvider.navBar.alignTitle('center');
+//.config(function($stateProvider, $locationProvider, $urlRouterProvider, $sceDelegateProvider) {
 
   $stateProvider
 

@@ -2,6 +2,8 @@ angular.module('dagensord.controllers', [])
 .controller('MainCtrl', function($scope, $ionicModal, $http, $timeout, $ionicLoading,$ionicSlideBoxDelegate, getData, $ionicPlatform) {
 
         $scope.title = '<a href="#/app/home"><img src="img/LOGO.png"></a>';
+        //$scope.title = trustAsHtml('<a href="#/app/home"><img src="img/LOGO.png"></a>');
+        //$scope.title = 'TITLE';
 
         $scope.boennerHandler = {
             // Variabler til at styre load og unload af bønner
